@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/Mypvdelete.css" />
+		<title>我的问诊</title>
+	</head>
+	<body>
+		<!-- seach start -->
+		<div class="pvddelete">
+			<form action="{$search_url}" method="post">
+			<div>
+				<img src="images/seach.png" alt="" />
+				<input type="text" id="input" name="keywords" value="{$search_value}" placeholder="请输入问诊标题" autocomplete="off">
+			</div>
+			<input type="hidden" name="id" value="{$cat_id}">
+        	<input type="hidden" name="cur_url" value="">
+        </form>
+		</div>
+		<!-- seach end -->
+		<!-- list start -->
+		<div class="content-soc">
+				<div class="lists">
+
+				</div>
+		</div>
+		<!-- list end -->
+	<script src="js/rem.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/dropload.min.js"></script>
+	<script type="text/javascript">
+
+		function delvote(id){
+			if(confirm('确定删除吗？')){
+				$.ajax({
+					 type: "GET",
+					 url: "",
+					 data: {type:'del',id:id},
+					 dataType: "json",
+					 success: function(data){
+						 if(data==0){
+							$('#del'+id).remove();
+						 }
+					  }
+				 });
+			}
+		}
+		$(function(){
+	    // 页数
+	    var page = 1;
+	    // 每页展示5个
+	    var size = 5;
+	    // dropload
+	    $('.content-soc').dropload({
+		        scrollArea : window,
+		        loadDownFn : function(me){
+		            page++;
+								console.log(page)
+		            // 拼接HTML
+		            var result = '';
+		            $.ajax({
+		                type: 'GET',
+		                url:'/mobile3/jinxinchao/ipvdoctor/ques_list_del2.php?page='+page,
+										dataType: 'json',
+										data:{
+											id:{$doc_id}
+										},
+		                success: function(data){
+											 	var arrLen = data.data.length;
+												console.log(arrLen)
+		                     if(arrLen > 0){
+		                         for(var i=0; i<data.data.length; i++){
+															 console.log(data.data[i].name)
+		                             result +=   '<div class="pvd-listdelete" id="del'+data.data[i].id+'"><div><div><span>'+data['data'][i].name+'</span><span>共题<img src="/mobile3/jinxinchao/ipvdoctor/images/left.png" alt="" /></span></div><p>'+data['data'][i].begin_time+'创建</p></div><div class="pvd-delete"><button onclick="delvote('+data.data[i].id+')" class="del-btn">删除</button></div></div>';
+		                         }
+		                     // 如果没有数据
+		                     }else{
+													 console.log('无数据')
+		                     //     锁定
+		                         me.lock();
+		                     //     无数据
+		                         me.noData();
+		                     }
+												 // 为了测试，延迟1秒加载
+												 setTimeout(function(){
+														console.log(result)
+												 //     插入数据到页面，放到最后面
+														 $('.lists').append(result);
+													//    每次数据插入，必须重置
+														 me.resetload();
+												 },500);
+		                },
+		                error: function(xhr, type){
+		                    console.log('Ajax error!');
+		                    // 即使加载出错，也得重置
+		                    me.resetload();
+		                }
+		            });
+		        }
+		    });
+		});
+	</script>
+	</body>
+</html>

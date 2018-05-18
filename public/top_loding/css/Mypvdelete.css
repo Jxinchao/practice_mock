@@ -1,0 +1,97 @@
+body {
+  background: #f0f0f0;
+}
+body .pvddelete {
+  width: 100%;
+  height: 1.02rem;
+  padding: 0.2rem 0.3rem;
+  background: #fff;
+  box-sizing: border-box;
+}
+body .pvddelete div {
+  width: 100%;
+  position: relative;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+body .pvddelete div img {
+  position: absolute;
+  top: 0.16rem;
+  left: 0.2rem;
+  width: 0.33rem;
+  height: 0.33rem;
+}
+body .pvddelete div input {
+  width: 100%;
+  height: 0.6rem;
+  font-size: 0.24rem;
+  background: #f0f0f0;
+  display: inherit;
+  text-indent: 0.7rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+body .pvd-listdelete {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  margin-top: 0.2rem;
+}
+body .pvd-listdelete > div {
+  padding: 0.2rem 0.3rem;
+}
+body .pvd-listdelete > div div {
+  display: flex;
+  margin-top: 0.2rem;
+}
+body .pvd-listdelete > div div span {
+  font-size: 0.32rem;
+  color: #000;
+  flex: 1;
+}
+body .pvd-listdelete > div div span:nth-child(1) {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .pvd-listdelete > div div span:nth-child(2) {
+  text-align: right;
+}
+body .pvd-listdelete > div div span:nth-child(2) img {
+  display: inline-block;
+  width: 0.16rem;
+  height: 0.26rem;
+  margin-left: 0.2rem;
+}
+body .pvd-listdelete > div p {
+  color: #686868;
+  font-size: 0.22rem;
+  margin-top: 0.3rem;
+}
+body .pvd-listdelete div.pvd-delete {
+  border-top: 1px solid #d8d8d8;
+  padding: 0.2rem 0.3rem;
+  position: relative;
+  height: 1rem;
+  box-sizing: border-box;
+}
+body .pvd-listdelete div.pvd-delete button {
+  width: 1.45rem;
+  height: 0.6rem;
+  border: 2px solid #3d95ff;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.3rem;
+}
+body .dropload-down {
+  font-size: 0.46rem;
+  text-align: center;
+  line-height: 50px;
+}
