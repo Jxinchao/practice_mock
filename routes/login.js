@@ -24,6 +24,7 @@ function searchUser(sql,callback){
 
 router.post('/login',function(req,res){
 	res.header("Access-Control-Allow-Origin","*");
+	console.log(1)
 	 // HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
 	 // HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS,DELETE,PUT");
 	 // HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Test");
