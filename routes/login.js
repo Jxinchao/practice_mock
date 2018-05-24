@@ -23,10 +23,10 @@ function searchUser(sql,callback){
 }
 
 router.post('/login',function(req,res){
-	// res.header("Access-Control-Allow-Origin","*");
-	HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-	 HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS,DELETE,PUT");
-	 HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Test");
+	res.header("Access-Control-Allow-Origin","*");
+	 // HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+	 // HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS,DELETE,PUT");
+	 // HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Test");
 	 res.send('ok')
 //	res.setHeader("Access-Control-Allow-Credentials",true);
 	// var unames=req.body['uname'];
