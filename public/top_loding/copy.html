@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <textarea name="" id="text" cols="30" rows="10">bacddhkdhjdjjgf</textarea>
+  <button id="btn">点击</button>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#btn").click(function(){
+      var val = $("#text").select();
+      var abc = document.execCommand("copy", false, null)
+      console.log(abc)
+    })
+    // document.getElementById("btn").onClick = function(){
+    //   console.log(1)
+    //   var val = document.getElementById("text").val();
+    //   console.log(val)
+    // }
+    // function copy(){
+    //        editor.document.execCommand("copy", true, null);
+    //    }
+  </script>
+</body>
+</html>
