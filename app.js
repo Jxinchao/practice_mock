@@ -27,7 +27,7 @@ app.get('/',function(req,res){
   res.send('hello')
 })
 
-app.post('/login',function(req,res){
+app.get('/login',function(req,res){
   res.send('ok')
 })
 // catch 404 and forward to error handler
