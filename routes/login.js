@@ -9,9 +9,25 @@ var pool=mysql.createPool({
 		port:3306
 })
 
+function searchUser(sql,callback){
+	pool.getConnection(function(err,conns){
+			//console.log(conns+'>>>'+err)
+			conns.query(sql,function(err,result){
+			//console.log(result)
+				//释放连接
+             	 conns.release();
+				callback(err,result)
+			})
+
+	})
+}
+
 router.post('/login',function(req,res){
-	res.header("Access-Control-Allow-Origin","*");
-	console.log(1)
+	// res.header("Access-Control-Allow-Origin","*");
+	HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+	 HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS,DELETE,PUT");
+	 HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Test");
+	 res.send('ok')
 //	res.setHeader("Access-Control-Allow-Credentials",true);
 	// var unames=req.body['uname'];
 	// var pwds=req.body['pwd'];
