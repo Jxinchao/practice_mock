@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+		<title>养生智库</title>
+		<link rel="stylesheet" type="text/css" href="/mobile3/jinxinchao/css/reset.css"/>
+		<link rel="stylesheet" href="/mobile3/jinxinchao/css/hz-yszk.css" />
+	</head>
+	<body>
+	<!-- search start -->
+	<div class="hz-search">
+		<input type="text" placeholder="搜索"/>
+		<img src="/mobile3/jinxinchao/images/search@2x.png" alt="" />
+		<span id="compile">编辑</span>
+	</div>
+	<!-- search end -->
+	<!-- tab start -->
+	<div class="tab">
+		<div class="tab-title">
+			<div>
+				<a href="javascript:;" class="active" d_type="3">文章</a>
+			</div>
+			<div>
+				<a href="javascript:;" id="shangpin" d_type="4">商品</a>
+			</div>
+			<div>
+				<a href="javascript:;">药方</a>
+			</div>
+		</div>
+		<div class="tab-con">
+			<!-- 文章 start -->
+			<div class="article wenzhang"></div>
+			<!-- 商品 start -->
+			<div class="article shangpins"></div>
+			<!-- 药房 start -->
+			<div class="article">
+				<!-- if no 收藏 显示 start -->
+				<div class="no" style="display:block;">
+					<img src="/mobile3/jinxinchao/images/no.png" alt="" />
+					<p>收藏空空如也</p>
+					<p>有好东西记得收藏起来</p>
+				</div>
+				<!-- if no 收藏 显示 end -->
+				<!-- <div class="article-list">
+					<div class="input-sel"><input type="checkbox" name="1" id="fo1">
+						<label for="fo1"></label>
+					</div>
+					<div>
+						<img src="/mobile3/jinxinchao/images/actirle.png"/>
+					</div>
+					<div>
+						<span>通风灵堂</span>
+						<p>通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂通风灵堂</p>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<!-- tab end -->
+	<div style="height:1rem;"></div>
+	<!-- 取消收藏底部栏 start -->
+	<div class="bottom">
+		<span><input type="checkbox" id="qx" name="qx"><label for="qx">全选</label></span>
+		<button>取消收藏</button>
+	</div>
+	<!-- 取消收藏底部栏 end -->
+	<script src="/mobile3/jinxinchao/js/rem.js"></script>
+	<script src="/mobile3/jinxinchao/js/jquery-3.3.1.min.js"></script>
+	<script>
+		var i = 0;  // i 全局取余
+		// tab标签
+			$(".article").hide();
+	    $(".article").eq(0).show();
+		// tab 栏点击事件
+    $(".tab-title div a").click(function() {
+			i = 0;
+			$(".input-sel").css("position","absolute");
+			$(".bottom").hide();
+			$("#compile").text("编辑");
+      $(".tab-title div a").parents().children('a').removeClass("active");
+      $(this).parent().children('a').addClass("active");
+			var activeTab = $(".tab-con .article");
+    	$(".article").hide().eq($(this).parents().index()).show();
+    });
+		// 全选事件
+		var is = 0;
+		$("#qx").on('click',function(e){
+			 e.stopPropagation();
+			if(this.checked){
+				$(".input-sel input").prop('checked',true);
+			}else{
+				$(".input-sel input").prop('checked',false);
+			}
+		})
+		// 数据调取  文章得
+		$.post("/mobile3/my-collect.php",{'data_type':1},function(data){
+			if(data.status == '200'){
+				var html = "";
+				if(data.data){
+					 $.each(data.data, function (i, item) {
+						 $.each(item, function (is, items) {
+							 html += '<div class="article-list"><div class="input-sel"><input type="checkbox" name="test1" id="fo'+items.article_rec_id+'" checkid="'+items.article_rec_id+'"><label for="fo'+items.article_rec_id+'"></label></div><div  class="edit" onclick="oUrl(\''+items.goods_link+'\')"><h1>'+items.title+'</h1><p>'+items.description+'</p><span>'+items.add_time+'</span></div><div><img src="'+items.pic_url+'" alt=""></div></div>'
+						 });
+						 $('.wenzhang').html(html);
+					  });
+				}
+				// 取消收藏数据
+				$('.bottom button').click(function(){
+					var data_type = $('.tab-title div a.active').attr('d_type');
+					var ar_id = '';
+					var i = '';
+					if(data_type == 3){
+						var count = $('.wenzhang input[name="test1"]:checked').length;
+						for(i=0;i<count;i++){
+							ar_id += $('.wenzhang input[name="test1"]:checked').eq(i).attr('checkid')+',';
+						}
+						ar_id = ar_id.slice(0,-1);
+					}else if(data_type == 4){
+						var count = $('.shangpins input[name="test2"]:checked').length;
+						console.log('选中 长度'+count)
+						for(i=0;i<count;i++){
+							ar_id += $('.shangpins input[name="test2"]:checked').eq(i).attr('goods_id')+',';
+						}
+						ar_id = ar_id.slice(0,-1);
+						console.log('id'+ar_id)
+					}
+					// 取消收藏得接口
+					$.post("/mobile3/my-collect.php",{'data_type':data_type,'ar_id':ar_id},function(data){
+						if(data.status == '300'){   //   删除文章
+							$('.wenzhang input[name="test1"]:checked').parent().parent().remove();
+							console.log(data.message);
+						}else if(data.status == '400'){  // 删除商品
+							$('.shangpins input[name="test2"]:checked').parent().parent().remove();
+							console.log(data.message);
+						}
+					}, "json");
+
+				})
+			}else if(data.status == '201'){
+				$('.wenzhang').html('<div class="no"><img src="/mobile3/jinxinchao/images/no.png" alt="" /><p>收藏空空如也</p><p>有好东西记得收藏起来</p></div>')
+			}
+		},'json')
+		// 跳转链接得方法
+		function oUrl(a){
+			window.location.href = ""+a+""
+		}
+		// 数据调取商品
+		$('#shangpin').click(function(){
+			$.post("/mobile3/my-collect.php",{'data_type':2},function(data){
+				if(data.status == '200'){
+					var sp_data = "";
+					if(data.data){
+						$.each(data.data, function (i, item) {
+							 $.each(item, function (is, items) {
+								 sp_data += '<div class="article-list"><div class="input-sel"><input type="checkbox" name="test2" id="fo2'+items.goods_rec_id+'" goods_id="'+items.goods_rec_id+'"><label for="fo2'+items.goods_rec_id+'"></label></div><div><img src="'+items.goods_pic+'"/></div><div onclick="oUrl(\''+items.goods_link+'\')"><p>'+items.goods_name+'</p><span>￥'+items.goods_price+'易币</span><s>价格：'+items.old_price+'</s></div></div>'
+							 });
+							 $('.shangpins').html(sp_data);
+						  });
+					}
+				}else if(data.status == '201'){
+					$('.shangpins').html('<div class="no"><img src="/mobile3/jinxinchao/images/no.png" alt="" /><p>收藏空空如也</p><p>有好东西记得收藏起来</p></div>')
+				}
+			}, "json");
+		});
+		// 点击编辑事件
+		// 点击事件
+		$("#compile").on("click",function(){
+			i++;
+			if(i%2 == 0){
+				$(".input-sel input").attr('checked',false);
+				$(".input-sel").css("position","absolute");
+				$(".bottom").hide();
+				$(this).text("编辑");
+			}else{
+				$(".input-sel input").attr('checked',false);
+				$(".input-sel").css("position","static");
+				$(".bottom").show();
+				$(this).text("完成")
+			}
+		})
+		// 取消选中得时候 全选状态关闭
+		$(document).on('click','.input-sel',function() {
+			var $subs = $(".input-sel input");
+			console.log($subs.length,$subs.filter(":checked").length)
+			$("#qx").prop("checked" , $subs.length == $subs.filter(":checked").length ? true :false);
+		});
+		var $nos = $(".input-sel input");
+		$("#qx").prop("checked" , $subs.length == $subs.filter(":checked").length ? false:true);
+	</script>
+	</body>
+</html>
