@@ -23,13 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/pro/lists',appendRouter);   // 数据列表
-app.use('/pro/login',logins);   // 登录
+app.use('/api/lists',appendRouter);   // 数据列表
+app.use('/api/login',logins);   // 登录
 
 app.get('/',function(req,res){
   res.send('hello')
-})
-
+});
+app.post('/', function (req, res) {
+  res.send('POST request to the homepage');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,10 +49,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var server = app.listen(8888, function () {
+var server = app.listen(8001, function () {
   var host = server.address().address;
   var port = server.address().port;
-
   console.log('Example app listening at http://%s:%s', host, port);
 });
 module.exports = app;
