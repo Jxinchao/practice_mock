@@ -24,6 +24,7 @@ function searchUser(sql,callback){
 
 route.post('/login',function(req,res){
 	res.header("Access-Control-Allow-Origin","*");
+	res.send('ok')
 	var unames=req.body['username'];
 	var pwds=req.body['password'];
 	console.log(unames+'>>>'+pwds)
