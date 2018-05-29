@@ -33,7 +33,7 @@ route.post('/login',function(req,res){
 			if(unames==result[user].uname&&pwds==result[user].pwd){
 				req.session.username=unames; //设置session
 				//console.log(userId)
-			//	res.redirect('html/homepage.html')
+				//res.redirect('html/homepage.html')   // 重定向
 				res.send({flag:1,id:result[user].id})
 				return;
 			}else if(unames==result[user].uname&&pwds!=result[user].pwd){
