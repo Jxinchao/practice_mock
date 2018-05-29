@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('pro/lists',appendRouter);   // 数据列表
-app.use('pro/login',logins);   // 登录
+app.use('/pro/lists',appendRouter);   // 数据列表
+app.use('/pro/login',logins);   // 登录
 
 app.get('/',function(req,res){
   res.send('hello')
