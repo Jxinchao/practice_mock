@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/login');
+var loginRouter = require('./routes/login'); // 登录
+var appendRouter = require('./routes/append');  // 数据
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -27,7 +28,8 @@ app.get('/',function(req,res){
   res.send('hello')
 })
 
-app.get('/login',loginRouter)
+// app.post('/login',loginRouter)   // 登录
+app.get('/list',appendRouter)    // 数据列表
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
