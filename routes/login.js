@@ -15,7 +15,7 @@ function searchUser(sql,callback){
 			conns.query(sql,function(err,result){
 			//console.log(result)
 				//释放连接
-             	 conns.release();
+        conns.release();
 				callback(err,result)
 			})
 
