@@ -24,6 +24,12 @@
     // function copy(){
     //        editor.document.execCommand("copy", true, null);
     //    }
+    <script>
+    $("textarea").bind('focus',function(){
+      $(this).select();
+      document.execCommand("copy", false, null)
+    })
+    </script>
   </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>获取数据</button>
+  <script src="../javascripts/jquery-3.3.1.min.js"></script>
+  <script>
+    $('button').click(function(){
+      $.ajax({
+        type:'post',
+        url:'http://node.itcnyz.com:8001/login/login',
+        success:function(e){
+          console.log(e)
+        },
+        error:function(){
+          console.log('error')
+        }
+      })
+    })
+  </script>
+</body>
+</html>
