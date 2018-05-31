@@ -46,6 +46,6 @@ route.post('/login',function(req,res){
 				}
 			}
 		}
-	// })
+	})
 })
 module.exports = route;
