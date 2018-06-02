@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var text = 'texting:1,1,2,2';   // 文本示列
+		var par = /\d+/g;   // 匹配所有包含一个或多个数字的实例
+		par.test(text);  // true匹配成功
+		text.search(par);  // 9 首次匹配成功的位置
+		text.match(par); // [1,2,3]  所有匹配组成的数组
+		text.replace(par,"#"); // "texting:###"
+		text.split(/\D+/);   // ["","1","2","3"]  用非数字字符截取字符串
+	</script>
+</body>
+</html>
