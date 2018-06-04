@@ -26,7 +26,6 @@ route.post('/login',function(req,res){
 	res.header("Access-Control-Allow-Origin","*");
 	var unames=req.body['username'];
 	var pwds=req.body['password'];
-	console.log(unames+'>>>'+pwds)
 	searchUser('select * from login',function(err,result){
 		console.log(result)
 		for(var user in result){

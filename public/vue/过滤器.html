@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      {{ data | formatDate}}
+
+      <!-- 串联 {{ data | formatA | formatB }}  -->
+      <!-- 接收参数 {{ data | format('arg1','arg2') }}
+           这里的字符串arg1和arg2将分别传给过滤器的第二个和第三个参数，因为第一个是数据本身。
+           过滤器应当用于处理简单的文本转换，如果要实现更为复杂的数据更换，应该使用计算属性。
+     -->
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script type="text/javascript">
+        var padDate = function(obj){ // 空位补零
+          return obj < 10 ? '0'+obj : obj;
+        };
+
+        var app = new Vue({
+          el:"#app",
+          data:{
+            data: new Date()
+          },
+          filters:{  // 过滤器
+            formatDate:function(value){   // 这里的value就是需要过滤的数据
+              var data = new Date(value);
+              var year = data.getFullYear();  // 获取年份
+              var month = padDate(data.getMonth()+1); // 月份从0 开始 要加1
+              var day   = padDate(data.getDate());  // 获取天数
+              var hour  = padDate(data.getHours()); // 获取小时
+              var minutes = padDate(data.getMinutes()); // 获取分
+              var seconds = padDate(data.getSeconds()); // 获取秒
+              // 将整理好的数据返回出去
+              return year + '-' + month + '-' + day + ' ' + hour +':'+ minutes + ':' + seconds;
+            }
+          },
+          mounted:function(){  // 我们一个人业务逻辑从这里开始
+            var _this = this;
+            this.timer = setInterval(function(){
+              _this.data = new Date(); // 修改dat的数据
+            })
+          },
+          beforeDestroy:function(){
+            if(this.timer){
+              clearInterval(this.timer);   // 再实例销毁前，清除我们的定时器
+            }
+          }
+        })
+    </script>
+</body>
+</html>
