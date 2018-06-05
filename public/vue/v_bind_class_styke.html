@@ -10,11 +10,78 @@
 <div id="app">
   <a v-bind:href="url">v-bind链接写法</a>
   <a :href="url">语法糖链写法</a>
+  <img :src="imgSrc" alt="">
+  <img v-bind:src="imgSrc" alt="">
+
+  <div :class="{'active':isActive,'error':isError}">:class也支持 class 与 :class 共存   对象中也可以传入多个属性:class="{'active':isActive,'error':isError}"</div>
+
+
+  <p>当:class的表达式过长或逻辑复杂时，还可以绑定一个计算属性，这是一种友好和常见的用法，一般多于两个时，都可以使用data或computed</p>
+  <div :class="classes"></div>
+  <p>除了计算属性，你也可以直接绑定一个Object类型的数据，或者使用类似计算属性的methods</p>
+  <h1>数组语法</h1>
+  <div :class="[activeCls,errorCls]"></div>
+
+  <h2>也可以用三元表达式来根据条件切换class</h2>
+  <div :class="[ isActive ? activeCls : errorCls]"></div>
+
+  <h3>class有多个条件时，这样写比较繁琐，可以再数组对象中使用对象语法</h3>
+  <div :class="[{'active':isActive},errorCls]"></div>
+
+  <h4>与对象语法一样,也可以使用data\computed\methods三种方法，已计算属性为列</h4>
+  <button :class="cls">我是button按钮</button>
+  <h4>使用计算属性给元素动态设置类名，再业务中经常用到，尤其是在写复用的组件时，所以再开发过程中，如果表达式较长或逻辑复杂，应该尽可能地优先使用计算属性</h4>
+  <my-component :class="{'active':isActive}"></my-component>
+
+  <h1>绑定内联样式</h1>
+  <div :style="{'height':height+'px','width':width+'px','background':background}"></div>
+  <h2>像font-size的使用驼峰命名fontSize   大多数情况下，直接写一长窜的样式不便于阅读维护，所以一般写在data或这computed里</h2>
+  <div :style="styles">文本</div>
+
+  <h1>应用多个样式对象时，可以使用数组语法</h1>
+  :style="[styleA,styleB]"   在实际业务中，：style的数组语法并不常用，因为往往可以写在一个对象里面；而较为常用的应当是计算属性。
 </div>
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 <script type="text/javascript">
     var app = new Vue({
-      
+      el: "#app",
+      data:{
+        url:"node.itcnyz.com",
+        imgSrc:"https://www.baidu.com/img/bd_logo1.png?where=super",
+        isActive: true,
+        isError: false,
+        error: null,
+        activeCls:'active',
+        errorCls:'error',
+        size:'larg',
+        disabled: false,
+        height:30,
+        width:60,
+        background:"red",
+        styles:{
+          color:'red',
+          fontSize:'20px',
+          lineHeight:'80px'
+        }
+      },
+      computed:{  // 看 pu de     methods  方法  my se de
+        classes:function(){
+          return {
+            active:this.isActive && !this.error,'text-fail':this.error && this.error.type == 'fail'
+          }
+        },
+        cls:function(){
+          return [
+            'btn',{
+              ['btn-'+ this.size]: this.size !== '',
+              ['btn-disabled']: this.disabled
+            }
+          ]
+        }
+      }
+    })
+    Vue.component('myComponent',{
+      template: '<p class="article">这里是一些文本,这里用法仅适用于自定义组件的最外层的一个根元素，不然会无效，当不满足这种条件或者要给具体的子元素设置类名时，应当使用组件的props来传递。这些用法同样适用于下一节中绑定内联样式的style的内容</p>'
     })
 </script>
 </body>

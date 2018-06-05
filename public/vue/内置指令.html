@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  [v-cloak]{
+    display: none;
+  }
+  </style>
+</head>
+<body>
+<div id="app" v-cloak>
+  {{ message }}
+  <p>1.v-cloak 不需要表达式，它会再vue是咧结束编辑时从绑定的HTML元素上移除，经常和css的display:none;配合使用，这时虽然已经加了指令，但其实并没有起到作用,网速慢/vue文件还没加载完，在页面会显示{{message}}的字样，直到Vue创建实例/编译模板时，DOM才被替换，所以这个过程有闪动。c's's加入[v-cloak]{
+    display: none;
+  }就可以解决了。一般情况下，v-cloak是一个解决初始化慢导致页面闪动的最近实践，对于简单的项目很实用，但是再具有工程化的项目里，比如vue-router，项目的HTML结构只有一个空的div元素，剩余的内容都是由路由去挂载不同组件完成的，所以不需要v-cloak</p>
+  <p>2.v-once
+  <br>
+  v-once 也是一个不需要表达式的指令，作用时定义它的元素或组件只渲染一次，包括元素或组件的所有子节点。首次渲染后，不在随数据的变化重新渲染，将被视为静态内容；
+  <span v-once>{{message}}</span>
+  <div v-once>
+    <span>
+      {{message}}
+    </span>
+  </div>
+  v-once 在业务中也很少使用，当你需要进一步优化性能时。可能会用到
+  </p>
+
+  <p>3.条件渲染指令
+  <br>
+  <p v-if=" status == 1"> 1显示这行</p>
+  <p v-else-if=" status ==2 ">2.显示这行</p>
+  <p v-else> 否则显示最后额 </p>
+  </p>
+
+  <h2>v-else-if 要紧跟v-if,v-else要紧跟v-else-if或者v-if,表达式为真时，当前元素/组件及所子节点将被渲染，为假时被移除，如果一次判断多个元素的时候，可以再js内置的template元素上面使用条件指令，最终渲染的结果不会包含该元素</h2>
+  <template v-if=" status == 2">
+    <p>我时template渲染的元素</p>
+    <p>我时template渲染的元素</p>
+    <p>我时template渲染的元素</p>
+    <p>我时template渲染的元素</p>
+  </template>
+  <template v-else>
+    <p>我时template渲染的元素else</p>
+    <p>我时template渲染的元素</p>
+    <p>我时template渲染的元素</p>
+    <p>我时template渲染的元素</p>
+  </template>
+
+
+  <p>Vue再渲染时，出于效率考虑，会尽可能地复用已有的元素而非重新渲染</p>
+  <template v-if="type === 'name'">
+      <label>用户名</label>
+      <input type="text" name="" value="11111">
+  </template>
+  <template v-else>
+      <label>邮箱</label>
+      <input type="text" name="" value="邮箱">
+  </template>
+
+  <button @click="btn">切换输入类型</button>
+
+  <p>如果不希望这样做，可以使用vue提供的key属性，它可以让你自己决定是否要复用元素，key值必须是唯一的,给两个input都增加了key后，就不会复用了，切换类型键入的内容也会被删除，不过label内容仍然是复用的，因为没有添加key属性</p>
+  <template v-if="type === 'name'">
+      <label>用户名</label>
+      <input type="text" name="" value="11111" key="name-key">
+  </template>
+  <template v-else>
+      <label>邮箱</label>
+      <input type="text" name="" value="邮箱" key="email-key">
+  </template>
+
+  <button @click="btn">切换输入类型</button>
+
+
+  <h1>v-show  v-show的用法跟v-if几倍一直，只不过v-show改变的是元素的css属性display v-if是操作的元素,<b>v-show不能再template上面使用</b>
+  <br>
+  v-if和v-show具有类似的功能，不过v-if才是真正的条件渲染，它会根据表达式适当的销毁或重建元素及绑定的事件或子组件。若表达式初始值为false，则一开始元素/组件并不会渲染。有当条件第一次为真时才开始真正的编译。而v-show只是简单的css属性切换，无论条件真与否，都会被编译。相比之下，v-if更适合条件不经常改变的场景，因为它切换开销相对较大，而v-show适用于频繁切换条件
+  </h1>
+  <p v-show="status==1">这里会被展示，因为条件满足了</p>
+  <p v-show="status==3">这里会因此，因为条件不满足所以会添加样式display:none</p>
+
+
+  <h1>v-for
+  当需要将一个数组遍历或一个对象循环显示时，会用到渲染指令v-for，它的表达式许结合in来使用，类似item in items 的形式，再表达式中，books是数据，book是当前数组元素的别名，循环出的每个<li>内的元素都可以访问到对应的当前数据book,列表渲染也支持用of 来代替in作为分隔符。它更接近JavaScript迭代器的语法</li>
+  </h1>
+  <ul>
+    <li v-for=" book in books">{{book.name}}</li>
+  </ul>
+
+  <ul>
+    v-for 表达式支持一个可选参数作为当前的索引
+    <li v-for="(boo,abc) of books">{{abc+1}}--- {{ boo.name }}</li>
+  </ul>
+
+
+  <p>与v-if一样，v-for也可以用再template上，将多个元素进行渲染</p>
+
+  <ul>
+    <template v-for="(boo,abc) of books">
+        <li >{{abc+1}}--- {{ boo.name }}</li>
+        <li >{{abc+1}}--- {{ boo.num }}</li>
+    </template>
+  </ul>
+
+  <p>v-for也支持json遍历,json 遍历的时候有两个参数 一个是key值，一个是索引
+      <span v-for="(json,key,index) in jsons">{{key}}----{{index}}---{{json}}</span>
+  </p>
+
+  <p>v-for 还可以迭代整数
+    <span v-for="n of 30">{{n}}</span>
+  </p>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+      el:'#app',
+      data:{
+        message:'55555',
+        status: 1,
+        type:'name',
+        books: [
+          {
+            name:'纤夫的爱',
+            num:2
+          },
+          {
+            name:'纤夫的爱',
+            num:2
+          },
+          {
+            name:'纤夫的爱',
+            num:2
+          },
+          {
+            name:'纤夫的爱',
+            num:2
+          }
+        ],
+        jsons:{
+          name:'我爱你',
+          title:'你是睡',
+          list:'我是你爱的人'
+        }
+      },
+      methods:{
+        btn:function(){
+          this.type = this.type === 'name' ? 'mail' : 'name'
+        }
+      }
+    })
+</script>
+</body>
+</html>
