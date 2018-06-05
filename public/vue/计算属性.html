@@ -9,18 +9,95 @@
 <body>
 <div id="app">
   {{ reversedText }}
+  <p>总价：{{priced}}</p>
+  <p>计算属性：姓名 {{ fullName }}</p>
 </div>
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 <script>
   var app = new Vue({
     el:"#app",
     data:{
-      num : '589,566'
+      num : '589,566',
+      package1: [
+        {
+          name:'华为P10',
+          count: 4600,
+          price: 130
+        },
+        {
+          name:'华为P10plus',
+          count: 80000,
+          price: 320
+        },
+        {
+          name:'华为P20',
+          count: 600,
+          price: 630
+        }
+      ],
+      package2: [
+        {
+          name:'videoP10',
+          count: 600,
+          price: 1
+        },
+        {
+          name:'iphotoP10plus',
+          count: 8000,
+          price: 2
+        },
+        {
+          name:'iphot',
+          count: 60,
+          price: 3
+        }
+      ],
+      firstName:'ChaoChao',
+      lastName:'XinXin'
     },
     computed:{  // 计算属性   看p u的
       // 所有的计算属性都以函数的形式写在vue实例内的computed选项内，最终返回计算后的结果；
       reversedText: function(){
         return this.num.split(',').reverse().join(':');
+      },
+      priced:function(){
+        var priced = 0;
+        for(var i=0;i<this.package1.length;i++){
+          console.log(this.package1[i].price*this.package1[i].count)
+          priced += this.package1[i].price * this.package1[i].count
+        }
+        return priced;
+      },
+      fullName:{
+        // getter 用于读取
+        get:function(){
+          return this.firstName + '----' + this.lastName;
+        },
+        // setter, 写入是触发
+        set:function(newValue){
+          var names = newValue.split(',');
+          this.firstName = names[0];
+          this.lastName = names[names.length-1];
+        }
+      }
+    }
+  })
+  app.fullName = '123';  // 当执行这个是时候，计算属性得setter 写入就会触发    绝大多数情况下，只会使用默认得getter 方法来读取一个计算属性；
+
+
+  // 计算属性还有两个很实用得小技巧容易被忽略，一是计算属性可以依赖其他计算属性；二是计算属性不仅可以依赖当前vue得实例数据，还可以依赖其他实例得数据；
+
+
+
+  // 计算属性缓冲   计算属性是基于它的依赖缓冲得。一个计算属性所依赖的数据发生变化时，它才会重新取值，所以text只要不改变，计算属性也就不更新；
+  //比如
+  var app1 = new Vue({
+    el:'#app',
+    data:{},
+    computed:{
+      now:function(){
+        // 这里的date.now()不是响应依赖，所以计算属性now不会更新。但是methods则不同，只要重新渲染，他就会被调用，因此函数 也会执行；  使用计算属性还是methods取决于你是否需要缓冲，当遍历大数组和做大量计算时，应当使用计算属性，除非你不希望得到缓冲
+        return Date.now();
       }
     }
   })
