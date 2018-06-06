@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <p>点击加一：{{count}}</p>
+    <button @click="count++">点我</button>
+    <button @click="btn">点我加1</button>
+    <button @click="btn(5)">点我加5</button>
+
+    <a href="http://www.baidu.com" @click="handle('就不给你打开', $event)">点我也不给你打开</a>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+  var app = new Vue({
+    el:"#app",
+    data:{
+      count: 0
+    },
+    methods:{
+      // 再methods中定义了我们需要的方法供@click调用，需要注意的是@click调用的方法名后面可以不跟括号，此时如果该方法有参数，默认会将原生事件对象event传入,可以试着修改为?@click="btn";然后打印参数cou看看。
+      // 打印的值为MouseEvent {isTrusted: true, screenX: 70, screenY: 138, clientX: 70, clientY: 72, …
+      // 在大部分业务场景中，如果方法不需要参数，为了简便可以不写括号。  这种再HTML元素上监听事件的设计看似将DOM与Javascript紧耦合，违背分离的原理，实则刚好相反，因为通过HTML就可以知道调用的是那个方法，将逻辑与DOM解耦，便于维护。重要的是，当viewModel销毁时，所有的事件处理器都会自动删除，无须自己清理
+      // vue 提供了一个特殊变量$event,用于访问原生DOM事件
+      btn:function(cou){
+        console.log(cou)
+        cou = cou || 1;
+        this.count += cou
+      },
+      handle:function(message,event){
+        event.preventDefault();
+        window.alert(message)
+      }
+    }
+  })
+</script>
+</body>
+</html>

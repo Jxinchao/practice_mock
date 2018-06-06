@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <template  v-for="book of filterBooks">
+        <li>{{ book.name }}</li>
+        <li>{{ book.author }}</li>
+    </template>
+  </ul>
+  <ul>
+    <template  v-for="book of sortBooks">
+        <li>{{ book.name }}</li>
+        <li>{{ book.author }}</li>
+    </template>
+  </ul>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+      el:"#app",
+      data:{
+        books:[
+          {
+            name:"《Vue.js实战》",
+            author: '梁灏'
+          },
+          {
+            name:"《Node实战》",
+            author: 'CHAoCHAO'
+          },
+          {
+            name:"《Javascript实战》",
+            author: 'WHO'
+          },
+          {
+            name:"《Javascript 语言精辟》",
+            author: 'Douglas'
+          },
+          {
+            name:"《Javascript 高级程序设计》",
+            author: 'Nicholas C.Zakas'
+          }
+        ]
+      },
+      computed:{
+        filterBooks:function(){
+          return this.books.filter(function(book){
+            return book.name.match(/Javascript/)
+          })
+        },
+        sortBooks:function(){
+          return this.books.sort(function(a,b){
+            return a.name.length > b.name.length
+          })
+        }
+      }
+    })
+</script>
+</body>
+</html>
