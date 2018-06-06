@@ -16,23 +16,99 @@
 
   <input type="radio" :checked="picked">
 
-
+  <p>单选框</p>
   <input type="radio" value="html" v-model="pick" id="html">
   <label for="html">html</label>
   <input type="radio" value="js" v-model="pick" id="js">
-  <label for="html">js</label>
+  <label for="js">js</label>
   <input type="radio" value="css" v-model="pick" id="css">
-  <label for="html">css</label>
+  <label for="css">css</label>
   <div>选中得是：{{pick}}</div>
+
+  <input type="checkbox" v-model="checkeds" id="checked">
+  <label for="checked">测试</label>
+  <p>复选框</p>
+  <input type="checkbox" value="html" v-model="checkeds" id="htmls">
+  <label for="htmls">html</label>
+  <input type="checkbox" value="js" v-model="checkeds" id="jss">
+  <label for="jss">js</label>
+  <input type="checkbox" value="css" v-model="checkeds" id="csss">
+  <label for="csss">css</label>
+  <div>选中得是：{{checkeds}}</div>
+
+  <p>下拉选择器  multiple加入这个就为多选了</p>
+  <select v-model="selected" multiple>
+    <option value="html">html</option>
+    <option>js</option>
+    <option>css</option>
+    <option>node</option>
+  </select>
+  <div>下拉选中得是: {{selected}}</div>
+
+  <p>在义务种经常用到v-for动态输出，value和text也是用v-bind来动态输出得</p>
+  <select name="" id="" v-model="selected">
+    <option v-for="option in options" :value="option.value">{{option.text}}</option>
+  </select>
+
+  <p>绑定值</p>
+  <input type="radio" v-model="pic" :value="value">
+  <label>单选按钮</label>
+  <p>{{pic}}</p>
+  <p>{{value}}</p>
+
+
+  <p>复选框</p>
+  <input type="checkbox" v-model="toggle" :true-value="value1" :false-value="value2">
+  <label>复选框</label>
+  <p>toggle: {{toggle}}</p>
+  <p>value1: {{value1}}</p>
+  <p>value2: {{value2}}</p>
+
+
+  <p>选择列表</p>
+  <select v-model="sel">
+    <option :value="{ number: 8}">eeee</option>
+  </select>
+  {{sel.number}}
+
+
+  <p>修饰符</p>
+  <ul>
+    <li>.lazy v-model.lazy="message"  message并不是实时改变的，而是再失焦或按回车时才更新</li>
+    <li>.number v-model.number="message" 使用.number修饰符可以将输入的东西转为数字。不然他的类型就是string</li>
+    <li>.trim   v-model.trim="message"   可以自动过滤输入的首位空格</li>
+  </ul>
 </div>
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 <script type="text/javascript">
   var app = new Vue({
     el:"#app",
     data:{
+      sel:'',
+      toggle: false,
+      value1:'a',
+      value2:'b',
       message:"",
       picked:true,
-      pick:'css'
+      pick:'css',
+      checkeds: [],
+      selected:['html','js','css'],
+      options:[
+        {
+          text:'html',
+          value:'1'
+        },
+        {
+          text:'js',
+          value:'2'
+        },
+        {
+          text:'css',
+          value:'3'
+        },
+      ],
+      pic: false,
+      value: 123
     },
     methods:{
       handleInput:function(e){
