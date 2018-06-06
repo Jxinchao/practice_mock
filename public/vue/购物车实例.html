@@ -21,7 +21,9 @@
       </thead>
       <tbody>
         <tr v-for="(item,index) in list">
-          <td>{{ index+1 }}</td>
+          <td>{{ index+1 }}
+          <input type="checkbox" placeholder="" v-model="checked" :value="index" >
+          </td>
           <td>{{ item.name }}</td>
           <td>{{ item.price }}</td>
           <td></td>
@@ -38,7 +40,13 @@
     </table>
     <div>总价：￥ {{ totalPrice }} </div>
   </template>
+  <div>
+    全选：<input :checked="isChecked" type="checkbox" @click="selectAll()">
+  </div>
   <div v-else>购物车为空</div>
+
+
+  {{checked}}
 </div>
 
 <!-- vue的js要引入再底部，如果写在head里，vue的实例将无法创建，因为此时DOM还没有被解析完成，除非通过异步或再事件DOMContentLoaded(IE onreadystatechange)触发时再创建Vue实列，这有点像jquery的$(doucment).ready()方法 -->
@@ -47,6 +55,8 @@
 var app = new Vue({
   el:"#app",
   data:{
+    checked:[],
+    isChecked:false,
     list:[
       {
         id:1,
@@ -71,9 +81,15 @@ var app = new Vue({
   computed:{
     totalPrice:function(){
       var total = 0;
-      for(var i=0;i<this.list.length;i++){
-        var item = this.list[i];
-        total += item.price * item.count
+      console.log(this.checked.length)
+      if(this.checked.length == 0){
+        return 0;
+      }else{
+        for(var i=0;i<this.checked.length;i++){
+          var item = this.checked[i];
+          total += this.list[item].price * this.list[item].count  
+          // total += item.price * item.count
+        }
       }
       return total.toString().replace(/\B(?=(\d{3})+$)/g,',')
     }
@@ -88,7 +104,31 @@ var app = new Vue({
     },
     handleRemove:function(index){
       this.list.splice(index,1)
-    }
+    },
+    selectAll:function(){
+      if(this.isChecked){
+        this.isChecked = false;
+        this.checked = [];
+      }else{
+         this.isChecked = true;
+         this.checked = [];
+         for (var i = 0; i < this.list.length;i++){
+            this.checked.push(i);
+         };
+      }
+    },
+  },
+  watch:{
+    'checked':{
+      handler:function(n,o){
+      if(this.checked.length == this.list.length){
+        this.isChecked = true;
+      }else {
+        this.isChecked = false;
+      }
+    },
+    deep:true
+   }
   }
 })
 </script>
