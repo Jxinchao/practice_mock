@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<p>非父子逐渐一般有两种，兄弟组件和跨多级组件
+<br>
+中央事件总线
+<br>
+首先创建了一个名为bus的空vue实例，里面没有任何内容，然后全局定义了组件my-bus，最后创建Vue实例app，再App初始化时，也就是再生命周期mounted  钩子函数里监听了来自bus的事件on-message，而再组件my-bus中，点击按钮会通过bus把事件on-message发出去，此时app就会接收到来自bus事件，进而再回调里完成自己业务逻辑
+<br>
+除了中央事件总监bus外，还有两种方法可以实现组件间通信：父链和子组件索引
+<br>
+父链：this.$parent    this.$children   父子组件最好还是通过props 和 $emit 来通信
+</p>
+<p>子组件索引”
+<br>
+vue 提供了子组件索引的方法，用特殊的属性来为组件指定一个索引名称 ref
+
+再父组件索引中，子组件标签上使用reg指定一个名称，并再父组件内通过this.$refs来访问指定名称的子组件
+
+$ref 只在组件渲染完成后才填充，并且它是非响应式的。它仅仅作为一个直接访问子组件的应急方案，应该避免再模板或计算属性中使用$refs
+</p>
+<div id="app">
+  {{ message }}
+  <my-bus></my-bus>
+
+  <button @click="handelRef">dddddd</button>
+  <my-ref ref="comA"></my-ref>
+  标签里面是 标签本身及内容
+  <p ref="an">我是p里面的ref</p>
+  组件里面的这堆东西  -- o {_uid: 4, _isVue: true, $options: {…}, _renderProxy: o, _self: o, …}$attrs: (...)$children: []$createElement: ƒ (e,t,n,r)$el: p$listeners: (...)$options: {parent: hn, _parentVnode: le, _parentElm: null, _refElm: null, propsData: undefined, …}parent: hn {_uid: 1, _isVue: true, $options: {…}, _renderProxy: hn, _self: hn, …}propsData: undefinedrender: ƒ anonymous( )staticRenderFns: []_componentTag: "my-p"_parentElm: null_parentListeners: undefined_parentVnode: le {tag: "vue-component-3-my-p", data: {…}, children: undefined, text: undefined, elm: p, …}_refElm: null_renderChildren: undefined__proto__: Object$parent: hn {_uid: 1, _isVue: true, $options: {…}, _renderProxy: hn, _self: hn, …}$attrs: (...)$children: (3) [o, o, o]$createElement: ƒ (e,t,n,r)$el: div#app$listeners: (...)$options: {components: {…}, directives: {…}, filters: {…}, _base: ƒ, el: "#app", …}$parent: undefined$refs: {comA: o, an: p, ans: o}$root: hn {_uid: 1, _isVue: true, $options: {…}, _renderProxy: hn, _self: hn, …}$scopedSlots: {}$slots: {}$vnode: undefinedhandelRef: ƒ ()message: (...)_c: ƒ (e,t,n,r)_data: {__ob__: _e}_directInactive: false_events: {}_hasHookEvent: false_inactive: null_isBeingDestroyed: false_isDestroyed: false_isMounted: true_isVue: true_renderProxy: hn {_uid: 1, _isVue: true, $options: {…}, _renderProxy: hn, _self: hn, …}_self: hn {_uid: 1, _isVue: true, $options: {…}, _renderProxy: hn, _self: hn, …}_staticTrees: null_uid: 1_vnode: le {tag: "div", data: {…}, children: Array(10), text: undefined, elm: div#app, …}_watcher: St {vm: hn, sync: false, lazy: false, user: false, deep: false, …}_watchers: [St]$data: (...)$isServer: (...)$props: (...)$ssrContext: (...)get $attrs: ƒ ()set $attrs: ƒ (e)get $listeners: ƒ ()set $listeners: ƒ (e)get message: ƒ ()set message: ƒ (e)__proto__: Object$refs: __proto__: Object$root: hn {_uid: 1, _isVue: true, $options: {…}, _renderProxy: hn, _self: hn, …}$scopedSlots: {}$slots: {}$vnode: le {tag: "vue-component-3-my-p", data: {…}, children: undefined, text: undefined, elm: p, …}_c: ƒ (e,t,n,r)_data: {__ob__: _e}_directInactive: false_events: {}_hasHookEvent: false_inactive: null_isBeingDestroyed: false_isDestroyed: false_isMounted: true_isVue: true_renderProxy: o {_uid: 4, _isVue: true, $options: {…}, _renderProxy: o, _self: o, …}_self: o {_uid: 4, _isVue: true, $options: {…}, _renderProxy: o, _self: o, …}_staticTrees: null_uid: 4_vnode: le {tag: "p", data: undefined, children: Array(1), text: undefined, elm: p, …}_watcher: St {vm: o, sync: false, lazy: false, user: false, deep: false, …}_watchers: [St]$data: (...)$isServer: (...)$props: (...)$ssrContext: (...)get $attrs: ƒ ()set $attrs: ƒ (e)get $listeners: ƒ ()set $listeners: ƒ (e)__proto__: hn
+  <my-p ref="ans"></my-p>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+var bus = new Vue();
+Vue.component('my-bus',{
+  template:'<button @click="handelEvent">传递事件</button>',
+  methods:{
+    handelEvent:function(){
+      bus.$emit('on-message','来自组件conmponent-a的内容')
+    }
+  }
+})
+
+// 子组件索引
+Vue.component('my-ref',{
+  template:'<p>子组件</p>',
+  data:function(){
+    return {
+      message:'子组件的内同'
+    }
+  }
+})
+
+// 打印ref看区别
+Vue.component('my-p',{
+  template:'<p>我是组件里面的ref</p>'
+})
+
+// 初始化实例
+var app = new Vue({
+  el:"#app",
+  data:{
+    message:''
+  },
+  method:function(){
+    var _this = this;
+    // 在实例初始化时，监听来自bus实例的事件
+    bus.$on("on-message",function(msg){
+      _this.meassage = msg;
+    })
+  },
+  methods:{
+    handelRef:function(){
+      var msg = this.$refs.comA.message;
+      console.log(msg,this.$refs.an,this.$refs.ans)
+    }
+  }
+})
+</script>
+</body>
+</html>
