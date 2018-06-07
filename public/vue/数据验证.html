@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<p>验证的type的类型是</p>
+<ul>
+  <li>String</li>
+  <li>Number</li>
+  <li>Boolean</li>
+  <li>Object</li>
+  <li>Array</li>
+  <li>Function</li>
+</ul>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+Vue.component('min',{
+  template:'<div>数据验证</div>',
+  props:{
+    propsA:Number, // 必须时数字类型
+    propsB:[String,Number], // 必须时字符串或数字类型
+    propsC:{
+      type: Boolean,
+      default: true   // 必须时布尔值，如果没有定义，默认为true
+    },
+    propsD:{
+      type:Number,
+      required: true   // 数组，且必传
+    },
+    propsE:{  // 如果是数组或对象，默认值必须是一个函数来返回
+      type:Array,
+      default:function(){
+        return [];
+      }
+    },
+    propsF:{  // 自定义验证函数
+      validator:function(value){
+        return value > 10
+      }
+    }
+  }
+})
+</script>
+</body>
+</html>

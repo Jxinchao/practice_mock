@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<h1>实现这样一个具有双向绑定的v-model组件要满足下面两个要求：
+<li>接受一个value属性</li>
+<li>再有新的value时触发input事件</li>
+</h1>
+<div id="app">
+  <p>总数：{{ total }}</p>
+  <my-input v-model="total"></my-input>
+  <button @click="handel">-1</button>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+Vue.component('my-input',{
+  props:['value'],
+  template:'<input :value="value"  @input="handleUp" />',
+  methods:{
+    handleUp:function(event){
+      this.$emit('input',event.target.value)
+    }
+  }
+});
+
+var app = new Vue({
+  el:"#app",
+  data:{
+    total:0
+  },
+  methods:{
+    handel:function(){
+      this.total--;
+    }
+  }
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<b>当子组件需要向父组件传递数据时，就要用到自定义事件，我们再介绍v-on时有提到，v-on除了监听DOM事件外，还可以用于组件之间的自定义事件，js设计模式-观察者模式，应该知道dispatchEvent 和 addEventListener 这两个方法。 vue组件也有类似的一套模式，子组件用$emit()来触发事件，父组件用$on()来监听子组件的事件</b>
+
+
+<div id="app">
+ <p>总数 {{ total }}</p>
+ <my-obj @increase="handleGetTotal" @reduce="handleGetTotal"></my-obj>
+
+
+  <my-input v-model="total"></my-input>
+
+</div>
+
+<p>子组件有两个按钮，分别实现加1 和减1的效果，再改变组件的打他“count”后，通过$emit()再把他传递给父组件，父组件用v-on:increase和v-on:reduce. $emit()方法的第一个参数是自定义事件的名称，后面的参数都是需要传递的数据，可以不填或填写多个。除了用v-on再组件上监听自定义事件外，也可以监听ＤＯＭ事件，这时可以用.native修饰符表示监听的是一个原生事件，监听的是该组件的根元素
+  my-obj v-on:click.native = "handleClick"
+</p>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+Vue.component('my-obj',{
+  template: `
+    <div>
+      <button @click="handleIncrease">+1</button>
+      <button @click="handleReduse">-1</button>
+    </div>
+  `,
+  data:function(){
+    return {
+      counter:0
+    }
+  },
+  methods:{
+    handleIncrease:function(){
+      this.counter ++;
+      this.$emit('increase',this.counter)
+    },
+    handleReduse:function(){
+      this.counter --;
+      this.$emit('reduce',this.counter)
+    }
+  }
+})
+
+// 自定义事件上面使用v-model
+Vue.component('my-input',{
+  template:'<button @click="handleClick">++++</button>',
+  data:function(){
+    return {
+      counters:0
+    }
+  },
+  methods:{
+    handleClick:function(){
+      this.counters++;
+      this.$emit('input',this.counters)
+    }
+  }
+})
+
+
+var app = new Vue({
+  el:'#app',
+  data:{
+    total:0
+  },
+  methods:{
+    handleGetTotal:function(total){
+      this.total = total
+    }
+  }
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组件复用</title>
+</head>
+<body>
+<div id="app">
+    <h1>Vue组件的模板再某些情况下会受到HTML限制，比如table内规定只允许是tr td 所以组table 内使用组件是无效的。这种情况下可以直接使用特殊的属性来挂载组件 <b style="color:red;">is  如果使用的是字符串模板，是不受限制的</b></h1>
+
+    <my-obj></my-obj>
+
+    <my-child></my-child>
+
+    <table>
+      <tbody is="my-childs"></tbody>
+    </table>
+
+    <h2>component 除了template选项外，组件中还可以像VUE实例那样使用其他的选项，比如data\computed\methods 再使用data时，和实例稍微有区别，data必须时函数，然后将数据return出去，<b>如果时字符串模板，将不受限制</b></h2>
+
+    <my-num></my-num>
+    <my-num></my-num>
+    <my-num></my-num>
+    <my-num></my-num>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+var child = {
+  template: '<p>这里通过注册组件来</p>'
+};
+var childs = {
+  template:'<h3>这里是使用特殊属性来挂载组件</h3>'
+}
+Vue.component('my-obj',{
+  template: '<div>{{message}}</div>',
+  data:function(){
+    return {
+      message: "这里时component里面data return 出来的组件内容"
+    }
+  }
+});
+var data = {
+  count:0
+}
+Vue.component('my-num',{
+  template:'<button @click="count++">+{{count}}</button>',
+  data:function(){
+    // return data;    这样就是引入外部变量 会继承
+    return {
+      count:0  // 这里如果引入外部变量就会都在同步，达不到复用的效果
+    }
+  }
+})
+var app = new Vue({
+  el:"#app",
+  components:{
+    'my-child':child,
+    'my-childs':childs
+  }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<p>props 的值可以时两种，一种是字符串数组，一种是对象</p>
+<p>由于hTML 特性不区分大小写，当使用DOM模板时，驼峰命名的props名称要转为短横线  <br>如果使用的时字符串模板。这些限制可以忽略</p>
+
+<p>如果数据不时写死的可以通过v-bind来直接动态绑定propos的值</p>
+
+<b style="color:red">再js中对象和数组都是引用类型，指向同一个内存空间，所以props是对象和数组时，再子组件内改变是会影响父组件的</b>
+<div id="app">
+  <input type="text" v-model="meassage">
+  <my-component :abcs="meassage"></my-component>
+  <my-mu :mun="1"></my-mu>
+  <!-- <my-obj message="这里是props"></my-obj> -->
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+
+// Vue.component('my-obj',{
+//   props:['message'],
+//   template:'<p>{{ message }}</p>',
+// })
+
+Vue.component('my-mu',{
+  props :['mun'],
+  template:'<p>{{ count }}</p>',
+  data: function(){
+    return {
+      count: this.mun
+    }
+  }
+})
+
+
+Vue.component('my-component', {
+  props:['abcs'],
+  template:'<div>动态{{ meassage }}</div>',
+  data:function(){
+    return {
+      meassage:''
+    }
+  }
+});
+
+var app = new Vue({
+  el:"#app",
+  data:{
+    meassage:''
+  }
+});
+</script>
+</body>
+</html>
