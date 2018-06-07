@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<h1>单个slot</h1>
+<div id="app">
+  <my-slot>
+    <p>分布发送的内容</p>
+    <p>更多发布的内容</p>
+  </my-slot>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+
+Vue.component('my-slot',function(){
+  template:'\
+  <div>\
+    <slot>\
+    <p>如果父组件没有插入内容，我将默认出现</p>\
+    </slot>\
+  </div>'
+})
+
+
+
+var app = new Vue({
+  el:"#app"
+})
+</script>
+</body>
+</html>
