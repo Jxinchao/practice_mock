@@ -81,13 +81,12 @@ var app = new Vue({
   computed:{
     totalPrice:function(){
       var total = 0;
-      console.log(this.checked.length)
       if(this.checked.length == 0){
         return 0;
       }else{
         for(var i=0;i<this.checked.length;i++){
           var item = this.checked[i];
-          total += this.list[item].price * this.list[item].count  
+          total += this.list[item].price * this.list[item].count
           // total += item.price * item.count
         }
       }
@@ -120,7 +119,7 @@ var app = new Vue({
   },
   watch:{
     'checked':{
-      handler:function(n,o){
+    handler:function(n,o){
       if(this.checked.length == this.list.length){
         this.isChecked = true;
       }else {
