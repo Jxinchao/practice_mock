@@ -22,7 +22,7 @@
       <tbody>
         <tr v-for="(item,index) in list">
           <td>{{ index+1 }}
-          <input type="checkbox" placeholder="" v-model="checked" :value="index" >
+          <input type="checkbox" placeholder="" v-model="checked" :value="item.id" >
           </td>
           <td>{{ item.name }}</td>
           <td>{{ item.price }}</td>
@@ -33,7 +33,7 @@
             <button @click="handleAdd(index)">+</button>
           </td>
           <td>
-            <button @click="handleRemove(index)">移除</button>
+            <button @click="handleRemove(item.id)">移除</button>
           </td>
         </tr>
       </tbody>
@@ -80,13 +80,19 @@ var app = new Vue({
   },
   computed:{
     totalPrice:function(){
+    	console.log(this.checked)
+    	console.log(this.list)
       var total = 0;
       if(this.checked.length == 0){
         return 0;
       }else{
         for(var i=0;i<this.checked.length;i++){
           var item = this.checked[i];
-          total += this.list[item].price * this.list[item].count
+          for (var j in this.list) {
+          	if(this.list[j].id == item){
+          		total += this.list[j].price * this.list[j].count
+          	}
+          }
           // total += item.price * item.count
         }
       }
@@ -102,7 +108,12 @@ var app = new Vue({
       this.list[index].count ++;
     },
     handleRemove:function(index){
-      this.list.splice(index,1)
+      this.list = this.list.filter((v) => {
+      	return v.id != index;
+      });
+      if(this.checked.indexOf(index)>-1){
+      	this.checked.splice(this.checked.indexOf(index),1)
+      }
     },
     selectAll:function(){
       if(this.isChecked){
@@ -112,7 +123,8 @@ var app = new Vue({
          this.isChecked = true;
          this.checked = [];
          for (var i = 0; i < this.list.length;i++){
-            this.checked.push(i);
+         	let item = this.list[i];
+            this.checked.push(item.id);
          };
       }
     },
