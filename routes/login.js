@@ -9,7 +9,7 @@ var pool=mysql.createPool({
 		port:3306
 })
 
-function searchUser(sql,callback){
+function searchUser(sql,callback){ 
 	pool.getConnection(function(err,conns){
 			//console.log(conns+'>>>'+err)
 			conns.query(sql,function(err,result){
