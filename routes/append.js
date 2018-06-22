@@ -162,6 +162,7 @@ router.get('/append',function(request,response){
 });
 //列表数据
 router.get('/list', function (requset, response) {
+    // response.header("Access-Control-Allow-Origin","*");
     response.header("Access-Control-Allow-Origin","*");
     response.send(arr);
 })

@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var logins = require('./routes/login'); // 登录
-var appendRouter = require('./routes/append');  // 数据
+var append = require('./routes/append.js');  // 数据
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/lists',appendRouter);   // 数据列表
+app.use('/list',append);   // 数据列表
 app.use('/login',logins);   // 登录
 
 app.get('/',function(req,res){
