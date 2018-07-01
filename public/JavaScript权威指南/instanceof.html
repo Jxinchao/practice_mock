@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var b = new Date(); // 通过Date()构造函数来创建一个新对象
+			console.log(b instanceof Date)  // true   d是由date()创建得
+			console.log(b instanceof Object)  // true 所有得对象都是Object得实例
+			console.log(b instanceof Number)  // false  d不是一个Number对象
+			
+			
+			/*
+			 *   当痛instanceof判断一个对象是否是一个类得实例得时候，这个判断也会包含对“父类”得检测。如果instanceof得左操作数不是对象得花，instanceof返回false
+			 * 
+			 * */
+		</script>
+	</body>
+</html>
