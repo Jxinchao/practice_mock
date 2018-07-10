@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="username">
+  <br>
+  <span id="uname">aaa</span>
+</body>
+<script type="text/javascript">
+  var obj = {
+    pwd:"123456"
+  }
+  Object.defineProperty(obj,"username",{  // set 跟 get 自动触发的
+    // value:"sdd"
+    get:function(){
+      console.log("get init");
+    },
+    set:function(val){
+      console.log("set init");
+      document.getElementById("uname").innerText = val;
+    }
+  })
+  // document.getElementById("username").addEventListener("keyup",function(){
+  //   document.getElementById("uname").innerText = event.target.value;
+  // })
+</script>
+</html>
