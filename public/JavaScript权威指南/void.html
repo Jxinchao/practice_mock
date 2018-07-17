@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- vioid 是一元运算符，它出现再操作数之前，操作数可以是任意类型。这个运算符并不经常使用：操作数会照常计算，但忽略计算结果并返回undefined,由于void会忽略操作数的值，因此操作数具有副作用的时候使用void来让程序更具有语义；
+
+    这个运算符最常用再客户端URL-JavaScript:URL 中，再URL：中可以写带有副作用的表达式，而void则让浏览器不必显示这个结果。
+ -->
+    <a href="javascript:void window.open()">打开一个新窗口</a>
+    <!-- 通过给<a href=""></a>的onclick绑定了一个事件处理程序要比再href中写 JavaScript:url 要更加清晰。这样的void操作符就可有可无了 -->
+</body>
+</html>

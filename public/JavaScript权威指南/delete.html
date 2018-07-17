@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+ <!-- delete 是一元操作符，用来删除对象属性或者数组元素，就像赋值、递增、递增运算符一样、delete也是具有副作用得，踏实用来删除操作额，不是用来返回一个值得。 -->
+<script>
+
+  var o = { x:1,y:2};   // 定义一个对象
+  delete o.x;           // 删除一个属性
+  console.log("x" in o);             // => false 这个属性再对象中不在存在
+
+  var a = [1,2,3,4];    // 定义一个数组
+  delete a[2];          // 删除最后一个数组元素
+  console.log(2 in a)   // =>false 元素2再数组中已经不存在了
+
+  // 需要注意得是，删除得属性或者删除数组元素不仅仅是设置了一个undefined得值，当删除一个属性时，这个属性将不在存在，读取一个不存在得属性将返回undefined,但是可以通过in运算符，来检测这个属性是否再对象中存在。
+  // delete 希望他得操作时一个左值，如果他不是左值，那么delete将不进行任何操作同时返回true,否则，delete将试图删除这个指定得左值，如果删除成功，delete将返回true，然而并不是所有得属性都可删除，一些内置核心和客户端属性是不能删除，用户通过var语句声明得变卦了不能删除，同样，通过function 语句定义得函数和函数参数也不能删除
+  // 再ECMScript5严格模式中。如果delete得操作数是非法得，比如变量、函数或函数参数，delete操作符将抛出一个语法错我异常，只有操作数是一个属性访问表达式得适合它才会正常工作，再严格模式下，delete删除不可配置得属性时会抛出一个类型错误异常。再非严格模式下，这些delete操作都不会报错，只是简单得返回false,以表明操作数不能执行删除操作
+  // 列子
+  var w = { x:1,y:2};  // 定义一个变量，初始化为对象
+  delete w.x;          // 删除一个对象属性，返回true
+  typeof w.x;          // 属性不存在，返回undefined
+  delete w.x;          // 删除不存在的属性，返回true
+  delete w;            // 不能删除通过var 声明的变量，返回false  再严格模式下，将抛出一个异常
+
+  delete 1;            // 参数不是一个左值，返回true
+  this.x = 1;          // 给全局对象定义了一个属性，这里没有适用var
+  delete x;            // 试图删除它，再非严格模式下返回true  严格模式下会抛出异常，这是适用delete this.x 来代替
+
+  x;                   // 运行时错误，没有定义 x
+
+
+</script>
+</body>
+</html>
