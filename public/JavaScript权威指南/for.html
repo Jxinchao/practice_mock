@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 再do\while循环和普遍得while循环之间有两点语法方面不同之处。首先，do循环要求必须使用关键字do来标识循环得开始，用while来表示循环得结尾进入循环条件判断，其次，while循环不同，do循环使用分还结尾得，如果while得循环体使用花括号起来得话，则while循环也不用使用分毫做结尾
+
+  for 语句提供了一种比while语句更加方便得循环控制结构。for语句对常用得循环模式做了一些简化。大部分得循环都是具有特定得计数器变量。再循环开始之前要初始化这个变量，然后再每次循环执行之前都检测一些它得值。最后，计数器变量做自增操作，佛则就再循环结束后、下一次判断循环条件前做修改。再这一类循环中，计数器得三个关键操作时初始化、检测和更新。for语句就将这三步操作明确声明为循环语法得一部分，各自使用一个表达式来表示。for语句如下
+
+  for(initialize;test;increment) statement
+
+  initialize\test\increment 三个表达式之间分号间隔，分别负责初始化操作、循环条件判断和计数器变量得更新。将他们放在循环得第一行会更容易理解for循环正在做什么，而且也可以防止忘记初始化或者递增计数器变量
+
+  解释for循环工作  等价得while循环
+
+  initialize
+  while(test){
+    statement
+    increment
+  }
+
+  换句话说，initialize表达式只再循环开始之前执行一次。初始化表达式应当具有副作用（通常时一条赋值语句），js同样允许初始化表达式中带有var变量声明语句，这样得话就可以同事声明并初始化一个计数变量。每次循环执行之前会执行test表达式，并判断表达式得结果来决定是否执行循环体。
+
+  while(true)  死循环
+  for(;;)      死循环
+
+
+  for\in
+  for/in 和常规得for循环完全不同得一类循环 语法
+
+  for(variable in object) statement
+
+  variable 通常是一个变量名，也可以是一个产生左值得表达式或者一个通过var语句声明得变量，总之必须是一个使用于赋值表达式左侧得值。object是一个表达式，这个表达式得计算结果是一个对象，同样，statement是一个语句或语句块，它构成了循环得主体。
+
+  使用for循环来遍历数组元素
+
+  for(var i=0;i<a.length;i++)console.log(a[i])   // i代表了数组元素得索引  输出数组中得每个元素
+
+  而 for/in循环则是用来更方便地遍历对象属性成员
+
+  for(var p in o)      // 将属性名字赋值给遍历p
+    console.log(o[p])  // 输出每一个属性得值
+
+  在执行for/in语句中，js解释器首先计算object表达式。如果表达式为null或者undefined,js解释器将会跳过循环并执行后续代码。如果表达式等于一个原始值，这个原始值将会转换为与之对应得包装对象。否则，expression本身已经是对象了。js会依次枚举对象得属性来执行循环。然而在每次循环之前，js都会计算variable表达式得值，并将属性名赋值给它
+
+  需要注意得是，只要for/in循环中variable得值可以当作赋值表达式得左值，他可以是任意表达式。每次循环都会计算这个表达式，也就是说每次循环它计算得值有可能不同。
+
+  var o = { x:1,y:2,v:3};
+  var a = [],i=0;
+  for(a[i++] in o) // empty
+  console.log(o)
+
+  break是跳转到循环或者其他语句得结束。
+  continue 是终止本次循环得执行并开始下一次循环得执行
+  return 语句让解释器跳出函数体得执行，并提供本次调用得返回值
+
+  throw语句触发或者 抛出一个异常，它是于try/catch/finally语句一同使用得，这些语句指定了处理异常得代码逻辑。这是一种复杂得跳转语句，当抛出一个异常得时候，程序将跳转至最近得闭合异常处理程序，这个异常处理程序可以是在同一个函数中或者在更高层得调用栈中
+
+ -->
+
+
+<script>
+
+var o = { x:1,y:2,v:3};
+var a = [],i=0;
+for(a[i++] in o) // empty
+console.log(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  for(var i = 0;i<10;i++){
+    console.log(i)
+  }
+  for(var i in 0){
+    console.log(i)
+  }
+  for(var i=0,j=10; i<10; i++,j--)console.log(i,j,i*j)
+
+
+  var n = 4;
+  switch (n) {
+    case 1:
+      console.log("1")
+      break;
+    case 2:
+      console.log("2")
+      break;
+    case 3:
+      console.log("=3")
+      break;
+    case 4:
+      console.log("4")
+      break;
+    default:
+      console.log("default");
+      break;
+
+  }
+</script>
+</body>
+</html>
