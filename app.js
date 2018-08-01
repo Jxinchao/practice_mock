@@ -4,10 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var logins = require('./routes/login'); // 登录
-var append = require('./routes/append.js');  // 数据
-var usersRouter = require('./routes/users');
+let indexRouter = require('./routes/index');
+let logins = require('./routes/login'); // 登录
+let append = require('./routes/append.js');  // 数据
+let usersRouter = require('./routes/users');
 
 var app = express();
 
