@@ -162,8 +162,8 @@ router.get('/append',function(request,response){
 });
 //列表数据
 router.get('/list', function (requset, response) {
-    // response.header("Access-Control-Allow-Origin","*");
     response.header("Access-Control-Allow-Origin","*");
+    console.log(arr);
     response.send(arr);
 })
 //搜索
@@ -218,4 +218,5 @@ router.get('/page', function(req, res) {
     var data = {total:total,pageSize:pageSize,totalPage:totalPage,list:results};
     res.send(data)
 });
+
 module.exports = router;
