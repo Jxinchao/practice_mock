@@ -13,7 +13,8 @@
     $('button').click(function(){
       $.ajax({
         type:'psot',
-        url:'http://60.205.208.183:8081/tzwItem!request.action',
+        // url:'http://60.205.208.183:8081/tzwItem!request.action',
+        url:'localhost:8088/register/register',
         success:function(e){
           console.log(e)
         },

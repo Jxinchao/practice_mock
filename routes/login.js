@@ -1,15 +1,15 @@
-var express	=	require('express');
-var mysql	=	require('mysql');
-var route =express.Router();
-var pool=mysql.createPool({
-		host:'118.89.101.176',//ip地址
+let express	=	require('express');
+let mysql	=	require('mysql');
+let route =express.Router();
+let pool=mysql.createPool({
+		host:'localhost',//ip地址
 		user:'root',
-		password:'root',
-		database:'node',
-		port:3306
+		password:'142303',
+		database:'nodedata',
+		port:3307
 })
 
-function searchUser(sql,callback){ 
+function searchUser(sql,callback){
 	pool.getConnection(function(err,conns){
 			//console.log(conns+'>>>'+err)
 			conns.query(sql,function(err,result){
