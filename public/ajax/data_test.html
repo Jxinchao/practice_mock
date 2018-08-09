@@ -5,16 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
 </head>
 <body>
+  用户名： <input type="text" id="uname"> <br>
+  手机号：<input type="text" id="tel"> <br>
+  密码： <input type="text" id="pwd"> <br>
   <button>获取数据</button>
   <script src="../javascripts/jquery-3.3.1.min.js"></script>
   <script>
     $('button').click(function(){
+      let uname = $("#uname").val(),
+          tel   = $("#tel").val(),
+          pwd   = $("#pwd").val();
       $.ajax({
-        type:'psot',
+        type:'post',
         // url:'http://60.205.208.183:8081/tzwItem!request.action',
-        url:'localhost:8088/register/register',
+        url:'http://localhost:8088/register/register',
+        data:{
+          "uname":uname,
+          "tel":tel,
+          "pwd":pwd
+        },
         success:function(e){
           console.log(e)
         },
