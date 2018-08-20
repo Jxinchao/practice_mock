@@ -20,7 +20,7 @@ var pool = mysql.createPool({
 
 
 //上传
-router.post('/up',function(req,res){
+router.post('/up',function(req,res){ 
 	console.log('into up......')
 	var form = new formidable.IncomingForm();   //创建IncomingForm对象
 	form.uploadDir = 'public/upload/temp/';  //设置上传文件路径
@@ -75,7 +75,7 @@ router.post('/login',function(requset,response){
             }else{
                 response.send({flag:4})  //注册失败
             }
-            
+
         })
     })
 
