@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 let indexRouter = require('./routes/index');
 let logins = require('./routes/login'); // 登录
-let register = require('./routes/register'); // 注册
+let register = require('./routes/register'); // 注册 
 let append = require('./routes/append');  // 数据
 let usersRouter = require('./routes/users');
 
