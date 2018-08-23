@@ -8,11 +8,11 @@ let indexRouter = require('./routes/index');
 let logins = require('./routes/login'); // 登录
 let register = require('./routes/register'); // 注册
 let append = require('./routes/append');  // 数据
-let usersRouter = require('./routes/users');
+let usersRouter = require('./routes/users');  
 
 var app = express();
 
-// view engine setup  
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
