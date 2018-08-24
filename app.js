@@ -8,7 +8,9 @@ let indexRouter = require('./routes/index');
 let logins = require('./routes/login'); // 登录
 let register = require('./routes/register'); // 注册
 let append = require('./routes/append');  // 数据
-let usersRouter = require('./routes/users');  
+let usersRouter = require('./routes/users');
+
+let mysqlup = require('./routes/nodedemo/mysqlup');  // 上传头像
 
 var app = express();
 
@@ -27,6 +29,7 @@ app.use('/users', usersRouter);
 app.use('/list',append);   // 数据列表
 app.use('/login',logins);   // 登录
 app.use('/register',register);   // 注册
+app.use('/mysqlup',mysqlup);   // 注册
 
 // app.get('/',function(req,res){
 //   res.send('hello')

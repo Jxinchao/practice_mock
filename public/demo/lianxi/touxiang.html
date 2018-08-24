@@ -10,7 +10,7 @@
 				padding:0;
 			}
 			.box{
-				
+
 				display:flex;
 			}
 			.box-1{
@@ -28,23 +28,23 @@
 </head>
 <body>
 	用户名：<input type="text" name="" id="uname">
-	密码：<input type="text" id="pwd"> 
+	密码：<input type="text" id="pwd">
 	<!-- <input type="file" name="" id="tx" style="display:none;"> -->
-	
+
 	<input type="button" value="注册" id="btn" >
 	<div class="box">
 		<div class="box-1">
-			<input type="file" id="tx" /> 上传
+			<input type="file" id="tx" /> 上传 
 		</div>
 	</div>
-	
+
 	<div id="img">
-		
+
 	</div>
 
 	<script type="text/javascript">
 		var obj = document.querySelector(".box-1");     //querySelector 返回文档中匹配指定的CSS选择器的第一元素
-		var file1 = document.querySelector("#tx")	
+		var file1 = document.querySelector("#tx")
 		obj.onclick = function(){
 			file1.click();     //file1触发事件
 		}
@@ -60,7 +60,7 @@
 			}
 		}
 
-		
+
 		// var setFiles = function(element){
 		// 	var obj = $('#box')
 		// 	console.log(element.files)  //获取到选取的图片
@@ -72,7 +72,7 @@
 		// 	}
 		// }
 
-	
+
 
 		$('#btn').click(function(){
 			var fd = new FormData();
