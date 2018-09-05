@@ -17,7 +17,7 @@ var pool = mysql.createPool({
     // database:'test',
     // port:'3306'
 })
-
+ 
 
 //上传
 router.post('/up',function(req,res){
