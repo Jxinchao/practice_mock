@@ -1,15 +1,15 @@
 var express = require('express');
 var mysql = require('mysql');
 var fs = require('fs');
-var formidable = require('formidable');
+// var formidable = require('formidable');
 var router = express.Router();
 
 
 var pool = mysql.createPool({
     host:'127.0.0.1',   //IP地址
     user:'root',    //数据库登录名
-    password:'root',   //数据库密码
-    database:'test1603',   //数据库名称
+    password:'123456',   //数据库密码
+    database:'node',   //数据库名称
     port:3306     //端口号
     // host:'192.168.43.197',
     // user:'root',
@@ -17,7 +17,7 @@ var pool = mysql.createPool({
     // database:'test',
     // port:'3306'
 })
- 
+
 
 //上传
 router.post('/up',function(req,res){
@@ -83,7 +83,7 @@ router.post('/login',function(requset,response){
 //获取图片
 router.get('/li',function(req,res){
 	pool.getConnection(function(err,conn){
-        var sql = 'select * from user';
+        var sql = 'select * from user_name';
         conn.query(sql,function(err,result){
             console.log('cc：'+result)
             res.send(result)
