@@ -10,6 +10,8 @@ let register = require('./routes/register'); // 注册
 let append = require('./routes/append');  // 数据
 let usersRouter = require('./routes/users');
 
+let ogtlist = require('./routes/list');  // ogtmin list
+
 let mysqlup = require('./routes/nodedemo/mysqlup');  // 上传头像
 
 var app = express();
@@ -30,6 +32,8 @@ app.use('/list',append);   // 数据列表
 app.use('/login',logins);   // 登录
 app.use('/register',register);   // 注册
 app.use('/mysqlup',mysqlup);   // 注册
+
+app.use('/ogtlist',ogtlist);  // ogtlist 小程序接口list
 
 // app.get('/',function(req,res){
 //   res.send('hello')
