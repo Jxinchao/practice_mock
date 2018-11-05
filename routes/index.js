@@ -5,6 +5,10 @@ var router = express.Router();
 var token = "ogtmin1123"; //此处需要你自己修改！
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  var signature = req.query.signature;
+   var timestamp = req.query.timestamp;
+   var nonce = req.query.nonce;
+   var echostr = req.query.echostr;
   /*  加密/校验流程如下： */
   //1. 将token、timestamp、nonce三个参数进行字典序排序
   var array = new Array(token,timestamp,nonce);
