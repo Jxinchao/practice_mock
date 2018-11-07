@@ -211,19 +211,19 @@ router.get('/search',function(req,res){
 
 
 
-// //分页
-// router.get('/page', function(req, res) {
-//     var pageNum = req.query.pageNum;
-//     //console.log('pageNum:'+pageNum);
-//     var total = 0;
-//     total=arr.length;
-//     pageSize=3;
-//     totalPage=Math.ceil(total/pageSize);
-//     var start=pageSize*(pageNum-1);
-//     var end = pageSize*pageNum;
-//     console.log(start+'|'+end);
-//     var results = arr.slice(start,end);
-//     var data = {total:total,pageSize:pageSize,totalPage:totalPage,list:results};
-//     res.send(data)
-// });
+//分页
+router.get('/page', function(req, res) {
+    var pageNum = req.query.pageNum;
+    //console.log('pageNum:'+pageNum);
+    var total = 0;
+    total=arr.length;
+    pageSize=3;
+    totalPage=Math.ceil(total/pageSize);
+    var start=pageSize*(pageNum-1);
+    var end = pageSize*pageNum;
+    console.log(start+'|'+end);
+    var results = arr.slice(start,end);
+    var data = {total:total,pageSize:pageSize,totalPage:totalPage,list:results};
+    res.send(data)
+});
 module.exports = router;
