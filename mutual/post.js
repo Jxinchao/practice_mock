@@ -9,7 +9,7 @@ var $sql = require('./postSqlMapping');
 var pool  = mysql.createPool($util.extend({}, $conf.mysql));
 
 // 向前台返回JSON方法的简单封装
-var jsonWrite = function (res, ret) {
+var jsonWrite = function (res, ret) {   
   if(typeof ret === 'undefined') {
     res.json({
       code:'1',
