@@ -14,7 +14,6 @@ let ogtlist = require('./routes/list');  // ogtmin list
 
 let mysqlup = require('./routes/nodedemo/mysqlup');  // 上传头像
 
-// let well_known = require('./routes/.well-konw');  // https://
 
 var app = express();
 
@@ -31,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/list',append);   // 数据列表
-// app.use('/.well-known',well_known);   // https:// 链接
+
 app.use('/login',logins);   // 登录
 app.use('/register',register);   // 注册
 app.use('/mysqlup',mysqlup);   // 注册
