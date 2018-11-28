@@ -25,6 +25,7 @@ router.get('/', function(req, res, next) {
   // }else{
   //     res.send("error");
   // }
+  console.log(11111);
   res.render('index', { title: 'Express' });
 });
 
