@@ -6,7 +6,7 @@ var router = express.Router();
 var pool = mysql.createPool({
     host:'120.79.168.209',   //IP地址
     user:'root',    //数据库登录名
-    password:'password',   //数据库密码
+    password:'123456',   //数据库密码
     database:'ogtmin',   //数据库名称
     port:3306     //端口号
     // host:'192.168.43.197',
@@ -207,9 +207,6 @@ router.get('/search',function(req,res){
     })
 
 })
-
-
-
 
 //分页
 router.get('/page', function(req, res) {
