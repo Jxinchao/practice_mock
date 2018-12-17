@@ -140,7 +140,8 @@ router.get('/list', function (requset, response) {
     // if(requset.session.u !='' && requset.session.u != null){
         pool.getConnection(function(err,conn){
             //var sql = 'SELECT * from `he365_news_data`  where news_type_id = 3 limit 20;';
-            var sql = 'SELECT * from `he365_news_data`';
+            //var sql = 'SELECT * from `he365_news_data`';
+            var sql = 'SELECT now()';
             conn.query(sql,function(err,result){
                 conn.release();
                 console.log(result)
