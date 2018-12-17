@@ -136,18 +136,19 @@ router.get('/list', function (requset, response) {
     // getAllUsers(id,uname,function(err,result){
     //     response.send(result)
     // })
-
+    response.send('444')
+    console.log(111)
     // if(requset.session.u !='' && requset.session.u != null){
-        pool.getConnection(function(err,conn){
-            //var sql = 'SELECT * from `he365_news_data`  where news_type_id = 3 limit 20;';
-            //var sql = 'SELECT * from `he365_news_data`';
-            var sql = 'SELECT now()';
-            conn.query(sql,function(err,result){
-                conn.release();
-                console.log(result)
-                response.send(result)
-            })
-        })
+        // pool.getConnection(function(err,conn){
+        //     //var sql = 'SELECT * from `he365_news_data`  where news_type_id = 3 limit 20;';
+        //     //var sql = 'SELECT * from `he365_news_data`';
+        //     var sql = 'SELECT now()';
+        //     conn.query(sql,function(err,result){
+        //         conn.release();
+        //         console.log(result)
+        //         response.send(result)
+        //     })
+        // })
     // }else{
     //    response.send({flag:0})
     // }
