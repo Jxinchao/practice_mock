@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="demoCanvas" style="width:300px;height:300px;margin:auto;position:absolute;top:0;left:0;right:0;bottom;"></div>
+  <script src="svga.min.js"></script>
+  <script type="text/javascript">
+    var player = new SVGA.Player('#demoCanvas');
+    var parser = new SVGA.Parser('#demoCanvas'); // 如果你需要支持 IE6+，那么必须把同样的选择器传给 Parser。
+    parser.load('min.svga', function(videoItem) {
+        player.setVideoItem(videoItem);
+        player.startAnimation();
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="demoCanvas" style="width:300px;height:300px;margin:auto;"></div>
+  <div id="demoCanvas1" style="width:300px;height:300px;margin:auto;"></div>
+  <div id="demoCanvas2" style="width:300px;height:300px;margin:auto;"></div>
+  <div id="demoCanvas3" style="width:300px;height:300px;margin:auto;"></div>
+  <div id="demoCanvas4" style="width:300px;height:300px;margin:auto;"></div>
+  <div id="demoCanvas5" style="width:300px;height:300px;margin:auto;"></div>
+  <script src="svga.min.js"></script>
+  <script type="text/javascript">
+    a('#demoCanvas','angel.svga');
+    a('#demoCanvas1','HamburgerArrow.svga');
+    a('#demoCanvas2','min.svga');
+    a('#demoCanvas3','rose.svga');
+    a('#demoCanvas4','posche.svga');
+    a('#demoCanvas5','halloween.svga');
+    function a(a,url){
+      var player = new SVGA.Player(a);
+      var parser = new SVGA.Parser(a); // 如果你需要支持 IE6+，那么必须把同样的选择器传给 Parser。
+      parser.load(url, function(videoItem) {
+          player.setVideoItem(videoItem);
+          player.startAnimation();
+      })
+    }
+  </script>
+</body>
+</html>
