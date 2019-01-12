@@ -1,0 +1,64 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "微软雅黑";
+  min-width: 1200px;
+  background: #fff;
+}
+
+a {
+  text-decoration: none
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  border: 0px;
+}
+
+ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, p, input {
+  padding: 0;
+  margin: 0
+}
+
+.clear {
+  clear: both;
+  height: 0px;
+  ine-height: 0px
+}
+
+article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video {
+  display: block
+}
+
+.w100 {
+  width: 100%;
+  margin: 0 auto;
+  min-width: 1200px;
+}
+
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.txt-dot {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.fl {
+  float: left;
+  display: inline;
+}
+
+.fr {
+  float: right;
+  display: inline;
+}
