@@ -5,7 +5,10 @@
   color: #979696;
   background: #3a3838;
 }
-
+.active_nav{
+  color: #fff;
+  background: #c26468;
+}
 .top {
   overflow: hidden;
 }
