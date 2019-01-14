@@ -3,11 +3,11 @@ $(function(){
 
   $('.nav li').hover(function(){
 
-    $(this).children('ul').stop(true,true).show('slow');
+    $(this).children('ul').stop().show('slow');
 
   },function(){
 
-    $(this).children('ul').stop(true,true).hide('slow');
+    $(this).children('ul').stop().hide('slow');
 
   });
 
@@ -31,7 +31,7 @@ $(function(){
     // 轮播图 two
     var swipers = new Swiper('.swiper-container_two', {
      slidesPerView: 4,
-     spaceBetween: 10,
+     spaceBetween: 0,
      slidesPerGroup: 1,
      loop: true,
      autoplay:true,
