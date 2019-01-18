@@ -90,9 +90,17 @@
 .footer .footer_top .footer_top_con {
   padding-top: 40px;
 }
+.footer .footer_top .footer_top_con .footer_logo {
+  margin-right: 30%;
+}
 .footer .footer_top .footer_top_con .footer_a {
-  font-size: 14px;
+  margin-left: 10%;
+}
+.footer .footer_top .footer_top_con .footer_a a {
+  display: block;
+  font-size: 16px;
   color: #fff;
+  height: 40px;
 }
 .footer .footer_bottom {
   background: #1f2122;
