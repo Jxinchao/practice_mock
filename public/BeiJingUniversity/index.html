@@ -2,13 +2,27 @@
 <html lang="en">
 
 <head>
+	<!-- 修改部分 S -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/rest.css">
-  <link rel="stylesheet" href="css/swiper.min.css">
+  <!--<link rel="stylesheet" href="css/swiper.min.css">-->
   <link rel="stylesheet" href="css/index.css">
   <title>北京大学</title>
+  <!--[if !IE]><!--> 
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+	<!--<![endif]-->
+	<!--[if IE]>
+	<link rel="stylesheet" href="css/idangerous.swiper.css">
+		<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/idangerous.swiper.min.js"></script>
+	<![endif]-->
+	
+	<!-- 修改部分 E -->
 </head>
 
 <body>
@@ -170,16 +184,31 @@
   </div>
   <!-- nav end -->
   <!-- banner start -->
+  <!-- 修改部分 S -->
   <div class="banner">
-    <div class="swiper-container swiper-container_one">
+  	<!--[if !IE]><!--> 
+	  <div class="swiper-container swiper-container_one">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="images/banner_2.jpg" alt=""></div>
         <div class="swiper-slide"><img src="images/banner_1.jpg" alt=""></div>
       </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
-    </div>
+			<div class="swiper-pagination"></div>
+      
+   </div>
+		<!--<![endif]-->
+		<!--[if IE]>
+		<div class="swiper-container swiper-container_1">
+			
+		  <div class="swiper-wrapper">
+		    <div class="swiper-slide blue-slide"><img src="images/banner_2.jpg" alt=""></div>
+		    <div class="swiper-slide red-slide"><img src="images/banner_1.jpg" alt=""></div>
+		  </div>
+		  <div class="pagination"></div>
+		</div>
+		<![endif]-->
+
   </div>
+  <!-- 修改部分 E -->
   <!-- banner end -->
   <!-- news start -->
   <div class="part1 w1200">
@@ -390,7 +419,10 @@
         <a target="_blank" href="javascript:;">相关资讯</a>
       </div>
       <div class="information_img">
+      	<!--<a class="arrow-left" href="javascript:;"></a> 
+    		<a class="arrow-right" href="javascript:;"><</a>-->
         <div class="swiper-container swiper-container_two">
+        	
           <div class="swiper-wrapper">
             <div class="swiper-slide"><a href="html/scientific_5.html"><img src="images/information_img1.jpg" alt="" class="imgAnimation"></a></div>
             <div class="swiper-slide"><a href="html/cooperation_2.html"><img src="images/information_img2.jpg" alt="" class="imgAnimation"></a></div>
@@ -447,10 +479,25 @@
   </div>
   <!-- footer end -->
   <!-- js import start-->
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/swiper.min.js"></script>
-  <script src="js/index.js"></script>
-
+  
+  <!--<script src="js/swiper.min.js"></script>-->
+  <!-- 修改部分 S -->
+  <!-- 添加 ie 兼容 代码    写入页面底部 -->
+  <!--[if !IE]><!--> 
+	  
+	<!--<![endif]-->
+  <!--[if IE]>
+	<script type="text/javascript">
+	  var mySwiper = new Swiper('.swiper-container_1',{
+	    loop: true,
+			autoplay: 3000,
+			paginationClickable: true,
+			pagination : '.pagination',
+	  });  
+	</script>
+	<![endif]-->
+	<script src="js/index.js"></script>
+	<!-- 修改部分 E -->
 </body>
 
 </html>

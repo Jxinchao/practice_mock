@@ -97,13 +97,19 @@
 }
 
 .national_banner {
-  width: 100%;
-  height: 370px;
+		width: 100%;
+    overflow: hidden;
+    height: 370px;
+    position: relative;
 }
 
 .national_banner img {
-  width: 100%;
-  height: 100%;
+  width: 1920px;
+	height: 370px;
+	position: absolute;
+	left: 50%;
+	margin-left: -960px;
+	top: 0px;
 }
 
 /* right */
@@ -157,13 +163,13 @@
 
 }
 .figure ul{
-	display: flex;
-	display: -webkit-flex;
+	/*display: flex;
+	display: -webkit-flex;*/
 	padding-top: 23px;
 }
 .figure ul li{
-	flex: 1;
-	-webkit-flex:1;
+	width: 50%;
+	float: left;
 }
 .figure ul li a div.img{
 	width: 120px;
@@ -251,16 +257,19 @@
 	position: relative;
 }
 .national_3 ul:nth-child(1){
-	margin-top: 10px;
+	margin-top: 0px;
 }
 .national_3 ul{
-	display: flex;
-	display: -webkit-flex;
+	/*display: flex;
+	display: -webkit-flex;*/
 	margin-top: 70px;
 }
 .national_3 ul li{
-	flex: 1;
-	-webkit-flex:1;
+	width: 50%;
+	float: left;
+  margin-top: 40px;
+	/*flex: 1;
+	-webkit-flex:1;*/
 }
 .national_3 ul li div{
 	float: left;

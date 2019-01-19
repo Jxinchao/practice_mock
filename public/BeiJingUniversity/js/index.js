@@ -34,19 +34,19 @@ $(function(){
      spaceBetween: 0,
      slidesPerGroup: 1,
      loop: true,
-     autoplay:true,
+     autoplay:3000,
      navigation: {
        nextEl: '.swiper-button-next',
        prevEl: '.swiper-button-prev',
      },
    });
    //鼠标移出隐藏按钮，移入显示按钮
-  swipers.el.onmouseover=function(){
-    swipers.navigation.$nextEl.removeClass('hide');
-    swipers.navigation.$prevEl.removeClass('hide');
-  }
-  swipers.el.onmouseout=function(){
-    swipers.navigation.$nextEl.addClass('hide');
-    swipers.navigation.$prevEl.addClass('hide');
-  }
+//		swipers.el.onmouseover=function(){
+//		    swipers.navigation.$nextEl.removeClass('hide');
+//		    swipers.navigation.$prevEl.removeClass('hide');
+//		}
+//		swipers.el.onmouseout=function(){
+//		    swipers.navigation.$nextEl.addClass('hide');
+//		    swipers.navigation.$prevEl.addClass('hide');
+//		}
 })
