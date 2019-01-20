@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/rest.css"/>
+	<link rel="stylesheet" href="css/disclaimer.css" />
+	<link rel="stylesheet" href="css/pub.css"/>
+	<title>免责声明</title>
+</head>
+<body>
+	<!-- header S -->
+	<div class="header">
+		<div class="top"></div>
+		<div class="masthead__main">
+			<div class="logo">
+				<a href="javascript:;">
+					<img src="images/position/header_logo.png" alt="" />
+				</a>
+			</div>
+			<ul>
+				<li>
+					<a href="javascript:;">关于我们</a>
+					<div class="box">
+						<div class="leftimg"><img src="images/nav1.jpg"/></div>
+						<div class="rightnav">
+							<a href="javascript:;">益普生集团<span>→</span></a>
+							<a href="javascript:;">益普生中国<span>→</span></a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">疾病领域</a>
+					<div class="box">
+						<div class="leftimg"><img src="images/nav2.jpg"/></div>
+						<div class="rightnav">
+							<a href="javascript:;">肿瘤病学<span>→</span></a>
+							<a href="javascript:;">神经科学<span>→</span></a>
+						</div>
+						<div class="rightnav">
+							<a href="javascript:;">罕见病学<span>→</span></a>
+							<a href="javascript:;">神经科学<span>→</span></a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">产品组合</a>
+				</li>
+				<li>
+					<a href="javascript:;">企业责任</a>
+					<div class="box">
+						<div class="leftimg"><img src="images/nav4.jpg"/></div>
+						<div class="rightnav">
+							<a href="javascript:;">疾病科普 <span>→</span></a>
+							<a href="javascript:;">爱心公益<span>→</span></a>
+						</div>
+						<div class="rightnav">
+							<a href="javascript:;">道德与合规<span>→</span></a>
+							<a href="javascript:;">质量控制和EHS策略<span>→</span></a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">媒体中心</a>
+					<div class="box boxs">
+						<div class="leftimg"><img src="images/nav1.jpg"/></div>
+						<div class="rightnav">
+							<a href="javascript:;">新闻稿件<span>→</span></a>
+							<a href="javascript:;">媒体报道<span>→</span></a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">职业发展</a>
+					<div class="box boxs">
+						<div class="leftimg"><img src="images/nav1.jpg"/></div>
+						<div class="rightnav">
+							<a href="javascript:;">人才发展<span>→</span></a>
+							<a href="javascript:;">加入我们<span>→</span></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="search">
+				<img src="images/position/search.png"/>
+			</div>
+        </div>      
+	</div>
+	<!-- header E -->
+	
+	<!-- banner S -->
+	<div class="banner">
+		<img src="images/position/iStock-484937356.jpg"/>
+		<div class="dask">
+			<h1>免责条款</h1>
+		</div>
+		<div class="banner_bottom"></div>
+	</div>
+	<!-- banner E -->
+	<div class="anchor_layer" id="navHeight">
+<div class="nav_wrap" id="nav_wrap">
+<div class="wrap_layer">
+<div class="wrap_tab"><a class="tab active" href="#aa">A</a></div>
+<div class="wrap_tab"><a class="tab" href="#bb">B</a></div>
+<div class="wrap_tab"><a class="tab" href="#cc">C</a></div>
+<div class="wrap_tab"><a class="tab" href="#dd">D</a></div>
+</div>
+</div>
+</div>
+<div class="cont" id="aa">
+1
+</div>
+<div class="cont" id="bb">
+2
+</div>
+<div class="cont" id="cc">
+3
+</div>
+<div class="cont" id="dd">
+4
+</div>
+
+<div style="height: 300px;"></div>
+	<!-- footer S -->
+	<div class="footer">
+		<div class="footer_top w1200">
+			<div class="footer_top_con disflex">
+				<div class="footer_logo">
+					<img src="images/position/footer_logo.png"/>
+				</div>
+				<div class="footer_a">
+					<a href="javascript:;">益普生集团官网</a>
+					<a href="javascript:;">站点地图</a>  
+				</div>
+				<div class="footer_a">
+					<a href="javascript:;">免责条款</a>
+					<a href="javascript:;">保密条款</a>  
+				</div>
+				<div class="footer_a">
+					<a href="javascript:;"></a>
+					<a href="javascript:;">cookies条款</a>  
+				</div>
+			</div>
+		</div>
+		<div class="footer_bottom">
+			©版权所有 - 2018  Ipsen China,津ICP备09015603号-5,互联网药品信息服务资格证书编号: (津)-非经营性-2015-0033
+		</div>
+	</div>
+	<!-- footer E -->
+	
+	<!-- js import S -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/nav.js"></script>
+	
+	<script>
+		// 导航
+
+
+   //内容信息导航吸顶
+	$(document).ready(function(){ 
+	var navHeight= $("#navHeight").offset().top; 
+	var navFix=$("#nav_wrap"); 
+	$(window).scroll(function(){ 
+		if($(this).scrollTop()>navHeight){ 
+			navFix.addClass("navFix"); 
+		} 
+		else{ 
+			navFix.removeClass("navFix"); 
+		} 
+		}) 
+	})
+//内容信息导航锚点
+   $('.nav_wrap').navScroll({
+	  mobileDropdown: true,
+	  mobileBreakpoint: 768,
+	  scrollSpy: true
+	}); 
+	
+	
+
+	</script>
+	
+	
+	<style>
+		body{font-size:12px; font-family:"微软雅黑",Tahoma,Arial,"宋体",sans-serif; margin:0; padding:0; background:#fff;}
+ul,li,ol{ list-style:none;}
+div,p,ul,li,ol,dl,h1,h2,h3,h4,h5,img,pre,input{margin:0; padding:0;}
+em,i{font-style:normal;}
+strong{font-weight:normal;}
+img{border:none; vertical-align:middle;}
+.clear{float:none!important; clear:both!important; margin:0; padding:0;}
+a{color:#2C2319;text-decoration:none;}
+.anchor_layer{width: 100%;}
+.anchor_layer .nav_wrap{width: 1220px; height: 45px; border-radius: 45px; background-color: #535353; overflow: hidden; margin: 0 auto 40px; behavior: url(pie.htc);}
+.anchor_layer .nav_wrap.navFix{position: fixed; left: 0; top: 0; width: 100%; min-width: 1220px; border-radius: 0; z-index: 9999;}
+.anchor_layer .nav_wrap .wrap_layer{width: 1200px; height: 45px; margin: 0 auto; padding: 0 10px;}
+.anchor_layer .nav_wrap .wrap_tab{width: 120px; height: 45px; float: left;}
+.anchor_layer .nav_wrap a{width: 120px; height: 45px; border-radius: 45px; display: block; color: #fff; line-height: 45px; text-align: center; font-size: 14px; behavior: url(pie.htc);} 
+.anchor_layer .nav_wrap .active,.details_main .anchor_layer .nav_wrap a:hover{background-color: #3366cc; behavior: url(pie.htc);}  
+.cont{width: 1200px; margin: 0 auto; height: 500px; background: #ccc; border-bottom: #f00 5px solid;}
+
+	</style>
+</body>
+</html>

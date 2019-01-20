@@ -1,14 +1,33 @@
 // 导航
-$(function(){
+$(function() {
 
-  $('.nav li').hover(function(){
+	$('.masthead__main ul li').hover(function() {
 
-    $(this).children('ul').stop(true,true).show('slow');
+		$(this).find('.box').stop().show('slow');
 
-  },function(){
+	}, function() {
 
-    $(this).children('ul').stop(true,true).hide('slow');
+		$(this).find('.box').stop().hide('slow');
 
-  });
+	});
 
 });
+// 吸顶条
+$(function() {
+
+	var titleTop =0  //$('.headers').offset().top;
+
+	$(document).on('scroll', function() {
+		if($(document).scrollTop() > titleTop) {
+			$('.headers').css({
+				"position": "fixed",
+				"top": 0,
+				"display": "block"
+			})
+		} else {
+			$('.headers').css({
+				"display": "none"
+			})
+		}
+	})
+})

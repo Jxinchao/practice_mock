@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html class="no-js no-svg" prefix="og: http://ogp.me/ns#" lang="fr-FR">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <title>Ipsen Corporate (Français)</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript" async="" src="Ipsen/analytics.js"></script><script async="" src="Ipsen/gtm.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/css.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/plyr.css">
+    <script src="css/polyfill.js"></script>
+    <script src="css/ResizeObserver.js"></script>
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" id="cpsh-shortcodes-css" href="css/shortcodes.css" type="text/css" media="all">
+    <link rel="stylesheet" id="cookie-notice-front-css" href="css/front.css" type="text/css" media="all">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="js/front.js"></script>
+    <script type="text/javascript" src="js/gtm4wp-form-move-tracker.js"></script>
+    <script type="text/javascript" src="js/analytics-talk-content-tracking.js"></script>
+
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var cnArgs = { "ajaxurl": "https:\/\/d1bml1vmyeu9v2.cloudfront.net\/fr\/wp-admin\/admin-ajax.php", "hideEffect": "fade", "onScroll": "no", "onScrollOffset": "100", "cookieName": "cookie_notice_accepted", "cookieValue": "true", "cookieTime": "2592000", "cookiePath": "\/", "cookieDomain": "", "redirection": "", "cache": "", "refuse": "no", "revoke_cookies": "0", "revoke_cookies_opt": "automatic", "secure": "1" };
+/* ]]> */
+    </script>
+
+
+</head>
+
+
+<body class="home page-template-default page page-id-4 language-fr-FR vanilla-modal cookies-not-set" data-glow="0, 111, 238">
+    <div class="page-container theme-corporate" data-glow="0, 111, 238">
+        <div id="masthead" class="masthead masthead--corporate masthead--white">
+            <div class="masthead__mobile " style="">
+                <div class="masthead__mobile__main">
+                    <div class="masthead__logo">
+                        <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr" title="Home">
+                            <svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="-194 390.9 206 60">
+                                <style>.st0{fill:#18296c}.st1{fill:#1a93e5}</style>
+                                <path class="st0" d="M-150.1 446.7c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-8.3c0-.4.4-.6.7-.6.3 0 .5.3.6.6v8.3zM-166.1 393.3s-39.8 14.3-6.6 28.6c0 0-39.6-14.1 6.6-28.6"></path>
+                                <path class="st0" d="M-175.5 397.2c-8.3 3.6-12.5 7.3-12.5 11.2 0 2.5 1.7 4.8 4 6.8-1.5-1.5-2.3-3.6-2.3-5.7.1-5 5.6-9.3 10.8-12.3m2.8 25.2h-.1c-.7-.2-16.3-5.9-16.1-13.9.1-5.6 7.7-10.8 22.7-15.5.2-.1.5.1.6.3.1.2-.1.4-.3.5-.2.1-19.2 7-19.5 15.7-.1 4.2 4.2 8.3 12.9 12 .2 0 .4.2.4.4-.1.2-.3.4-.6.5.1 0 .1 0 0 0z"></path>
+                                <path class="st0" d="M-185.6 447.4s40.3-13.3 6.9-28.2c0 .1 39.8 15-6.9 28.2"></path>
+                                <path class="st0" d="M-167.3 426.2c1.5 1.5 2.3 3.6 2.3 5.8-.2 4.9-5.8 9-11.1 11.8 8.3-3.3 12.6-6.9 12.8-10.7.1-2.5-1.6-4.9-4-6.9m-18.3 21.7c-.2 0-.4-.1-.4-.3-.1-.2 0-.5.3-.5.2-.1 19.4-6.5 19.8-15.1.2-4.2-4.1-8.3-13-12.3-.2-.1-.3-.4-.2-.6.1-.2.3-.3.5-.2.7.3 16.4 6.3 16.1 14.3-.2 5.5-8 10.5-23.1 14.7.1 0 0 0 0 0M-109.9 416.5c0 2.2-.6 3.1-2.8 3.1h-11.9v-7.3c0-2 1-3.1 3.6-3.1h8.3c2.2 0 2.9.9 2.8 3.1v4.2zm3.5-10.7h-28.9v26.6h10.7V423h18.3c4.5 0 7.1-1 7.1-5.4v-6.4c-.1-4.4-2.7-5.4-7.2-5.4M-151.2 405.8h10.7v26.6h-10.7zM-62.3 426.9c0 3-.9 5.5-7 5.5h-24.3V429h18.1c1.3.1 2.4-.9 2.5-2.1v-3.3c0-2-.9-2.9-2.7-2.9h-14.1c-4.8 0-6.2-2.3-6.2-5.2v-4.9c0-2.9 2.3-4.8 6.2-4.8h23.5s-.3 3.4-4.5 3.4h-11.8c-2.2 0-2.8 1.3-2.8 2.7v2.5c0 1.6.6 2.8 2.6 2.8H-69c5.3 0 6.7 2.1 6.7 5.9v3.8zM-59 432.4v-26.6h29.1v3.5h-15.6c-1.8 0-2.8.7-2.8 2.8v5.2H-33s-.3 3.4-4.5 3.4h-10.8v5.5c0 2.1 1 2.8 2.7 2.8h15.7v3.4H-59zM.9 432.4c-2.5 0-4.4-1-6.3-3.2l-16-18.3h-.1v21.5h-4.9v-26.6h9.8c1.8-.1 3.6.6 4.9 2 1.3 1.6 16.6 19.1 16.6 19.1H5v-21.1h4.9v26.6h-9zM-148.3 440.8c0-.4.3-.6.7-.6.4 0 .6.3.6.6v.3c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6V443c-.1-1-1-1.7-2-1.6-.8.1-1.5.8-1.6 1.6v3.8c0 .4-.3.6-.7.6-.4 0-.6-.3-.6-.6v-6zM-140.3 440.8c0-.4.4-.6.7-.6.3 0 .5.3.6.6v.3c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .4-.3.6-.7.6-.4 0-.6-.3-.6-.6V443c-.2-1-1.1-1.6-2.1-1.5-.7.1-1.3.7-1.5 1.5v3.8c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-6zM-129.2 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6-1.6 0-2.1 1.4-2.1 2.6-.1 1.2.5 2.6 2.1 2.6m0-6.2c2-.1 3.7 1.4 3.8 3.4.1 2-1.4 3.7-3.4 3.8-2 .1-3.7-1.4-3.8-3.4v-.2c-.1-1.9 1.3-3.5 3.2-3.6h.2M-125 441.2c-.1-.1-.1-.3-.1-.5 0-.3.3-.5.6-.5s.6.2.7.4l1.8 4.9 1.8-4.9c.1-.3.4-.5.7-.4.3 0 .6.2.6.5 0 .2-.1.3-.1.5l-2.2 5.7c-.1.3-.3.5-.7.5s-.6-.2-.7-.5l-2.4-5.7zM-114.9 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.2 1.4-2.2 2.6c0 1.2.6 2.6 2.2 2.6m3.4.5c0 .3-.3.6-.6.6s-.6-.2-.6-.5v-.6c-.5.7-1.3 1.1-2.1 1.1-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4.8 0 1.6.3 2.1 1v-.4c0-.3.3-.6.6-.6s.6.2.6.6v6zM-109.4 438.7c0-.4.3-.6.6-.6.4 0 .6.3.6.6v1.5h.5c.4 0 .7.2.7.5s-.2.5-.7.5h-.5v5.5c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6v-5.5h-.5c-.4 0-.7-.2-.7-.5s.2-.5.7-.5h.5v-1.5zM-104.6 446.7c0 .3-.2.6-.6.6h-.1c-.3 0-.6-.2-.6-.5v-6.1c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v6.1zm-.6-9c.4 0 .8.2.8.6 0 .4-.2.8-.6.8h-.2c-.4 0-.8-.2-.8-.6 0-.4.2-.8.6-.8h.2M-99.7 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m0-6.2c2-.1 3.7 1.4 3.8 3.4.1 2-1.4 3.7-3.4 3.8-2 .1-3.7-1.4-3.8-3.4v-.2c-.1-1.9 1.3-3.5 3.2-3.6h.2M-94.8 440.8c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v.4c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6V443c0-1-.8-1.8-1.8-1.8s-1.8.8-1.8 1.8v3.8c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5v-.1l-.2-6zM-81.4 446.7c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-5.5h-.5c-.4 0-.7-.2-.7-.5s.2-.5.7-.5h.5v-1.7c0-.8.7-1.5 1.5-1.5H-80.6c.3 0 .7.2.7.5s-.2.5-.7.5h-.3c-.4 0-.5.2-.5.5v1.7h.8c.4 0 .7.2.7.5s-.2.5-.7.5h-.8v5.5zM-76.1 446.3c1.6 0 2.2-1.4 2.2-2.6 0-1.2-.6-2.6-2.2-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m0-6.2c2-.1 3.7 1.4 3.8 3.4.1 2-1.4 3.7-3.4 3.8-2 .1-3.7-1.4-3.8-3.4v-.2c-.1-1.9 1.3-3.5 3.2-3.6h.2M-71.3 440.8c0-.4.3-.6.6-.6.4 0 .6.3.6.6v.6c.3-.7 1-1.1 1.8-1.2.3 0 .7.2.7.5v.1c0 .3-.3.5-.8.6-1 .1-1.8 1-1.7 2v3.4c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6v-6zM-59.4 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m-3.4-5.5c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v.4c.5-.7 1.3-1.1 2.1-1 2 .2 3.5 1.9 3.3 3.9-.2 1.7-1.5 3.1-3.3 3.3-.8 0-1.6-.4-2.1-1v3.1c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5v-8.7zM-51.5 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c0 1.2.5 2.6 2.1 2.6m3.4.5c0 .3-.3.6-.6.6s-.6-.2-.6-.5v-.5c-.5.7-1.3 1.1-2.1 1.1-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4.8 0 1.6.3 2.1 1v-.4c0-.3.3-.6.6-.6s.6.2.6.6v5.9zM-45.9 438.7c0-.4.4-.6.7-.6.3 0 .5.3.6.6v1.5h.5c.4 0 .6.2.6.5s-.2.5-.6.5h-.5v5.5c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-5.5h-.5c-.4 0-.6-.2-.6-.5s.2-.5.6-.5h.5v-1.5zM-41.1 446.7c0 .4-.3.6-.7.6-.4 0-.6-.3-.6-.6v-6c0-.4.3-.6.6-.6.4 0 .7.3.7.6v6zm-.7-9c.4 0 .7.4.7.8s-.4.7-.8.7-.7-.3-.7-.7c0-.5.4-.8.8-.8M-34.3 443.3c.1-1.2-.8-2.2-2-2.3s-2.2.8-2.3 2v.3h4.3zm-4.2.9c0 1.2.9 2.1 2.1 2.1h.2c1.7 0 2.2-.9 2.6-.9.3 0 .5.2.5.5 0 .6-1.6 1.5-3.1 1.5-1.9.1-3.5-1.3-3.6-3.1v-.5c-.1-1.9 1.4-3.5 3.3-3.6h.2c1.9 0 3.3 1.5 3.3 3.4v.1c0 .4-.2.6-.7.6l-4.8-.1zM-31.6 440.8c0-.4.3-.6.6-.6.4 0 .6.3.6.6v.3c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5V443c0-1-.8-1.8-1.8-1.8s-1.8.8-1.8 1.8v3.8c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6l-.1-6zM-23.3 438.7c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v1.6h.5c.4 0 .6.2.6.5s-.2.5-.6.5h-.5v5.5c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5v-5.6h-.5c-.4 0-.6-.2-.6-.5s.2-.5.6-.5h.5l-.1-1.5zM-12.9 440.1c1.3 0 2.1.4 2.1.9 0 .3-.3.5-.5.5-.5 0-.7-.4-1.6-.4-1.4.2-2.4 1.5-2.2 3 .2 1.2 1.1 2.1 2.2 2.2.9 0 1.1-.4 1.6-.4.2 0 .5.1.5.4v.1c0 .4-.7.9-2.1.9-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4M-6.3 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m3.3.5c0 .3-.3.6-.6.6s-.6-.2-.6-.5v-.5c-.5.7-1.3 1.1-2.1 1.1-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4.8 0 1.6.3 2.1 1v-.4c0-.3.3-.6.6-.6s.6.2.6.5v6zM-1.2 440.8c0-.4.3-.6.7-.6.4 0 .6.3.6.6v.6c.3-.7 1-1.1 1.8-1.2.4 0 .7.2.7.6 0 .3-.3.5-.8.6-1 .1-1.8 1-1.7 2v3.4c0 .4-.3.6-.6.6-.4 0-.7-.3-.7-.6v-6zM8.6 443.3c.1-1.2-.8-2.2-2-2.3s-2.2.8-2.3 2v.3h4.3zm-4.3.9c0 1.2.9 2.1 2.1 2.1h.2c1.7 0 2.2-.9 2.6-.9.3 0 .5.2.5.5 0 .6-1.6 1.5-3.1 1.5-1.8.1-3.5-1.2-3.6-3.1v-.5c-.1-1.9 1.4-3.5 3.3-3.6h.2c1.9 0 3.4 1.5 3.4 3.3v.1c0 .4-.2.6-.7.6H4.3z"></path>
+                                <path class="st1" d="M-192.4 424.4s40.3-13.3 6.9-28.2c0 0 39.8 14.9-6.9 28.2"></path>
+                                <path class="st1" d="M-174.1 403.1c1.5 1.5 2.3 3.6 2.3 5.7-.2 4.9-5.8 9-11.1 11.8 8.3-3.3 12.6-6.9 12.8-10.7 0-2.4-1.7-4.8-4-6.8m-18.3 21.7c-.2 0-.4-.2-.4-.4s.1-.4.3-.4c.2-.1 19.4-6.5 19.8-15.1.2-4.2-4.1-8.3-13-12.3-.2-.1-.3-.4-.2-.6.1-.2.3-.3.5-.2.7.3 16.4 6.2 16.1 14.3-.2 5.5-8 10.5-23 14.7h-.1"></path>
+                                <path class="st1" d="M-159.5 414.4s-39.8 14.3-6.6 28.6c0 0-39.6-14.1 6.6-28.6M-161.7 406.6c.8 1.7.1 3.7-1.6 4.5-.1.1-.3.1-.5.2-1.8.7-3.3-.9-3.7-2.1-.4-1.9 1.7-3.1 3.9-3.5.8-.2 1.6.2 1.9.9"></path>
+                                <path class="st1" d="M-168.9 418.3c-8.3 3.6-12.5 7.3-12.6 11.2 0 2.5 1.7 4.8 4 6.8-1.5-1.5-2.3-3.6-2.3-5.7.1-5.1 5.6-9.3 10.9-12.3m2.8 25.1h-.1c-.7-.2-16.3-5.9-16.1-14 .1-5.6 7.7-10.8 22.7-15.5.2-.1.5 0 .5.3.1.2 0 .5-.3.6-.2.1-19.2 7-19.5 15.7-.1 4.2 4.2 8.3 12.9 12 .2 0 .4.2.4.4-.1.3-.3.5-.5.5z"></path>
+                            </svg> </a>
+                    </div>
+                    <div class="snowball"></div>
+                    <button class="mobile-nav__toggle">
+                        <svg id="nav-trigger" class="nav-trigger" viewBox="0 0 24 24" width="30">
+                            <path id="burger" d="M5.18 10.97H20v2H5.18zM5.18 16.97h11.06v2H5.18zM5.18 4.97h11.06v2H5.18z"></path>
+                            <path id="cross" d="M5.65 7.443L7.064 6.03l10.48 10.48-1.415 1.414zM5.644 16.509l3.931-3.932 1.414 1.415-3.931 3.931zM12.194 9.956l3.931-3.932L17.54 7.44l-3.931 3.931z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="masthead__inner">
+                <div class="masthead__mobile--scroll-wrapper">
+                    <div class="masthead__upper">
+                        <div class="masthead__widget-area masthead__widget-area--left">
+
+                        </div>
+                    </div>
+                    <div class="masthead__main">
+                        <div class="masthead__logo">
+                            <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr" title="Home">
+                                <svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="-194 390.9 206 60">
+                                    <style>.st0{fill:#18296c}.st1{fill:#1a93e5}</style>
+                                    <path class="st0" d="M-150.1 446.7c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-8.3c0-.4.4-.6.7-.6.3 0 .5.3.6.6v8.3zM-166.1 393.3s-39.8 14.3-6.6 28.6c0 0-39.6-14.1 6.6-28.6"></path>
+                                    <path class="st0" d="M-175.5 397.2c-8.3 3.6-12.5 7.3-12.5 11.2 0 2.5 1.7 4.8 4 6.8-1.5-1.5-2.3-3.6-2.3-5.7.1-5 5.6-9.3 10.8-12.3m2.8 25.2h-.1c-.7-.2-16.3-5.9-16.1-13.9.1-5.6 7.7-10.8 22.7-15.5.2-.1.5.1.6.3.1.2-.1.4-.3.5-.2.1-19.2 7-19.5 15.7-.1 4.2 4.2 8.3 12.9 12 .2 0 .4.2.4.4-.1.2-.3.4-.6.5.1 0 .1 0 0 0z"></path>
+                                    <path class="st0" d="M-185.6 447.4s40.3-13.3 6.9-28.2c0 .1 39.8 15-6.9 28.2"></path>
+                                    <path class="st0" d="M-167.3 426.2c1.5 1.5 2.3 3.6 2.3 5.8-.2 4.9-5.8 9-11.1 11.8 8.3-3.3 12.6-6.9 12.8-10.7.1-2.5-1.6-4.9-4-6.9m-18.3 21.7c-.2 0-.4-.1-.4-.3-.1-.2 0-.5.3-.5.2-.1 19.4-6.5 19.8-15.1.2-4.2-4.1-8.3-13-12.3-.2-.1-.3-.4-.2-.6.1-.2.3-.3.5-.2.7.3 16.4 6.3 16.1 14.3-.2 5.5-8 10.5-23.1 14.7.1 0 0 0 0 0M-109.9 416.5c0 2.2-.6 3.1-2.8 3.1h-11.9v-7.3c0-2 1-3.1 3.6-3.1h8.3c2.2 0 2.9.9 2.8 3.1v4.2zm3.5-10.7h-28.9v26.6h10.7V423h18.3c4.5 0 7.1-1 7.1-5.4v-6.4c-.1-4.4-2.7-5.4-7.2-5.4M-151.2 405.8h10.7v26.6h-10.7zM-62.3 426.9c0 3-.9 5.5-7 5.5h-24.3V429h18.1c1.3.1 2.4-.9 2.5-2.1v-3.3c0-2-.9-2.9-2.7-2.9h-14.1c-4.8 0-6.2-2.3-6.2-5.2v-4.9c0-2.9 2.3-4.8 6.2-4.8h23.5s-.3 3.4-4.5 3.4h-11.8c-2.2 0-2.8 1.3-2.8 2.7v2.5c0 1.6.6 2.8 2.6 2.8H-69c5.3 0 6.7 2.1 6.7 5.9v3.8zM-59 432.4v-26.6h29.1v3.5h-15.6c-1.8 0-2.8.7-2.8 2.8v5.2H-33s-.3 3.4-4.5 3.4h-10.8v5.5c0 2.1 1 2.8 2.7 2.8h15.7v3.4H-59zM.9 432.4c-2.5 0-4.4-1-6.3-3.2l-16-18.3h-.1v21.5h-4.9v-26.6h9.8c1.8-.1 3.6.6 4.9 2 1.3 1.6 16.6 19.1 16.6 19.1H5v-21.1h4.9v26.6h-9zM-148.3 440.8c0-.4.3-.6.7-.6.4 0 .6.3.6.6v.3c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6V443c-.1-1-1-1.7-2-1.6-.8.1-1.5.8-1.6 1.6v3.8c0 .4-.3.6-.7.6-.4 0-.6-.3-.6-.6v-6zM-140.3 440.8c0-.4.4-.6.7-.6.3 0 .5.3.6.6v.3c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .4-.3.6-.7.6-.4 0-.6-.3-.6-.6V443c-.2-1-1.1-1.6-2.1-1.5-.7.1-1.3.7-1.5 1.5v3.8c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-6zM-129.2 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6-1.6 0-2.1 1.4-2.1 2.6-.1 1.2.5 2.6 2.1 2.6m0-6.2c2-.1 3.7 1.4 3.8 3.4.1 2-1.4 3.7-3.4 3.8-2 .1-3.7-1.4-3.8-3.4v-.2c-.1-1.9 1.3-3.5 3.2-3.6h.2M-125 441.2c-.1-.1-.1-.3-.1-.5 0-.3.3-.5.6-.5s.6.2.7.4l1.8 4.9 1.8-4.9c.1-.3.4-.5.7-.4.3 0 .6.2.6.5 0 .2-.1.3-.1.5l-2.2 5.7c-.1.3-.3.5-.7.5s-.6-.2-.7-.5l-2.4-5.7zM-114.9 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.2 1.4-2.2 2.6c0 1.2.6 2.6 2.2 2.6m3.4.5c0 .3-.3.6-.6.6s-.6-.2-.6-.5v-.6c-.5.7-1.3 1.1-2.1 1.1-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4.8 0 1.6.3 2.1 1v-.4c0-.3.3-.6.6-.6s.6.2.6.6v6zM-109.4 438.7c0-.4.3-.6.6-.6.4 0 .6.3.6.6v1.5h.5c.4 0 .7.2.7.5s-.2.5-.7.5h-.5v5.5c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6v-5.5h-.5c-.4 0-.7-.2-.7-.5s.2-.5.7-.5h.5v-1.5zM-104.6 446.7c0 .3-.2.6-.6.6h-.1c-.3 0-.6-.2-.6-.5v-6.1c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v6.1zm-.6-9c.4 0 .8.2.8.6 0 .4-.2.8-.6.8h-.2c-.4 0-.8-.2-.8-.6 0-.4.2-.8.6-.8h.2M-99.7 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m0-6.2c2-.1 3.7 1.4 3.8 3.4.1 2-1.4 3.7-3.4 3.8-2 .1-3.7-1.4-3.8-3.4v-.2c-.1-1.9 1.3-3.5 3.2-3.6h.2M-94.8 440.8c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v.4c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6V443c0-1-.8-1.8-1.8-1.8s-1.8.8-1.8 1.8v3.8c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5v-.1l-.2-6zM-81.4 446.7c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-5.5h-.5c-.4 0-.7-.2-.7-.5s.2-.5.7-.5h.5v-1.7c0-.8.7-1.5 1.5-1.5H-80.6c.3 0 .7.2.7.5s-.2.5-.7.5h-.3c-.4 0-.5.2-.5.5v1.7h.8c.4 0 .7.2.7.5s-.2.5-.7.5h-.8v5.5zM-76.1 446.3c1.6 0 2.2-1.4 2.2-2.6 0-1.2-.6-2.6-2.2-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m0-6.2c2-.1 3.7 1.4 3.8 3.4.1 2-1.4 3.7-3.4 3.8-2 .1-3.7-1.4-3.8-3.4v-.2c-.1-1.9 1.3-3.5 3.2-3.6h.2M-71.3 440.8c0-.4.3-.6.6-.6.4 0 .6.3.6.6v.6c.3-.7 1-1.1 1.8-1.2.3 0 .7.2.7.5v.1c0 .3-.3.5-.8.6-1 .1-1.8 1-1.7 2v3.4c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6v-6zM-59.4 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m-3.4-5.5c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v.4c.5-.7 1.3-1.1 2.1-1 2 .2 3.5 1.9 3.3 3.9-.2 1.7-1.5 3.1-3.3 3.3-.8 0-1.6-.4-2.1-1v3.1c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5v-8.7zM-51.5 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c0 1.2.5 2.6 2.1 2.6m3.4.5c0 .3-.3.6-.6.6s-.6-.2-.6-.5v-.5c-.5.7-1.3 1.1-2.1 1.1-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4.8 0 1.6.3 2.1 1v-.4c0-.3.3-.6.6-.6s.6.2.6.6v5.9zM-45.9 438.7c0-.4.4-.6.7-.6.3 0 .5.3.6.6v1.5h.5c.4 0 .6.2.6.5s-.2.5-.6.5h-.5v5.5c0 .4-.4.6-.7.6-.3 0-.5-.3-.6-.6v-5.5h-.5c-.4 0-.6-.2-.6-.5s.2-.5.6-.5h.5v-1.5zM-41.1 446.7c0 .4-.3.6-.7.6-.4 0-.6-.3-.6-.6v-6c0-.4.3-.6.6-.6.4 0 .7.3.7.6v6zm-.7-9c.4 0 .7.4.7.8s-.4.7-.8.7-.7-.3-.7-.7c0-.5.4-.8.8-.8M-34.3 443.3c.1-1.2-.8-2.2-2-2.3s-2.2.8-2.3 2v.3h4.3zm-4.2.9c0 1.2.9 2.1 2.1 2.1h.2c1.7 0 2.2-.9 2.6-.9.3 0 .5.2.5.5 0 .6-1.6 1.5-3.1 1.5-1.9.1-3.5-1.3-3.6-3.1v-.5c-.1-1.9 1.4-3.5 3.3-3.6h.2c1.9 0 3.3 1.5 3.3 3.4v.1c0 .4-.2.6-.7.6l-4.8-.1zM-31.6 440.8c0-.4.3-.6.6-.6.4 0 .6.3.6.6v.3c.5-.6 1.3-1 2.2-.9 1.4-.1 2.6 1 2.7 2.4v4.2c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5V443c0-1-.8-1.8-1.8-1.8s-1.8.8-1.8 1.8v3.8c0 .4-.3.6-.6.6-.4 0-.6-.3-.6-.6l-.1-6zM-23.3 438.7c0-.3.2-.6.6-.6h.1c.3 0 .6.2.6.5v1.6h.5c.4 0 .6.2.6.5s-.2.5-.6.5h-.5v5.5c0 .3-.2.6-.5.6h-.1c-.3 0-.6-.2-.6-.5v-5.6h-.5c-.4 0-.6-.2-.6-.5s.2-.5.6-.5h.5l-.1-1.5zM-12.9 440.1c1.3 0 2.1.4 2.1.9 0 .3-.3.5-.5.5-.5 0-.7-.4-1.6-.4-1.4.2-2.4 1.5-2.2 3 .2 1.2 1.1 2.1 2.2 2.2.9 0 1.1-.4 1.6-.4.2 0 .5.1.5.4v.1c0 .4-.7.9-2.1.9-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4M-6.3 446.3c1.6 0 2.1-1.4 2.1-2.6 0-1.2-.6-2.6-2.1-2.6s-2.1 1.4-2.1 2.6c-.1 1.2.5 2.6 2.1 2.6m3.3.5c0 .3-.3.6-.6.6s-.6-.2-.6-.5v-.5c-.5.7-1.3 1.1-2.1 1.1-2-.1-3.5-1.8-3.4-3.8.1-1.8 1.6-3.3 3.4-3.4.8 0 1.6.3 2.1 1v-.4c0-.3.3-.6.6-.6s.6.2.6.5v6zM-1.2 440.8c0-.4.3-.6.7-.6.4 0 .6.3.6.6v.6c.3-.7 1-1.1 1.8-1.2.4 0 .7.2.7.6 0 .3-.3.5-.8.6-1 .1-1.8 1-1.7 2v3.4c0 .4-.3.6-.6.6-.4 0-.7-.3-.7-.6v-6zM8.6 443.3c.1-1.2-.8-2.2-2-2.3s-2.2.8-2.3 2v.3h4.3zm-4.3.9c0 1.2.9 2.1 2.1 2.1h.2c1.7 0 2.2-.9 2.6-.9.3 0 .5.2.5.5 0 .6-1.6 1.5-3.1 1.5-1.8.1-3.5-1.2-3.6-3.1v-.5c-.1-1.9 1.4-3.5 3.3-3.6h.2c1.9 0 3.4 1.5 3.4 3.3v.1c0 .4-.2.6-.7.6H4.3z"></path>
+                                    <path class="st1" d="M-192.4 424.4s40.3-13.3 6.9-28.2c0 0 39.8 14.9-6.9 28.2"></path>
+                                    <path class="st1" d="M-174.1 403.1c1.5 1.5 2.3 3.6 2.3 5.7-.2 4.9-5.8 9-11.1 11.8 8.3-3.3 12.6-6.9 12.8-10.7 0-2.4-1.7-4.8-4-6.8m-18.3 21.7c-.2 0-.4-.2-.4-.4s.1-.4.3-.4c.2-.1 19.4-6.5 19.8-15.1.2-4.2-4.1-8.3-13-12.3-.2-.1-.3-.4-.2-.6.1-.2.3-.3.5-.2.7.3 16.4 6.2 16.1 14.3-.2 5.5-8 10.5-23 14.7h-.1"></path>
+                                    <path class="st1" d="M-159.5 414.4s-39.8 14.3-6.6 28.6c0 0-39.6-14.1 6.6-28.6M-161.7 406.6c.8 1.7.1 3.7-1.6 4.5-.1.1-.3.1-.5.2-1.8.7-3.3-.9-3.7-2.1-.4-1.9 1.7-3.1 3.9-3.5.8-.2 1.6.2 1.9.9"></path>
+                                    <path class="st1" d="M-168.9 418.3c-8.3 3.6-12.5 7.3-12.6 11.2 0 2.5 1.7 4.8 4 6.8-1.5-1.5-2.3-3.6-2.3-5.7.1-5.1 5.6-9.3 10.9-12.3m2.8 25.1h-.1c-.7-.2-16.3-5.9-16.1-14 .1-5.6 7.7-10.8 22.7-15.5.2-.1.5 0 .5.3.1.2 0 .5-.3.6-.2.1-19.2 7-19.5 15.7-.1 4.2 4.2 8.3 12.9 12 .2 0 .4.2.4.4-.1.3-.3.5-.5.5z"></path>
+                                </svg> </a>
+                        </div>
+                        <nav class="masthead__nav" tabindex="0">
+                            <ul>
+                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-698 menu-item-has-children">
+                                    <a class="masthead__primary-link" target="" href=""
+                                        data-js-trigger-subnav=""
+                                        data-menu-item="notre-compagnie">关于我们</a>
+                                </li>
+                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-701 menu-item-has-children">
+                                    <a class="masthead__primary-link" target="" href=""
+                                        data-js-trigger-subnav="" 
+                                        data-menu-item="science-innovation">疾病领域</a>
+                                </li>
+                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-704">
+                                    <a class="masthead__primary-link" target="" href=""
+                                       
+                                        data-menu-item="responsabilite">产品组合</a>
+                                </li>
+                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1104 menu-item-has-children">
+                                    <a class="masthead__primary-link" target="" href=""
+                                        data-js-trigger-subnav="" 
+                                        data-menu-item="patients">企业责任</a>
+                                </li>
+                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-708 menu-item-has-children">
+                                    <a class="masthead__primary-link" target="" href=""
+                                        data-js-trigger-subnav="" 
+                                        data-menu-item="investisseurs">媒体中心</a>
+                                </li>
+                                <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-707">
+                                    <a class="masthead__primary-link" target="" href=""
+                                       
+                                        data-menu-item="partenaires">职业发展</a>
+                                </li>
+                               
+                                <li class="search__trigger">
+                                    <a href="#" data-js-trigger-search="">
+                                        <div class="mobile-text">Rechercher</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24">
+                                            <path d="M23 21.7l-6-6c1.4-1.5 2.2-3.5 2.2-5.7 0-4.7-3.9-8.6-8.6-8.6C5.9 1.4 2 5.3 2 10s3.9 8.6 8.6 8.6c1.8 0 3.5-.6 4.9-1.5l6.1 6.1 1.4-1.5zM3.9 9.9c0-3.6 3-6.6 6.6-6.6s6.6 3 6.6 6.6-3 6.6-6.6 6.6-6.6-3-6.6-6.6z"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="search">
+                                <div class="search__field">
+                                    <form action="https://d1bml1vmyeu9v2.cloudfront.net/fr" method="get">
+                                        <div class="icon-toggle">
+                                            <svg id="close-icon" class="close-icon" viewBox="0 0 24 24" width="30">
+                                                <path id="minus" d="M4.18 11.28h15.43v2H4.18z"></path>
+                                                <path id="cross" d="M5.65 7.443L7.064 6.03l10.48 10.48-1.415 1.414zM5.644 16.509l3.931-3.932 1.414 1.415-3.931 3.931zM12.194 9.956l3.931-3.932L17.54 7.44l-3.931 3.931z"></path>
+                                            </svg>
+                                        </div>
+                                        <input type="text" name="s" placeholder="Je suis à la recherche de....">
+                                        <button type="submit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24">
+                                                <path d="M23 21.7l-6-6c1.4-1.5 2.2-3.5 2.2-5.7 0-4.7-3.9-8.6-8.6-8.6C5.9 1.4 2 5.3 2 10s3.9 8.6 8.6 8.6c1.8 0 3.5-.6 4.9-1.5l6.1 6.1 1.4-1.5zM3.9 9.9c0-3.6 3-6.6 6.6-6.6s6.6 3 6.6 6.6-3 6.6-6.6 6.6-6.6-3-6.6-6.6z"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- 关于我们 菜单栏 -->
+            <div class="global-subnav global-subnav--corporate" data-submenu-item="notre-compagnie">
+                <button class="global-subnav__section-title mobile-back-button"><span></span>Notre compagnie</button>
+                <div class="global-subnav__intro">
+                    <div class="global-subnav__intro__inner">
+                        <img id="global-subnav-image__1" class="global-subnav__item-image" src="images/n19.png">
+                        <div class="global-subnav__intro__text">
+                           创新，关爱，健康
+                        </div>
+                    </div>
+                </div>
+                <div class="global-subnav__links">
+                    <ul>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-701 menu-item-has-children">
+                            <a   class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                   益普生集团
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-702">
+                            <a class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                益普生中国
+                                </span>
+                                
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- 疾病领域 菜单栏 -->
+            <div class="global-subnav global-subnav--corporate" data-submenu-item="science-innovation">
+                <button class="global-subnav__section-title mobile-back-button"><span></span>Science &amp; Innovation</button>
+                <div class="global-subnav__intro">
+                    <div class="global-subnav__intro__inner">
+                        <img id="global-subnav-image__2" class="global-subnav__item-image" src="images/n20.png">
+                    </div>
+                </div>
+                <div class="global-subnav__links">
+                    <ul>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-702">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06161720/oncology.jpg"
+                                data-image-target="#global-subnav-image__2" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/oncologie/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                    肿瘤病学
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-703">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06161746/neuroscience.jpg"
+                                data-image-target="#global-subnav-image__2" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/neurosciences/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                    神经科学
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1161">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06161825/raredisease.jpg"
+                                data-image-target="#global-subnav-image__2" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/maladies-rares/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                   罕见病学
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1162">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06161848/consumerhealthcare.jpg"
+                                data-image-target="#global-subnav-image__2" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/sante-familiale/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                   多元健康
+                                </span>
+                            </a>
+                        </li>
+                      
+                    </ul>
+                </div>
+
+            </div>
+            <!-- 企业责任 -->
+            <div class="global-subnav global-subnav--corporate" data-submenu-item="patients">
+                <button class="global-subnav__section-title mobile-back-button"><span></span>Patients</button>
+                <div class="global-subnav__intro">
+                    <div class="global-subnav__intro__inner">
+                        <img id="global-subnav-image__4" class="global-subnav__item-image" src="Ipsen/patient.jpg">
+                        <div class="global-subnav__intro__text">
+                            Nous sommes dédiés à l’amélioration de la vie de nos patients. Découvrez leurs histoires
+                        </div>
+                    </div>
+                </div>
+                <div class="global-subnav__links">
+                    <ul>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1104 menu-item-has-children">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06162623/patient.jpg"
+                                data-image-target="#global-subnav-image__4" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/patients/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                   疾病科普
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-706">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06161942/patientinvolment.jpg"
+                                data-image-target="#global-subnav-image__4" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/patients/patients-dans-la-recherche/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                   道德与合规
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1580">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06162208/patientstories.jpg"
+                                data-image-target="#global-subnav-image__4" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/patients/temoignages-de-patients/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                    爱心公益
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1162">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06161848/consumerhealthcare.jpg"
+                                data-image-target="#global-subnav-image__2" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/sante-familiale/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                   限量控制和EHS策略
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- 媒体中心 菜单栏 -->
+            <div class="global-subnav global-subnav--corporate" data-submenu-item="investisseurs">  
+                <button class="global-subnav__section-title mobile-back-button"><span></span>Investisseurs</button>
+                <div class="global-subnav__intro">
+                    <div class="global-subnav__intro__inner">
+                        <img id="global-subnav-image__5" class="global-subnav__item-image" src="images/n21.png">
+                    </div>
+                </div>
+                <div class="global-subnav__links">
+                    <ul>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-708 menu-item-has-children">
+                            <a data-image="https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/12/06162306/investors.jpg"
+                                data-image-target="#global-subnav-image__5" href="https://d1bml1vmyeu9v2.cloudfront.net/fr/investisseurs/"
+                                class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                  新闻稿件
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-710">
+                            <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/investisseurs/financial-results/" class="global-subnav__primary-link">
+                                <span class="global-subnav__primary-link__title">
+                                   媒体报道
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <header id="hero" class="hero hero--has-image  hero--full-height  hero--light-background hero--dark-gradient parallax"
+            style="padding-top: 121px;">
+            <div class="hero__background parallax-background" style=" background: url('images/banner.png'); transform: translate3d(0px, 457.2px, 0px);"></div>
+            <section class="hero__upper">
+                <div class="hero__main">
+                    <h1 class="heading heading--large">
+                        Innovation for <br>patient care
+                    </h1>
+                    <div class="hero__content">
+                        <p>创新，关爱，健康</p>
+                    </div>
+                    <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-compagnie/" class="cta cta--primary cta--has-shadow has-shadow"
+                        data-shadow-color="0, 111, 238" style="box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) 0px -4px 50px, rgba(0, 111, 238, 0.05) 0px -12px 50px, rgba(0, 111, 238, 0.05) -1px -24px 50px;">
+                        <span class="cta__label">En savoir plus
+                            <svg data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M14.54 7.63l-1.5 1.13.67 2.21H5.18v2h8.53l-.67 2.2 1.5 1.13 5.32-3.5v-1.67l-5.32-3.5z"></path>
+                            </svg>
+                        </span>
+                    </a>
+                    <div class="hero__legal">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="hero__icon">
+                    <img src="">
+                </div>
+            </section>
+
+            <section class="hero__lower">
+
+            </section>
+        </header>
+        <main id="page-main" class="page-main">
+            <nav role="navigation" aria-label="anchor-links" class="anchor-links fixed">
+                <ul class="anchor-links__inner flickity-enabled is-draggable" tabindex="0">
+                    <div class="flickity-viewport" style="height: 59px; touch-action: pan-y;    height: 59px;
+                    touch-action: pan-y;
+                    position: absolute;
+                    left: -50%;
+                    width: 1261px;">
+                        <div class="flickity-slider" style="left: 0px; transform: translateX(20%);">
+                            <li style="position: absolute; left: 0%;" aria-selected="false" class="has-been is-next">
+                                <a href="#domaines-therapeutiques" class="in-page-link">
+                                    <span class="anchor-links__label">
+                                        疾病领域
+                                    </span>
+                                    <span class="anchor-links__dot"></span>
+                                </a>
+                            </li>   
+                            <li style="position: absolute; left: 20%;" aria-selected="false" class="is-previous has-been">
+                                <a href="#meiti" class="in-page-link">
+                                    <span class="anchor-links__label">
+                                       媒体报道
+                                    </span>
+                                    <span class="anchor-links__dot"></span>
+                                </a>
+                            </li>
+                            <li style="position: absolute; left: 40%;" aria-selected="true" class="has-been is-selected">
+                                <a href="#site-footer" class="in-page-link">
+                                    <span class="anchor-links__label">
+                                        关于我们
+                                    </span>
+                                    <span class="anchor-links__dot"></span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="blocksbuilder">
+                <div class="block" id="">
+                    <div class="content-cards content-cards--three-columns-on-desktop has-lines">
+                        <div class="content-cards__spacer">
+                            <div class="content-cards__inner">
+                                <div data-observe-resizes="" class="content-card content-card--singular SM MD LG XL">
+                                    <div class="content-card__image " style="background-image: url('images/p.png')"></div>
+                                    <div class="content-card__content">
+                                        <div class="content-card__padder">
+                                            <h2 class="heading heading--small">益普生中国</h2>
+                                            <p>我们始终以患者需求为己任，产品除涉及肿瘤、神经、罕见病、内分泌等专科领域外，还关注在以胃肠道疾病为主导的多元健康领域。</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block" id="domaines-therapeutiques">
+                    <div class="clickable-cards clickable-cards--stacked  has-dark-background">
+                        <div class="clickable-cards__text-wrap">
+                            <h2 class="clickable-cards__heading heading heading--medium">疾病领域</h2>
+                        </div>
+                        <div class="card-collection" style="padding-top:0;">
+                            <div class="card-collection__inner card-collection__inner--stacked">
+                                <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/oncology/"
+                                    data-observe-resizes="" class="icon-card has-shadow SM" style="box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) 0px -4px 50px, rgba(0, 111, 238, 0.05) 0px -12px 50px, rgba(0, 111, 238, 0.05) 0px -24px 50px;">
+                                    <div class="icon-card__image  " style="background-image: url('https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/sites/49/2019/01/07095917/rsz_181204-134.jpg')">
+                                    </div>
+                                    <div class="icon-card__content">
+                                        <div class="icon-card__padder">
+                                            <h2 class="heading heading--small">肿瘤病学</h2>
+                                            <div class="icon-card__button-wrapper">
+                                                <button class="cta cta--link">
+                                                    <span class="cta__label">了解更多
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path d="M14.54 7.63l-1.5 1.13.67 2.21H5.18v2h8.53l-.67 2.2 1.5 1.13 5.32-3.5v-1.67l-5.32-3.5z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/neuroscience/"
+                                    data-observe-resizes="" class="icon-card has-shadow SM" style="box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) 0px -4px 50px, rgba(0, 111, 238, 0.05) 1px -12px 50px, rgba(0, 111, 238, 0.05) 3px -23px 50px;">
+                                    <div class="icon-card__image  " style="background-image: url('https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/sites/49/2019/01/16112840/img-neurologiecard-header1-e1547638147655.jpg')">
+                                    </div>
+                                    <div class="icon-card__content">
+                                        <div class="icon-card__padder">
+                                            <h2 class="heading heading--small">神经科学</h2>
+                                            <div class="icon-card__button-wrapper">
+                                                <button class="cta cta--link">
+                                                    <span class="cta__label">了解更多
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path d="M14.54 7.63l-1.5 1.13.67 2.21H5.18v2h8.53l-.67 2.2 1.5 1.13 5.32-3.5v-1.67l-5.32-3.5z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/rare-diseases/"
+                                data-observe-resizes="" class="icon-card has-shadow SM" style="box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) 0px -4px 50px, rgba(0, 111, 238, 0.05) 0px -12px 50px, rgba(0, 111, 238, 0.05) 0px -24px 50px;">
+                                <div class="icon-card__image  " style="background-image: url('https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/sites/49/2019/01/07100007/rsz_1ipsenslc-4.jpg')">
+                                </div>
+                                <div class="icon-card__content">
+                                    <div class="icon-card__padder">
+                                        <h2 class="heading heading--small">罕见病学</h2>
+                                        <div class="icon-card__button-wrapper">
+                                            <button class="cta cta--link">
+                                                <span class="cta__label">了解更多
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <path d="M14.54 7.63l-1.5 1.13.67 2.21H5.18v2h8.53l-.67 2.2 1.5 1.13 5.32-3.5v-1.67l-5.32-3.5z"></path>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/notre-science/sante-familiale/"
+                                data-observe-resizes="" class="icon-card has-shadow SM" style="box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) 0px -4px 50px, rgba(0, 111, 238, 0.05) 2px -12px 50px, rgba(0, 111, 238, 0.05) 4px -23px 50px;">
+                                <div class="icon-card__image  " style="background-image: url('https://d1bml1vmyeu9v2.cloudfront.net/websites/Ipsen_Online/wp-content/uploads/2018/11/16104258/megan-lewis-4230242.jpg')">
+                                </div>
+                                <div class="icon-card__content">
+                                    <div class="icon-card__padder">
+                                        <h2 class="heading heading--small">多元健康</h2>
+                                        <div class="icon-card__button-wrapper">
+                                            <button class="cta cta--link">
+                                                <span class="cta__label">了解更多
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <path d="M14.54 7.63l-1.5 1.13.67 2.21H5.18v2h8.53l-.67 2.2 1.5 1.13 5.32-3.5v-1.67l-5.32-3.5z"></path>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+               
+ 
+                <div class="block" id="meiti">
+
+                    <div class="news-centre-block-container" style="height:500px;">
+                        <div class="news-centre-block">
+                            <div class="news-centre-block__header" >
+                                <h2>媒体中心</h2>
+                            </div>
+                            <div class="news-centre-block__content article-slider">
+                                <div class="news-centre-block--article-list slide">
+                                    <div class="article-teaser">
+                                        <div class="article-teaser__image">
+                                            <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/livingwithnets-com-awarded-as-most-valuable-patient-initiative-by-eyeforpharma-awards-2018/">
+                                                <img src="images/m1.PNG">
+                                            </a>
+                                        </div>
+                                        <div class="article-teaser__content">
+                                            <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/livingwithnets-com-awarded-as-most-valuable-patient-initiative-by-eyeforpharma-awards-2018/">
+                                                <span class="article-teaser__titles" style="">
+                                                  新闻稿件
+                                                </span>
+                                                <span class="cta__label">了解更多
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <path d="M14.54 7.63l-1.5 1.13.67 2.21H5.18v2h8.53l-.67 2.2 1.5 1.13 5.32-3.5v-1.67l-5.32-3.5z"></path>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-centre-block--article-list slide">
+                                    <div class="article-teaser">
+
+                                        <div class="article-teaser__image">
+                                            <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/ipsen-named-one-of-the-best-workplaces-in-ireland/">
+                                                <img src="images/m2.png">
+                                            </a>
+                                        </div>
+
+                                        <div class="article-teaser__content">
+                                            <a href="https://d1bml1vmyeu9v2.cloudfront.net/fr/ipsen-named-one-of-the-best-workplaces-in-ireland/">
+
+                                                <span class="article-teaser__titles" style="">
+                                                   媒体报道
+                                                </span>
+                                                <span class="cta__label">了解更多
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <path d="M14.54 7.63l-1.5 1.13.67 2.21H5.18v2h8.53l-.67 2.2 1.5 1.13 5.32-3.5v-1.67l-5.32-3.5z"></path>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="site-footer" class="colophon">
+            <div class="colophon__inner">
+                <nav class="colophon__widgets">
+                    <div class="colophon__link-block">
+                        <div class="menu-corporate-footer-1-container">
+                           <img src="images/b1.PNG" alt="" srcset="">
+                           <p>联系我们</p>
+                        </div>
+                    </div>
+                    <div class="colophon__link-block">
+                        <div class="menu-corporate-footer-1-container">
+                            <img src="images/b2.png" alt="" srcset="">
+                            <p>药物不良反应报告</p>
+                        </div>
+                    </div>
+                    <div class="colophon__link-block">
+                        <div class="menu-corporate-footer-1-container">
+                            <img src="images/b3.png" alt="" srcset="">
+                            <p>产品及医学信息咨询</p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+       
+
+
+        <div class="modal">
+            <div class="modal-inner has-shadow" style="box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) 0px -4px 50px, rgba(0, 111, 238, 0.05) 0px -12px 50px, rgba(0, 111, 238, 0.05) 1px -24px 50px;">
+                <button data-modal-close="" class="modal-close">
+                    <svg id="nav-trigger" class="nav-trigger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        width="32">
+                        <path id="cross" d="M5.65 7.443L7.064 6.03l10.48 10.48-1.415 1.414zM5.644 16.509l3.931-3.932 1.414 1.415-3.931 3.931zM12.194 9.956l3.931-3.932L17.54 7.44l-3.931 3.931z"></path>
+                    </svg>
+                </button>
+                <div class="modal-content"></div>
+            </div>
+        </div>
+       
+    </div>
+	<!-- footer S -->
+	<div class="footer" >
+		<div class="footer_top w1200">
+			<div class="footer_top_con disflex">
+				<div class="footer_logo">
+					<img src="images/footer_logo.png"/>
+				</div>
+				<div class="footer_a">
+					<a href="javascript:;">益普生集团官网</a>
+					<a href="javascript:;">站点地图</a>  
+				</div>
+				<div class="footer_a">
+					<a href="javascript:;">免责条款</a>
+					<a href="javascript:;">保密条款</a>  
+				</div>
+				<div class="footer_a">
+					<a href="javascript:;"></a>
+					<a href="javascript:;">cookies条款</a>  
+				</div>
+			</div>
+		</div>
+		<div class="footer_bottom">
+			©版权所有 - 2018  Ipsen China,津ICP备09015603号-5,互联网药品信息服务资格证书编号: (津)-非经营性-2015-0033
+		</div>
+	</div>
+
+    <script src="js/plyr.js"></script>
+
+    <script type="text/javascript">
+
+        /**
+         * detect IE
+         * returns version of IE or false, if browser is not Internet Explorer
+         */
+
+        (function detectIE() {
+            var ua = window.navigator.userAgent;
+
+            var msie = ua.indexOf('MSIE ');
+            if (msie > 0) {
+                // IE 10 or older => return version number
+                var ieV = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+                document.querySelector('body').className += ' browser--ie10';
+            }
+
+            var trident = ua.indexOf('Trident/');
+            if (trident > 0) {
+                // IE 11 => return version number
+                var rv = ua.indexOf('rv:');
+                var ieV = parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+                document.querySelector('body').className += ' browser--ie11';
+            }
+
+            var edge = ua.indexOf('Edge/');
+            if (edge > 0) {
+                // IE 12 (aka Edge) => return version number
+                var ieV = parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+                document.querySelector('body').className += ' browser--edge';
+            }
+
+            // other browser
+            return false;
+        })();
+    </script>
+    <script type="text/javascript">
+        // Only run if ResizeObserver is supported.
+        if ('ResizeObserver' in self) {
+            // Create a single ResizeObserver instance to handle all
+            // container elements. The instance is created with a callback,
+            // which is invoked as soon as an element is observed as well
+            // as any time that element's size changes.
+            var ro = new ResizeObserver(function (entries) {
+                // Default breakpoints that should apply to all observed
+                // elements that don't define their own custom breakpoints.
+                var defaultBreakpoints = { SM: 384, MD: 576, LG: 768, XL: 960 }
+
+                entries.forEach(function (entry) {
+                    // If breakpoints are defined on the observed element,
+                    // use them. Otherwise use the defaults.
+                    var breakpoints = entry.target.dataset.breakpoints
+                        ? JSON.parse(entry.target.dataset.breakpoints)
+                        : defaultBreakpoints
+
+                    // Update the matching breakpoints on the observed element.
+                    Object.keys(breakpoints).forEach(function (breakpoint) {
+                        var minWidth = breakpoints[breakpoint]
+                        if (entry.contentRect.width >= minWidth) {
+                            entry.target.classList.add(breakpoint)
+                        } else {
+                            entry.target.classList.remove(breakpoint)
+                        }
+                    })
+                })
+            })
+
+            // Find all elements with the `data-observe-resizes` attribute
+            // and start observing them.
+            var elements = document.querySelectorAll('[data-observe-resizes]')
+            for (var element, i = 0; element = elements[i]; i++) {
+                ro.observe(element)
+                console.log('resizing observed')
+            }
+        }
+    </script>
+    <script src="js/jquery-3.js"></script>
+
+    <script src="js/noframework.js"></script>
+    <script type="text/javascript">
+        var waypoint = new Waypoint({
+            element: document.getElementById('page-main'),
+            handler: function (direction) {
+                $('.bourse-widget').toggleClass('bourse-widget--white')
+            }
+        });
+    </script>
+
+
+    <script src="js/bundlerrr.js"></script>
+
+    <script src="js/vanillamodal.js"></script>
+
+    <script>
+        var leavingModal = new VanillaModal.default()
+        var leavingWhiteList = "".split(' ')
+
+        function closeLeavingModal() {
+            leavingModal.close()
+            return false
+        }
+
+        $(function () {
+            $('a:not([href*="https://d1bml1vmyeu9v2.cloudfront.net/fr"])').each(function () {
+                $(this).not('.no-modal-override')
+                    .not('[href*="#"]')
+                    .not('[href*="mailto:"]')
+                    .not('[href$=".pdf"]')
+                    .not('.mlp-language-nav-item a')
+                    .not('[href$="?nopop"]')
+                    .not('[href$=".ics"]')
+                    .not('[data-popupcontent]').click(function () {
+                        var targetUrl = $(this).attr('href')
+                        var isExternal = true
+                        for (var n = 0; n < leavingWhiteList.length; n++) {
+                            if (targetUrl.indexOf(leavingWhiteList[n]) >= 0 && leavingWhiteList[n] != "") {
+                                isExternal = false
+                            }
+                        }
+                        if (!isExternal) {
+                            $('#modal-leaving .external-modal-content').addClass('hidden')
+                            $('#modal-leaving .internal-modal-content').removeClass('hidden')
+                        } else {
+                            $('#modal-leaving .external-modal-content').removeClass('hidden')
+                            $('#modal-leaving .internal-modal-content').addClass('hidden')
+                        }
+                        leavingModal.open('#modal-leaving')
+                        $('#modal-leaving-continue').attr('href', targetUrl)
+                        return false
+                    })
+            })
+            $('[href$=".pdf"]').attr('target', '_blank')
+        });
+
+        $('[href$="?nopop"]').on("click", function (e) {
+            e.preventDefault()
+            var url = $(this).attr('href')
+            url = url.replace('?nopop', '')
+            window.location.href = url
+        });
+
+    </script>
+
+    <script>
+        var a2a_config = a2a_config || {};
+        a2a_config.num_services = 10;
+        a2a_config.show_title = 1;
+    </script>
+
+    <script async="" src="js/page.js"></script>
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPQTXB4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script type="text/javascript" src="js/gtm4wp-users.js"></script>
+    <script type="text/javascript" src="js/wp-embed.js"></script>
+
+    
+  
+</body>
+</html>
