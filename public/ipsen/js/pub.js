@@ -15,7 +15,7 @@ $(function() {
 // 吸顶条
 $(function() {
 
-	var titleTop =530;  //$('.headers').offset().top;
+	var titleTop =500;  //$('.headers').offset().top;
 
 	$(document).on('scroll', function() {
 		if($(document).scrollTop() > titleTop) {
