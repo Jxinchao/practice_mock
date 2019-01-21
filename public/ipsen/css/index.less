@@ -39,6 +39,8 @@
                     height: 87px;
                     display: block;
                     float: left;
+                    transition: all 0.6s;
+                    -webkit-transition: all 0.6s;
                 }
                 div {
                     float: left;
@@ -69,6 +71,7 @@
         div {
             float: left;
             width: 50%;
+            overflow: hidden;
             img {
                 width: 100%;
             }
@@ -110,12 +113,13 @@
             margin-left: 4%;
             float: left;
             div {
+                overflow: hidden;
                 img {
                     width: 100%;
                 }
                 h1 {
                     font-size: 26px;
-                    margin-top: 100px;
+                    margin-top: 15%;
                     text-align: center;
                 }
                 a {
@@ -159,12 +163,13 @@
                 -webkit-box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, .5);
                 box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, .5);
                 div {
+                    overflow: hidden;
                     img {
                         width: 100%;
                     }
                     h1 {
                         font-size: 26px;
-                        margin-top: 100px;
+                        margin-top: 15%;
                         text-align: center;
                     }
                     a {
@@ -260,4 +265,13 @@
             }
         }
     }
+}
+
+.imgs:hover{
+        transform: scale(1.1); /* 放大1.2倍 */
+       -webkit-transform: scale(1.1);
+}
+img{
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
 }
