@@ -94,3 +94,17 @@
   background-size: cover;
   height: 960px;
 }
+.ipsenchina_b {
+  padding-top: 130px;
+}
+.ipsenchina_b .product_text h1 {
+  color: #1C1C1C;
+  font-size: 32px;
+  margin-bottom: 80px;
+}
+.ipsenchina_b .product_text div {
+  width: 100%;
+}
+.ipsenchina_b .product_text div img {
+  width: 100%;
+}
