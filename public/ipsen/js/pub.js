@@ -15,8 +15,8 @@ $(function() {
 // 吸顶条
 $(function() {
 
-	var titleTop =500;  //$('.headers').offset().top;
-
+	var titleTop = $('.banner').height();
+	console.log(titleTop)
 	$(document).on('scroll', function() {
 		if($(document).scrollTop() > titleTop) {
 			$('.headers').css({

@@ -659,7 +659,7 @@ input {
 }
 
 .horizontal-timeline .horizontal-timeline__bg {
-	background-size: cover!important;
+	/*background-size: cover!important;
 	background-position: 50%!important;
 	-webkit-transition: .7s;
 	transition: .7s;
@@ -667,20 +667,20 @@ input {
 	height: 120%;
 	position: absolute;
 	left: 0;
-	top: 0
+	top: 0*/
 }
 
 .horizontal-timeline:after {
-	content: "";
+	/*content: "";
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 100%;
+	width: 100%;*/
 	z-index: 0;
-	background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(57, 51, 84, .3)), to(#04032a));
-	background-image: linear-gradient(0deg, rgba(57, 51, 84, .3), #04032a)
+	/*background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(57, 51, 84, .3)), to(#04032a));
+	background-image: linear-gradient(0deg, rgba(57, 51, 84, .3), #04032a)*/
 }
 
 .horizontal-timeline h2 {

@@ -15,12 +15,7 @@
 	</head>
 
 	<body>
-		<div class="modal">
-    <div class="modal-inner has-shadow">
-
-      <div class="modal-content"></div>
-    </div>
-  </div>
+		
 		<!-- header S -->
 		<div class="header">
 			<div class="top"></div>
@@ -391,7 +386,7 @@
 		<script>
 			//内容信息导航吸顶
 			$(document).ready(function() {
-				var navHeight = $("#navHeight").offset().top;
+				var navHeight = $(".banner").height();
 				var navFix = $("#nav_wrap");
 				$(window).scroll(function() {
 					if($(this).scrollTop() > navHeight) {
@@ -410,12 +405,6 @@
 				mobileDropdown: true,
 				mobileBreakpoint: 768,
 				scrollSpy: true
-			});
-			// 轮播
-			var swiper = new Swiper('.swiper-container', {
-				pagination: {
-					el: '.swiper-pagination',
-				},
 			});
 		</script>
 

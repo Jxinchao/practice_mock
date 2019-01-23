@@ -22404,19 +22404,19 @@
             }
             var i = !1;
             if ((0, c.default)('a[href*="#"]').not('[href="#"]').not('[href="#0"]').not('[href="#important-safety-information"]').click(function(t) {
-                if (console.log(this), location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
-                    var e = (0, c.default)(this.hash);
-                    if ((e = e.length ? e : (0, c.default)("[name=" + this.hash.slice(1) + "]")).length) {
-                        var i = e.offset().top - a,
-                            n = (0, c.default)(e);
-                        if (t.preventDefault(), "false" == (0, c.default)(e).find("button").attr("aria-expanded") && (0, c.default)(e).find("button").click(), (0, c.default)(".masthead__mobile__main .mobile-nav__toggle--is-open").length && (0, c.default)(".masthead__mobile__main .mobile-nav__toggle").click(), (0, c.default)("html, body").animate({
-                            scrollTop: i
-                        }, 1e3, function() {
-                            n.focus()
-                        }), n.is(":focus")) return !1;
-                        n.attr("tabindex", "-1"), n.focus()
-                    }
-                }
+//              if (console.log(this), location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
+//                  var e = (0, c.default)(this.hash);
+//                  if ((e = e.length ? e : (0, c.default)("[name=" + this.hash.slice(1) + "]")).length) {
+//                      var i = e.offset().top - a,
+//                          n = (0, c.default)(e);
+//                      if (t.preventDefault(), "false" == (0, c.default)(e).find("button").attr("aria-expanded") && (0, c.default)(e).find("button").click(), (0, c.default)(".masthead__mobile__main .mobile-nav__toggle--is-open").length && (0, c.default)(".masthead__mobile__main .mobile-nav__toggle").click(), (0, c.default)("html, body").animate({
+//                          scrollTop: i
+//                      }, 1e3, function() {
+//                          n.focus()
+//                      }), n.is(":focus")) return !1;
+//                      n.attr("tabindex", "-1"), n.focus()
+//                  }
+//              }
             }), (0, c.default)(".anchor-links__inner").length) {
                 var l = new n.default(".anchor-links__inner", {
                     prevNextButtons: !1,
