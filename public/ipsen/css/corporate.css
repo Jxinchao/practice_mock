@@ -193,6 +193,16 @@
   color: #181818;
   margin-top: 15px;
 }
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p span {
+  font-size: 12px;
+  display: block;
+  float: left;
+  width: 24%;
+  text-align: left;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p.mt {
+  margin-top: 0;
+}
 .ipsenchina_b .w1200 .ipsen_coporate .coporate_three p.title_s {
   font-size: 26px;
 }
@@ -207,4 +217,7 @@
   position: absolute;
   right: 3%;
   top: 23%;
+}
+.ipsenchina_b .m_t {
+  padding-bottom: 50px;
 }
