@@ -52,13 +52,26 @@
         }
     }
 }
-
+iframe{background: transparent !important;}
 .bigs {
     width: 100%;
     background: url(../images/chain_banner.jpg);
     -webkit-background-size: cover;
     background-size: cover;
-    height: 960px;
+    height: 980px;
+    overflow: hidden;
+    h2{
+        color: #fff;
+        font-size: 30px;
+        position: relative;
+        z-index: 1;
+        margin: 1.5rem;
+        width: 1200px;
+        margin: 30px auto 0;
+    }
+    .horizontal-timeline{
+        padding: 1rem;
+    }
     .tabe{
         width: 1200px;
         margin: 30px auto 10px;
@@ -94,6 +107,9 @@
     }
     .horizontal-timeline .timeline-slider{
         margin: 0;
+    }
+    .horizontal-timeline{
+        padding: 0 !important;
     }
 }
 

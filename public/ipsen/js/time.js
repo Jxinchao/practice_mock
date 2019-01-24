@@ -22902,6 +22902,7 @@
                     e = t.children(".horizontal-timeline__bg"),
                     i = t.find(".timeline-slider").outerWidth() / 100 * 4,
                     n = t.find(".is-selected").index();
+                    console.log(t)
                 e.css({
                     transform: "translate3d(" + -i * n + "px, 0px, 0px )"
                 })

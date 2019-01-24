@@ -11,5 +11,7 @@ $(function(){
         console.log(this.id)
        $("#"+this.id+"_ .tog").slideToggle();
     });
+    
+    
    
 })

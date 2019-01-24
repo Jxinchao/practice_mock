@@ -49,12 +49,28 @@
   margin: auto;
   cursor: pointer;
 }
+iframe {
+  background: transparent !important;
+}
 .bigs {
   width: 100%;
   background: url(../images/chain_banner.jpg);
   -webkit-background-size: cover;
   background-size: cover;
-  height: 960px;
+  height: 980px;
+  overflow: hidden;
+}
+.bigs h2 {
+  color: #fff;
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+  margin: 1.5rem;
+  width: 1200px;
+  margin: 30px auto 0;
+}
+.bigs .horizontal-timeline {
+  padding: 1rem;
 }
 .bigs .tabe {
   width: 1200px;
@@ -90,6 +106,9 @@
 }
 .bigs .horizontal-timeline .timeline-slider {
   margin: 0;
+}
+.bigs .horizontal-timeline {
+  padding: 0 !important;
 }
 .ipsenchina_b {
   margin-top: 140px;
