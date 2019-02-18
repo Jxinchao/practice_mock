@@ -67,7 +67,7 @@ iframe {
   z-index: 1;
   margin: 1.5rem;
   width: 1200px;
-  margin: 30px auto 0;
+  margin: 55px auto 0;
 }
 .bigs .horizontal-timeline {
   padding: 1rem;
@@ -103,6 +103,7 @@ iframe {
   font-weight: 400;
   color: #ffffff;
   line-height: 30px;
+  margin: 30px 0;
 }
 .bigs .horizontal-timeline .timeline-slider {
   margin: 0;
@@ -111,7 +112,7 @@ iframe {
   padding: 0 !important;
 }
 .ipsenchina_b {
-  margin-top: 140px;
+  margin-top: 80px;
 }
 .ipsenchina_b .w1200 {
   box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) -3px -3px 50px, rgba(0, 111, 238, 0.05) -8px -9px 50px, rgba(0, 111, 238, 0.05) -16px -17px 50px;

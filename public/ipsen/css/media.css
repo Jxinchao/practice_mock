@@ -95,17 +95,20 @@
 .con_ul{
   width: 1211px;
   display: block;
-  height: 560px;
+  /*height: 560px;*/
   margin: 0 auto;
 }
 .con_ul span{
   width: 1211px;
   height: 170px;
-  display: block;
+  display: inline-block;
   background:rgba(255,255,255,1);
   text-align: left;
   border-bottom: 1px solid #bdbdbd; 
   margin: 0 auto;
+}
+.con_ul span.up{
+	display: none;
 }
 .con_ul span p{
   margin: 20px 0;
@@ -136,13 +139,16 @@
 /* 媒体报道 */
 .media_ul{
   width: 1211px;
-  height: 708px;
+  /*height: 708px;*/
   margin: 0 auto;
 }
 .media_li{
   width: 1211px;;
   height: 320px;
   padding: 20px 0px;
+}
+.media_li.up{
+	display: none;
 }
 .media_li img{
   width: 453px;

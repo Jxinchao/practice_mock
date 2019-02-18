@@ -34,13 +34,13 @@
          h1{
              color: #1C1C1C;
              font-size: 32px;
-             margin-left: 15%;
+            text-align: center;
          }
      }
  }
  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
      bottom: 35px;
-     left: 15%;
+     text-align: center;
  }
 .swiper-pagination-bullet {
     width: 10px;
@@ -117,27 +117,31 @@
         }
         
     }
-    p.x_text{
-            color: #1E3749;
-            text-align: right;
-            font-size: 32px;
-            font-style: oblique;
-            margin-top: 15%;
-    }
+   
 }
 .stratagem_bg{
     background: #1e3749;
-    height: 367px;
+//  height: 367px;
     position: relative;
-    .str_box{
-        width: 363px;
-        height: 458px;
-        position: absolute;
+    overflow: hidden;
+    padding-bottom: 50px;
+    margin-top: 5%;
+     p.x_text{
+        color: #fff;
+        text-align: left;
+        font-size: 30px;
+        font-style: oblique;
+        margin-top: 6%;
+        margin-bottom: 3%;
+    }
+    .box{
+        overflow: hidden;
+        .str_box{
+        width: 298px;
+        height: 350px;   
         background: #fff;
-//      padding: 8px;
-        top: -40%;
-         -webkit-box-shadow: 0px 0px 25px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 25px 0 rgba(0, 0, 0, 0.3);
+        border: 2px solid #fff;
+        float: left;
         img{
             width: 100%;
             height: 100%;
@@ -146,16 +150,19 @@
     }
     .str_text{
         float: right;
-        width: 500px;
+        width: 60%;
         margin-top: 80px;
+        float: left;
+        margin-left: 60px;
         img{
             display: block;
         }
         p{
-            font-size: 28px;
+            font-size: 26px;
             color: #fff;
             margin-top: 30px;
         }
+    }
     }
 }
 
