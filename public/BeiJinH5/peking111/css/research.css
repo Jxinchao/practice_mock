@@ -1,0 +1,20 @@
+/*研究**/
+.research-list{
+    padding: .2rem 0;
+}
+.research-list li{
+    font-size: .22rem;
+    color: rgba(62,62,62,.77);
+    line-height: .38rem;
+    padding: .1rem 0;
+}
+.research-list li a{
+    display: block;
+    color: rgba(62,62,62,.77);
+}
+.research-list li span{
+    float: right;
+}
+
+
+/*教育教学**/

@@ -1,0 +1,298 @@
+.index-box{
+    padding: .2rem;
+}
+
+.index-title{
+    width: 4.8rem;
+    font-size: .3rem;
+    color: #474747;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: .1rem;
+    margin: 0 auto;
+}
+.index-title span{
+    padding-bottom: .1rem;
+    border-bottom: 3px solid #a92027;
+}
+.index-more{
+    width: 100%;
+    height: .52rem;
+    text-align: center;
+    font-size: .22rem;
+    line-height: .52rem;
+    background: #e4e4e4;
+    margin-top: .1rem;
+}
+.index-more a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #303030;
+}
+
+
+.index-con{
+    padding:.1rem;
+}
+.hot-news-list li{
+    font-size: .22rem;
+    padding: .17rem 0;
+    border-bottom: 1px dashed #c6c6c6;
+}
+.hot-news-list a{
+    display: block;
+    color: #7d7d7d;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+}
+.hot-news-list li p{
+    margin-top: .15rem;
+    color: #6d6d6d;
+}
+.hot-news-list li:last-child{
+    border-bottom: none;
+}
+.hot-news-list li:first-child a{
+    color: #616161;
+}
+
+
+.announcement-list li{
+    position: relative;
+    padding: .2rem 0 .2rem .9rem;
+    border-bottom: 1px dashed #c6c6c6;
+}
+.announcement-list li:last-child{
+    border-bottom: none;
+}
+.announcement-date{
+    position: absolute;
+    left: 0;
+    top: .2rem;
+    width: .73rem;
+    height: .71rem;
+    background: url(../img/ico-date.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    color: #fff;
+}
+.date-year{
+    font-size: .12rem;
+    margin-top: .07rem;
+    line-height: .14rem;
+}
+.date-day{
+    font-style: italic;
+    font-weight: bold;
+    font-size: .26rem;
+    line-height: .5rem;
+}
+.announcement-list li a{
+    color: rgba(0,0,0,1);
+    opacity: .7;
+    font-size: .2rem;
+    line-height: .29rem;
+}
+
+.index-about{
+    width: 100%;
+    height: 4.2rem;
+    background: url(../img/index-about-bg.png) no-repeat bottom center;
+    background-size: 100% 3.74rem;
+    margin-top: .2rem;
+}
+.about-title{
+    position: relative;
+    width: 2.87rem;
+    height: .77rem;
+    background: #A12329 url(../img/ico-about-t.png) no-repeat;
+    background-size: .82rem .77rem;
+    margin-left: .43rem;
+    line-height: .67rem;
+    text-align: right;
+    padding-right: .3rem;
+    color: #fff;
+}
+.about-title .about-title-en{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: .34rem;
+    color: rgba(255,255,255,.3);
+}
+.about-text{
+    font-size: .2rem;
+    color: #292929;
+    line-height: .36rem;
+    padding: .5rem .37rem 0;
+}
+.about-more{
+    margin: .4rem auto 0;
+    width: 1.27rem;
+    height: .42rem;
+    background: #A12329;
+    border-radius: .21rem;
+    text-align: center;
+    line-height: .42rem;
+    font-size: .2rem;
+}
+.about-more a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.cooperation-list{
+    margin-top: .4rem;
+}
+.cooperation-list li{
+    width: 2.85rem;
+    float: left;
+    margin-left: .28rem;
+    color: rgba(0,0,0,.7);
+}
+.cooperation-list li:first-child{
+    margin-left: 0;
+}
+
+.cooperation-list li img{
+    display: block;
+    width: 2.85rem;
+    height: 1.83rem;
+}
+.cooperation-tit{
+    font-size: .24rem;
+    margin-top: .1rem;
+}
+.cooperation-text{
+    font-size: .2rem;
+    margin-top: .1rem;
+    padding-right: .3rem;
+}
+
+.research-title{
+    width: 100%;
+    height: .52rem;
+    background: #A92027;
+    padding: 0 .4rem 0 .1rem;
+    font-size: .28rem;
+    line-height: .52rem;
+    color: #fff;
+}
+.ico-research{
+    display: inline-block;
+    width: .15rem;
+    height: .15rem;
+    background: #fff;
+    vertical-align: middle;
+    margin-right: .05rem;
+}
+.research-title a{
+    float: right;
+    color: #fff;
+    font-size: .2rem;
+}
+
+.research-list li{
+    position: relative;
+    padding-left: 2.6rem;
+    padding: .3rem 0 .3rem 2.6rem;
+    border-bottom: 1px solid #BFBFBF;
+}
+.research-pic{
+    position: absolute;
+    left: 0;
+    top: .3rem;
+    width: 2.49rem;
+    height: 1.41rem;
+}
+.research-pic img{
+    width: 100%;
+    height: 100%;
+}
+
+.research-text{
+    position: relative;
+    height: 1.41rem;
+}
+.research-text-t{
+    padding-top: .1rem;
+    color: rgba(0,0,0,.7);
+}
+.research-time{
+    position: absolute;
+    bottom: .1rem;
+    left: 0;
+    right: 0;
+    font-size: .2rem;
+    color: #A92027;
+    text-align: right;
+}
+
+.leader-t{
+    font-size: .28rem;
+    color: #A72126;
+    margin-top: .3rem;
+    padding-left: .3rem;
+}
+.leader-list{
+    margin: 0 .3rem;
+    padding-bottom: .3rem;
+    border-bottom: 1px dashed #c6c6c6;
+}
+.leader-list:last-child{
+    border-bottom: none;
+}
+.leader-list li{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.leader-pic{
+    width: 1.16rem;
+    height: 1.16rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.leader-pic img{
+    width: 100%;
+    height: 100%;
+}
+
+.leader-name{
+    font-size: .24rem;
+    color:rgba(1,1,1,.7);
+}
+
+.related-con{
+    width: 4.1rem;
+    margin: .3rem auto;
+}
+.related-con img{
+    display: block;
+    width: 100%;
+    height: 2.48rem;
+}
+.related-tit{
+    font-size: .22rem;
+    color: #302F2F;
+    text-align: center;
+    margin-top: .2rem;
+}
+
+.related-con .banner .pagination{
+    top: 2rem;
+    bottom: auto;
+}
+.related-con .banner .swiper-pagination-bullet{
+    width: .16rem;
+    height: .16rem;
+}

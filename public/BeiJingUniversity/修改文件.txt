@@ -1,3 +1,24 @@
+2019/2/18  修改
+
+1、 替换index.css 文件
+
+2、修改顶部 logo 路径   index.html
+
+3、修改底部 logo 路径   index.html
+
+
+2019/2/19   修改
+
+1、修改导航鼠标移入颜色
+
+2、更改轮播图
+
+3、替换images 文件夹
+
+
+
+
+//  之前修改的
 html  结构修改     
 
 	national_3.html   去掉UL即可
