@@ -1,3 +1,61 @@
+/* 2019/2/20 添加部分 start */
+.focuss {
+	height: 350px;
+	background: url(../images/bg.jpg) no-repeat top center;;
+}
+.f-scroll {
+    width: 100%;
+    min-width: 1000px;
+}
+.box {
+	width: 1439px;
+	height: 350px;
+	margin: 0 auto;
+	position: relative
+}
+
+.boxin {
+	width: 1439px !important;
+	height: 350px;
+	overflow: hidden;
+	position: relative;
+	left: 50%;
+	margin-left: -720px;
+}
+
+.box ul {
+	width: 1000%;
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.box ul li {
+	float: left
+}
+
+.box ol {
+	position: absolute;
+	left: 50%;
+	bottom: 30px;
+	margin-left: -38px
+}
+
+.box ol li {
+	float: left;
+	width: 13px;
+	height: 13px;
+	overflow: hidden;
+	background: #fff;
+	margin: 0 3px;
+	cursor: pointer;
+	border-radius: 50%
+}
+
+.box ol li.current {
+	background: #c00
+}
+/* 2019/2/20 添加部分 end */
 .top-bg {
   height: 30px;
   line-height: 30px;

@@ -96,7 +96,7 @@
   color: #616161;
 }
 
-/* 修改部分  2019/2/19 s */
+/*  2019/2/20  修改 start */
 .national_banner {
 		width: 100%;
     overflow: hidden;
@@ -106,13 +106,13 @@
 
 .national_banner img {
   width: 1920px;
-	/*height: 175px;*/
+	/*height: 370px;*/
 	position: absolute;
 	left: 50%;
 	margin-left: -960px;
 	top: 0px;
 }
-/* 修改部分  2019/2/19 end */
+/*  2019/2/20  修改 end */
 /* right */
 .detali {
     padding: 25px 0px;
