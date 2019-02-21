@@ -42,18 +42,33 @@
 }(window, Zepto));
 
 $(function(){
+    //一级导航
     var goNavbar = $(".go-navbar"),
         nav = $(".nav");
     goNavbar.click(function(){
         if( nav.height() == 0 ){
-            nav.addClass("navAni").removeClass("navAninone")
+            nav.animate({
+                height: 'auto',
+            });
         }else{
-            nav.addClass("navAninone").removeClass("navAni")
+             nav.animate({
+                height: 0,
+            });
         }
     })
 
     $(".nav a").click(function(){
         $(this).addClass("active")
+    })
+
+    //悬浮导航
+    $(".quick-nav").click(function(){
+        $(".quick-nav-box").toggle();
+        if( $(".quick-nav-box").css("display") == 'none' ){
+            $(this).removeClass("quick-nav-yes");
+        }else{
+            $(this).addClass("quick-nav-yes");
+        }
     })
 
     $(".qnav-tit").click(function(){
@@ -68,12 +83,17 @@ $(function(){
     })
 
 
-    $(".quick-nav").click(function(){
-        $(".quick-nav-box").toggle();
-        if( $(".quick-nav-box").css("display") == 'none' ){
-            $(this).removeClass("quick-nav-yes");
+    //二级导航
+    $(".navbar-nav").click(function(){
+        var navBarList = $(this).siblings(".navbar-list");
+        if( navBarList.height() == 0 ){
+            navBarList.animate({
+                height: 'auto',
+            });
         }else{
-            $(this).addClass("quick-nav-yes");
+            navBarList.animate({
+                height: 0,
+            });
         }
     })
 })

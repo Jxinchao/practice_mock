@@ -5,36 +5,7 @@
 }
 
 
-.about-first{
-    margin-top: .2rem;
-}
 
-.about-pic{
-    margin-bottom: .2rem;
-}
-.about-pic img{
-    display: block;
-    width: 100%;
-}
-
-
-.text-con{
-    font-size: .2rem;
-    color: #000000;
-    opacity:0.7;
-    line-height: .36rem;
-    text-indent: 2em;
-}
-
-.about-second{
-    margin-top: .2rem;
-    padding-top: .2rem;
-    border-top: 1px dashed #B5B5B5;
-}
-.about-tit{
-    font-size: .24rem;
-    color: #000;
-}
 
 .leader-con{
     margin-top: .3rem;
@@ -119,3 +90,25 @@
     color: rgba(0,0,0,.77);
     margin-top: .1rem;
 }
+
+
+/*研究**/
+.research-list{
+    padding: .2rem 0;
+}
+.research-list li{
+    font-size: .22rem;
+    color: rgba(62,62,62,.77);
+    line-height: .38rem;
+    padding: .1rem 0;
+}
+.research-list li a{
+    display: block;
+    color: rgba(62,62,62,.77);
+}
+.research-list li span{
+    float: right;
+}
+
+
+/*教育教学**/

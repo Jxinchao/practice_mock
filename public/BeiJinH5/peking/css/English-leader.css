@@ -1,0 +1,39 @@
+#header .logo img{
+	width: 1.98rem;
+	height: .68rem;
+}
+#header .header-right.header-english{
+	right: 0rem;
+}
+.j-about .j-titile{
+	background: #A72126;
+	height: .52rem;
+	color: #fff;
+	line-height: .52rem;
+	text-indent: 2em;
+	margin-top: .25rem;
+}
+.j-text{
+	background: url(../img/index-about-bg.png) no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	padding: .35rem .28rem;
+	font-size: .20rem;
+}
+.j-text h1{
+	color: #A72126;	
+	line-height: .52rem;
+	border-bottom: 1px solid #BFBFBF;
+	font-size: .28rem;
+}
+.text{
+	text-indent: 2em;
+	margin-top: .25rem;
+	line-height: .36rem;
+}
+.leader-list-p{
+	font-size: .20rem;
+}
+.foot-con{
+	font-size: .17rem;
+}

@@ -62,7 +62,7 @@
 
 .announcement-list li{
     position: relative;
-    padding: .2rem 0 .2rem .9rem;
+    padding: .2rem 0 .2rem 1.3rem;
     border-bottom: 1px dashed #c6c6c6;
 }
 .announcement-list li:last-child{
@@ -72,8 +72,8 @@
     position: absolute;
     left: 0;
     top: .2rem;
-    width: .73rem;
-    height: .71rem;
+    width: 1.1rem;
+    height: .9rem;
     background: url(../img/ico-date.png) no-repeat;
     background-size: 100% 100%;
     text-align: center;
@@ -81,20 +81,21 @@
 }
 .date-year{
     font-size: .12rem;
-    margin-top: .07rem;
-    line-height: .14rem;
+    margin-top: .1rem;
+    line-height: .2rem;
 }
 .date-day{
     font-style: italic;
-    font-weight: bold;
-    font-size: .26rem;
-    line-height: .5rem;
+    font-size: .3rem;
+    line-height: .62rem;
 }
 .announcement-list li a{
+    display: block;
+    height: .9rem;
     color: rgba(0,0,0,1);
     opacity: .7;
     font-size: .2rem;
-    line-height: .29rem;
+    line-height: .32rem;
 }
 
 .index-about{
