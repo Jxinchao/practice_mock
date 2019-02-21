@@ -1,0 +1,149 @@
+.focuss {
+	height: 350px;
+	background: url(../images/bg.jpg) no-repeat top center;;
+}
+.f-scroll {
+    width: 100%;
+    min-width: 1000px;
+}
+.box {
+	width: 1439px;
+	height: 350px;
+	margin: 0 auto;
+	position: relative
+}
+
+.boxin {
+	width: 1439px !important;
+	height: 350px;
+	overflow: hidden;
+	position: relative;
+	left: 50%;
+	margin-left: -720px;
+}
+
+.box ul {
+	width: 1000%;
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.box ul li {
+	float: left
+}
+
+.box ol {
+	position: absolute;
+	left: 50%;
+	bottom: 30px;
+	margin-left: -38px
+}
+
+.box ol li {
+	float: left;
+	width: 13px;
+	height: 13px;
+	overflow: hidden;
+	background: #fff;
+	margin: 0 3px;
+	cursor: pointer;
+	border-radius: 50%
+}
+
+.box ol li.current {
+	background: #c00
+}
+.national_banner{
+	width: 1439px;
+	margin: 0 auto;
+}
+.en-about{
+	overflow: hidden;
+	height: 562px;
+	background: url(../images/bg.png) no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	margin-top: 70px;
+	padding-top: 70px;
+}
+.en-title{
+	border-bottom: 1px solid #BFBFBF;
+}
+.en-title span{
+	display: inline-block;
+	font-size: 28px;
+	color: #474747;
+	border-bottom: 4px solid #A92027;
+}
+.en-con{
+	margin-top: 30px;
+	overflow: hidden;
+}
+.en-con .en-l{
+	float: left;
+	width: 591px;
+	height: 308px;
+}
+.en-con .en-l img{
+	width: 100%;
+	height: 100%;
+}
+.en-con .en-r{
+	width: 48%;
+	float: right;
+	text-indent: 2em;
+	font-size: 18px;
+	line-height:36px;
+}
+.en-leaders{
+	padding: 100px 0;
+	overflow: hidden;
+}
+
+.en-leader ul li{
+	float: left;
+	width: 25%;
+}
+.en-leader ul li a{
+	display: block;
+}
+.en-leader ul li a div.en-tit{
+	font-size: 30px;
+	color: #A12329;
+	margin-top: 90px;
+	height: 24px;
+}
+.en-img{
+	width: 217px;
+	height: 217px;
+	border-radius: 50%;
+	margin-top: 50px;
+	overflow: hidden;
+}
+.en-img img{
+	width: 100%;
+	height: 100%;
+}
+.en-leader ul li a p{
+	text-align: center;
+	color: #000;
+	font-size: 20px;
+	margin-top: 20px;
+}
+.w217{
+	width: 217px;
+}
+.imgAnimation{
+  transition: transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -webkit-transition: -webkit-transform 1s;
+  -o-transition: -o-transform 1s;
+}
+.imgAnimation:hover{
+  transform:scale(1.05);
+  -moz-transform:-moz-scale(1.05);
+  -webkit-transform:-webkit-scale(1.05);
+  -o-transform:-o-scale(1.05);
+  cursor: pointer;
+}
