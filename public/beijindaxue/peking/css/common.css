@@ -185,7 +185,8 @@ input:focus{
 
 
 .nav{
-    height: 0;
+	display: none;
+    height: auto;
     overflow: hidden;
     padding: 0 .4rem;
 }
@@ -242,8 +243,39 @@ input:focus{
     color: #fff;
 }
 
+/* search start  */
+.logo-btnshow {
+	margin: 1% 1.5% 1.5% 1.5%;
+	overflow: hidden;
+	display: none;
+	position: relative;
+}
 
+.show-test {
+	width: 100%;
+	float: left;
+	/*height: 18px;*/
+	line-height: 18px;
+	text-indent: 15px;
+	border: none;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	padding: 8px 0px;
+	border: 1px solid #eaeaea;
+}
 
+.show-btn {
+	width: 60px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 35px;
+	line-height: 35px;
+	border: none;
+	color: #fff;
+	background-color: #004991;
+}
+/* search end  */
 /**悬浮导航**/
 .quick-nav{
     position: fixed;
@@ -468,7 +500,7 @@ input:focus{
 }
 
 .footer{
-    height: .5rem;
+    /*height: .5rem;*/
     background: #383737;
     color:rgba(255,255,255,1);
     font-size: .18rem;

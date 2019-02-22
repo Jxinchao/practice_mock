@@ -43,19 +43,19 @@
 
 $(function(){
     //一级导航
-    var goNavbar = $(".go-navbar"),
-        nav = $(".nav");
-    goNavbar.click(function(){
-        if( nav.height() == 0 ){
-            nav.animate({
-                height: 'auto',
-            });
-        }else{
-             nav.animate({
-                height: 0,
-            });
-        }
-    })
+//  var goNavbar = $(".go-navbar"),
+//      nav = $(".nav");
+//  goNavbar.click(function(){
+//      if( nav.height() == 0 ){
+//          nav.animate({
+//              height: 'auto',
+//          });
+//      }else{
+//           nav.animate({
+//              height: 0,
+//          });
+//      }
+//  })
 
     $(".nav a").click(function(){
         $(this).addClass("active")
@@ -81,8 +81,15 @@ $(function(){
             that.children(".arrow-r").addClass("arrow-rb");
         }
     })
-
-
+	// search
+    $(".search-btn").click(function(){
+    	$(this).parents().next().next(".nav-box").slideUp(300);
+    	$(this).parents().find(".logo-btnshow").slideToggle(300);    
+    })
+    $(".menu-btn").click(function(){
+    	$(this).parents().next(".logo-btnshow").slideUp(300);
+    	$(this).parents().find(".nav-box").slideToggle(300);    
+    })
     //二级导航
     $(".navbar-nav").click(function(){
         var navBarList = $(this).siblings(".navbar-list");
