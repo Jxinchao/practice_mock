@@ -2,8 +2,9 @@
 $(function(){
 
   $('.nav li').hover(function(){
-
+		
     $(this).children('ul').stop().show('slow');
+    
 
   },function(){
 
@@ -18,10 +19,11 @@ $(function(){
 // new 轮播图
 
 $(function() {
+	$(".cn-nav>li").last().children('ul.sub').children("ul").css("right",'100%')
 	$(".box ul li:first").clone().appendTo($(".box ul"));
 	var $key=0; /* 控制整图片播放的关键变量*/
 	/* 克隆第一张，作为最后一张*/
-
+	
 	var $circle=0;/* 控制小圆点的播放*/
 	/*开始定时器*/
 

@@ -1,4 +1,5 @@
 /* 2019/2/20 添加部分 start */
+
 .focuss {
 	height: 350px;
 	background: url(../images/bg.jpg) no-repeat top center;;
@@ -975,4 +976,8 @@ input.search-right {
   to {
     transform: none;
   }
+}
+
+.en-right{
+	right: 100%;
 }
