@@ -55,6 +55,12 @@
 .box ol li.current {
 	background: #c00
 }
+@media only screen and (max-width: 1439px) {
+			body { overflow-x:hidden;}
+			.box{ width: 1439px; overflow: hidden; left:50%; margin-left:-720px; }
+			.box img{ width:100%;}
+			.boxin {width:100%!important; }
+		}
 /* 2019/2/20 添加部分 end */
 .top-bg {
   height: 30px;

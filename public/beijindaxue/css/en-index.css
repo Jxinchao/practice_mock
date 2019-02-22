@@ -58,15 +58,25 @@
 	width: 1439px;
 	margin: 0 auto;
 }
+/* 2019/2/22 修改 开始  */
+@media only screen and (max-width: 1439px) {
+	body { overflow-x:hidden;}
+	.box{ width: 1439px; overflow: hidden; left:50%; margin-left:-720px; }
+	.box img{ width:100%;}
+	.boxin {width:100%!important; }
+}
 .en-about{
 	overflow: hidden;
-	height: 562px;
-	background: url(../images/bg.png) no-repeat;
-	-webkit-background-size: 100%;
-	background-size: 100%;
-	margin-top: 70px;
-	padding-top: 70px;
+    height: 570px;
+    background: url(../images/bg.png) no-repeat;
+    -webkit-background-size: 100%;
+    background-size: cover;
+    /*margin-top: 70px;*/
+    padding-top: 70px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
+/* 2019/2/22 修改 结束   */
 .en-title{
 	border-bottom: 1px solid #BFBFBF;
 }
