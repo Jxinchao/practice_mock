@@ -348,17 +348,6 @@ input:focus{
     background: url(../img/arrow-r.png) no-repeat center center;
     background-size: .16rem .39rem;
 }
-.arrow-red{
-    position: absolute;
-    right: .9rem;
-    top: 50%;
-    margin-top: -.19rem;
-    display: block;
-    width: .39rem;
-    height: .39rem;
-    background: url(../img/red-arrow.png) no-repeat center center;
-    background-size: .16rem .39rem;
-}
 .arrow-rb{
     transform:rotate(90deg);
     -ms-transform:rotate(90deg);     /* IE 9 */
@@ -375,20 +364,18 @@ input:focus{
     display: none;
 }
 .qnav-con-t{
-	position: relative;
     font-size: .3rem;
     text-align: center;
-    color: #333;
+    color: #fff;
     height: .8rem;
     line-height: .8rem;
-    border-bottom: 1px solid #b24b4f;
-    background: rgba(255,255,255,0.9);
+    border-bottom: 1px solid #e7cdce;
 }
 .qnav-con-t:last-child{
     border-bottom: none;
 }
 .qnav-con-t a{
-    color: #333;
+    color: #fff;
 }
 .qnav-con ul li{
     height: .62rem;
@@ -396,15 +383,12 @@ input:focus{
     text-align: center;
     color: #fff;
     font-size: .24rem;
-    border-bottom: 1px solid #b24b4f;
-    background: rgba(255,255,255,0.9);
+    border-bottom: 1px solid #e7cdce;
 }
 .qnav-con ul li a{
-    color: #333;
+    color: #fff;
 }
-.three-nav {
-	display: none;
-}
+
 /**首页**/
 .banners,
 .banner {

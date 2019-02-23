@@ -1,0 +1,46 @@
+.about-pic{
+	width: 4.75rem;
+	margin: 0 auto .4rem;
+}
+.about-second{
+	border-top: 0px;
+}
+.about-second h1{
+	text-align: center;
+	color: #4D4D4D;
+	font-size: .24rem;
+}
+.about-second p{
+	font-size: .18rem;
+	color: #6D6C6C;
+	text-align: center;
+}
+.about-second ul{
+	overflow: hidden;
+}
+.about-second ul li{
+	margin-top: 0.1rem;
+	overflow: hidden;
+}
+.about-second ul li a{
+	display: block;
+}
+.about-second ul li a span{
+	float: left;
+	font-size: .20rem;
+}
+.about-second ul li a span:nth-child(2){
+	float: right;
+}
+.text-con{
+	text-indent: 0;
+}
+.mt{
+	margin-top: .34rem;
+}
+.w502{
+	width: 5.02rem;
+}
+.ti{
+	text-indent: 2em;
+}

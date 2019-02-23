@@ -1,5 +1,7 @@
 /* 2019/2/20 添加部分 start */
-
+.en-right{
+	left: -130%;
+}
 .focuss {
 	height: 350px;
 	background: url(../images/bg.jpg) no-repeat top center;;

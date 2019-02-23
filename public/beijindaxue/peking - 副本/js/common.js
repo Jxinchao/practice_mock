@@ -62,8 +62,7 @@ $(function(){
     })
 
     //悬浮导航
-    $(".menu-btn").click(function(e){
-    	stopPropagation(e)
+    $(".quick-nav").click(function(){
         $(".quick-nav-box").toggle();
         if( $(".quick-nav-box").css("display") == 'none' ){
             $(this).removeClass("quick-nav-yes");
@@ -72,45 +71,25 @@ $(function(){
         }
     })
 
-    $(".qnav-tit").click(function(e){
-    	stopPropagation(e)
+    $(".qnav-tit").click(function(){
         var that = $(this);
         var qnavCon = that.siblings(".qnav-con");
-
         qnavCon.toggle();
-
         if( qnavCon.css("display") == 'none' ){
             that.children(".arrow-r").removeClass("arrow-rb");
         }else{
             that.children(".arrow-r").addClass("arrow-rb");
         }
     })
-    
-    $(".qnav-con-t").click(function(e){
-    	stopPropagation(e)
-    	var that = $(this);
-        var qnavCon = that.siblings(".three-nav");
-        qnavCon.toggle();
-       	
-        if( qnavCon.css("display") == 'none' ){
-            that.children(".arrow-red").removeClass("arrow-rb");
-        }else{
-            that.children(".arrow-red").addClass("arrow-rb");
-        }
-    })
-    
-    $(document).bind('click',function(){ 
-		$(".quick-nav-box").css("display","none")
-	});
 	// search
     $(".search-btn").click(function(){
     	$(this).parents().next().next(".nav-box").slideUp(300);
     	$(this).parents().find(".logo-btnshow").slideToggle(300);    
     })
-//  $(".menu-btn").click(function(){
-//  	$(this).parents().next(".logo-btnshow").slideUp(300);
-//  	$(this).parents().find(".nav-box").slideToggle(300);    
-//  })
+    $(".menu-btn").click(function(){
+    	$(this).parents().next(".logo-btnshow").slideUp(300);
+    	$(this).parents().find(".nav-box").slideToggle(300);    
+    })
     //二级导航
     $(".navbar-nav").click(function(){
         var navBarList = $(this).siblings(".navbar-list");
@@ -125,17 +104,3 @@ $(function(){
         }
     })
 })
-
-function stopPropagation(e){
-
-    if(e.stopPropagation){
-
-    e.stopPropagation()//阻止非ie浏览器的时间冒泡
-
-    }else{
-
-    e.cancelBubble=true;//阻止ie冒泡事件
-
-    }
-
-}
