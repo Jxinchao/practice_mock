@@ -64,7 +64,7 @@ $(function(){
     //悬浮导航
     $(".menu-btn").click(function(e){
     	stopPropagation(e)
-        $(".quick-nav-box").toggle();
+        $(".dask").toggle();
         if( $(".quick-nav-box").css("display") == 'none' ){
             $(this).removeClass("quick-nav-yes");
         }else{
@@ -100,7 +100,7 @@ $(function(){
     })
     
     $(document).bind('click',function(){ 
-		$(".quick-nav-box").css("display","none")
+		$(".dask").css("display","none")
 	});
 	// search
     $(".search-btn").click(function(){

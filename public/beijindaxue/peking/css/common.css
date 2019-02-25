@@ -179,8 +179,8 @@ input:focus{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 2.69rem;
-    height: .69rem;
+    width: 3.4rem;
+    height: .39rem;
 }
 
 
@@ -210,6 +210,7 @@ input:focus{
 /**二级导航**/
 .navbar-nav{
     padding: .18rem .2rem;
+    display: none;
 }
 .navbar-nav img{
     display: block;
@@ -296,11 +297,18 @@ input:focus{
     width: 100%;
     height: 100%;
 }
-
+.dask{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 998;
+	background: transparent;
+	top: 0;
+}
 .quick-nav-box{
-    display: none;
     position: fixed;
-    z-index: 10000;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 4.88rem;
@@ -310,12 +318,12 @@ input:focus{
     background: rgba(135,6,11,.9);
 }
 .quick-logo{
-    width: 2.69rem;
+    width: 3.4rem;
     margin: 0 auto;
 }
 .quick-logo img{
-    width: 2.69rem;
-    height: .69rem;
+    width: 3.4rem;
+    height: .39rem;
 }
 .quick-navs{
     margin-top: .3rem;
@@ -336,6 +344,7 @@ input:focus{
 }
 .qnav-tit a{
     color: #fff;
+    display: block;
 }
 .arrow-r{
     position: absolute;
@@ -401,6 +410,7 @@ input:focus{
 }
 .qnav-con ul li a{
     color: #333;
+    display: block;
 }
 .three-nav {
 	display: none;
