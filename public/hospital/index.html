@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>首页</title>
+	
+	<link rel="stylesheet" href="js/lib/swiper/swiper.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/core.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/lib/swiper/swiper.js" ></script>
+</head>
+<body>
+	<!-- background start -->
+	<div class="bg"><img src="img/z-bg.jpg" alt="" /></div>
+	<!-- background end -->
+	<!-- bottomnav s -->
+	<div class="bottomnav">
+		<div class="nav">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			      <div class="swiper-slide">
+			      	<ul>
+			      		<li>
+			      			<a href="javascript:;">
+			      				<div><img src="img/w-1.png" alt="" /></div>
+			      				<p>欢迎辞</p>
+			      			</a>
+			      		</li>
+			      	</ul>
+			      </div>
+			      <div class="swiper-slide">Slide 2</div>
+			      <div class="swiper-slide">Slide 3</div>
+			    </div>
+			    <!-- Add Arrows -->
+			    <div class="swiper-button-next"></div>
+			    <div class="swiper-button-prev"></div>
+			  </div>
+		</div>
+	</div>
+	<!-- bottomnav e -->
+	
+	
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+	      navigation: {
+	        nextEl: '.swiper-button-next',
+	        prevEl: '.swiper-button-prev',
+	      },
+	    });
+  	</script>
+</body>
+</html>
