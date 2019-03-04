@@ -8,7 +8,7 @@
     display: none;
     img {
         width: 100%;
-        height: 100%;
+        height: 100%; 
     }
     .arrowsdown {
         position: absolute;
@@ -18,13 +18,13 @@
         margin: 0 auto;
         width: .8rem;
         z-index: 9;
-       animation: ghostUpdown 1s infinite alternate;
+        animation: ghostUpdown 1s infinite alternate;
         -webkit-animation: ghostUpdown 1s infinite alternate;
         img {
             width: .8rem;
             height: .5rem;
             animation: ghostUpdown 1s infinite alternate;
-        -webkit-animation: ghostUpdown 1s infinite alternate;
+            -webkit-animation: ghostUpdown 1s infinite alternate;
         }
     }
 }
@@ -46,66 +46,76 @@
 .bottomnav {
     display: none;
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     z-index: 3;
+    padding-bottom: 0.3rem;
+   
     .nav {
         width: 100%;
-        background: rgba(0, 0, 0, 0.3);
-    }
-}
-
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    height: 4.6rem;
-    padding: 0.7rem 1.05rem;
-    ul {
-        display: flex;
-        display: -webkit-flex;
-        flex-wrap: wrap;
-        li {
-            width: 25%;
-            margin-top: 0.2rem;
-            a {
-                display: block;
-                div {
-                    width: 1.16rem;
-                    height: 1.16rem;
-                    border-radius: 50%;
+        ul {
+            display: flex;
+            display: -webkit-flex;
+            flex-wrap: wrap;
+            li {
+                width: 2.48rem;
+                height: 2.81rem;
+                padding: .12rem;
+                border-top: 1px solid #D2D2D2;
+                border-right: 1px solid #D2D2D2;
+                overflow: hidden;
+                a {
+                    display: block;
+                    height: 100%;
+                    background: #5DB610;
                     overflow: hidden;
-                    margin: 0 auto;
-                }
-                p {
-                    color: #fff;
-                    font-size: .26rem;
-                    text-align: center;
+                    div {
+                        width: 1.1rem;
+                        height: 1.13rem;
+                        margin: 0.4rem auto 0.1rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    p {
+                        color: #fff;
+                        font-size: .26rem;
+                        text-align: center;
+                    }
                 }
             }
+            li:nth-child(1),
+            li:nth-child(4),
+            li:nth-child(7),
+             li:nth-child(10),
+              li:nth-child(14) {
+                margin-left: 0rem;
+            }
+            li:nth-child(2) {
+                a {
+                   background: #F65686;
+                }
+            }
+            li:nth-child(3), li:nth-child(4){
+                a {
+                   background: #00A1E9;
+                }
+            }
+             li:nth-child(5) {
+               a{
+                   background: #FBBF05;
+               }
+            }
+            li:nth-last-child(1),li:nth-last-child(2),li:nth-last-child(3) {
+                border-bottom: 1px solid #D2D2D2;
+            }
+           
         }
     }
 }
 
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-    background-image: url(../img/right.png);
-    right: 0.37rem;
-    outline: inherit;
-    border: none;
-}
 
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-    background-image: url(../img/left.png);
-    left: 0.37rem;
-    outline: inherit;
-    border: none;
-}
+/* PROGRESS */
 
 .container {
     left: 50%;
@@ -115,13 +125,6 @@
     transform: translate(-50%, -50%);
     z-index: 15;
 }
-
-.dis {
-    //  display: none;
-}
-
-
-/* PROGRESS */
 
 .progress {
     background-color: #e5e9eb;
@@ -143,7 +146,7 @@
 }
 
 .progress-shadow {
-//  background-image: linear-gradient(to bottom, #eaecee, transparent);
+    //  background-image: linear-gradient(to bottom, #eaecee, transparent);
     height: 4em;
     position: absolute;
     top: 100%;
@@ -188,9 +191,15 @@
         bottom: 70px;
     }
 }
+
+.swiper-pagination-bullet-active{
+    background: #fff;
+}
+.swiper-pagination-bullet{
+    background: #ccc;
+}
 .footer-text{
+    margin-top: 0.3rem;
     text-align: center;
     font-size: .24rem;
-    color: #fff;
-    padding-bottom: 0.2rem;
 }
