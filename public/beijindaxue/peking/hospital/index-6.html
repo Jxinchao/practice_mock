@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>首页</title>
+
+		<link rel="stylesheet" href="js/lib/swiper.min.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/index-6.css">
+		<script type="text/javascript" src="js/core.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/lib/swiper.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
+	</head>
+
+	<body>
+		<!-- loding s -->
+		<div class="container">
+			<div class="progress">
+				<div class="progress-bar">
+					<div class="progress-shadow"></div>
+				</div>
+			</div>
+		</div>
+		<!-- loding e -->
+
+			<!-- welcome s -->
+			<div class="welcome swiper-one">
+				<img src="img/fm.jpg" alt="" />
+
+				<div class="arrowsdown"><img src="img/next.png" alt="" /></div>
+			</div>
+			<!-- welcome e -->
+
+			<!-- background start -->
+			<div class="bg">
+
+				<img src="img/index-6.jpg" alt="" /></div>
+			<!-- background end -->
+			<div id="certify">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="img/index-6-banner1.png" /></div>
+						<div class="swiper-slide"><img src="img/index-6-banner2.png" /></div>
+						<div class="swiper-slide"><img src="img/index-6-banner2.png" /></div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- bottomnav s -->
+			<div class="bottomnav">
+
+				<div class="nav">
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/1.png" alt="" /></div>
+								<p>欢迎辞</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/2.png" alt="" /></div>
+								<p>组织机构</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/3.png" alt="" /></div>
+								<p>基本信息</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/4.png" alt="" /></div>
+								<p>大会日程</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/5.png" alt="" /></div>
+								<p>大会注册</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/6.png" alt="" /></div>
+								<p>特邀嘉宾</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/7.png" alt="" /></div>
+								<p>酒店住宿</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/8.png" alt="" /></div>
+								<p>微直播</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div><img src="img/9.png" alt="" /></div>
+								<p>照片直播</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-text">
+					XXX 技术支持
+				</div>
+			</div>
+			<!-- bottomnav e -->
+
+
+		<script>
+			//当页面加载状态改变的时候执行function
+			document.onreadystatechange = function() {
+				if(document.readyState == "complete") { //当页面加载状态为完全结束时进入
+					setTimeout(function() {
+						$(".container").hide(500)
+						$(".welcome").fadeIn(1000)
+						$(".welcome").on("touchstart", function(e) {
+							// 判断默认行为是否可以被禁用
+							if(e.cancelable) {
+								// 判断默认行为是否已经被禁用
+								if(!e.defaultPrevented) {
+									e.preventDefault();
+								}
+							}
+							startX = e.originalEvent.changedTouches[0].pageX,
+								startY = e.originalEvent.changedTouches[0].pageY;
+						});
+						$(".welcome").on("touchend", function(e) {
+							// 判断默认行为是否可以被禁用
+							if(e.cancelable) {
+								// 判断默认行为是否已经被禁用
+								if(!e.defaultPrevented) {
+									e.preventDefault();
+								}
+							}
+							moveEndX = e.originalEvent.changedTouches[0].pageX,
+								moveEndY = e.originalEvent.changedTouches[0].pageY,
+								X = moveEndX - startX,
+								Y = moveEndY - startY;
+							if(Y > 0) {
+								$(".bottomnav").hide();
+								$(".bg").hide();
+								console.log('xia')
+							}
+							//上滑
+							else if(Y < 0) {
+								$(".welcome").fadeOut();
+								$(".bg").show();
+								$(".bottomnav").show(500);
+								$("#certify").show();
+								console.log('shang')
+							}
+							//单击
+							else {
+								$(".bottomnav").hide();
+								$(".bg").hide();
+								console.log('dian')
+							}
+						});
+
+					}, 2000)
+				}
+			}
+		</script>
+
+		<script>
+			$(function() {
+
+				certifySwiper = new Swiper('#certify .swiper-container', {
+					watchSlidesProgress: true,
+					slidesPerView: 'auto',
+					centeredSlides: true,
+					loop: true,
+					loopedSlides: 5,
+					autoplay: 3000,
+					prevButton: '.swiper-button-prev',
+					nextButton: '.swiper-button-next',
+					pagination: '.swiper-pagination',
+					observer:true,
+							 observeParents:true,
+					//paginationClickable :true,
+					onProgress: function(swiper, progress) {
+						for(i = 0; i < swiper.slides.length; i++) {
+							var slide = swiper.slides.eq(i);
+							var slideProgress = swiper.slides[i].progress;
+							modify = 1;
+							if(Math.abs(slideProgress) > 1) {
+								modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+							}
+							translate = slideProgress * modify * 260 + 'px';
+							scale = 1 - Math.abs(slideProgress) / 5;
+							zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+							slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+							slide.css('zIndex', zIndex);
+							slide.css('opacity', 1);
+							if(Math.abs(slideProgress) > 3) {
+								slide.css('opacity', 0);
+							}
+						}
+					},
+					onSetTransition: function(swiper, transition) {
+						for(var i = 0; i < swiper.slides.length; i++) {
+							var slide = swiper.slides.eq(i)
+							slide.transition(transition);
+						}
+
+					},
+					//处理分页器bug
+					
+				});
+
+			})
+		</script>
+	</body>
+
+</html>
