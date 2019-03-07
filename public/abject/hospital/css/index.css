@@ -37,10 +37,6 @@
   width: 100%;
   height: 100%;
 }
-.bg .logo {
-  position: fixed;
-  padding: 0.9rem 0.73rem;
-}
 .bg img {
   width: 100%;
   height: 100%;
@@ -48,53 +44,62 @@
 .bottomnav {
   display: none;
   width: 100%;
-  position: relative;
+  position: fixed;
+  bottom: 0;
   z-index: 3;
-  padding-bottom: 0.3rem;
-  padding-top: 5.4rem;
 }
 .bottomnav .nav {
   width: 100%;
-  padding: 0 0.12rem;
+  background: rgba(0, 0, 0, 0.3);
 }
-.bottomnav .nav ul {
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-  margin-top: 0.48rem;
-}
-.bottomnav .nav ul li {
-  width: 2.29rem;
-  height: 2.19rem;
-  background: rgba(0, 80, 153, 0.6);
-  margin-top: 0.2rem;
-  margin-left: 0.18rem;
-}
-.bottomnav .nav ul li a {
-  display: block;
-}
-.bottomnav .nav ul li a div {
-  width: 1rem;
-  height: 1rem;
-  margin: 0.4rem auto 0.1rem;
-}
-.bottomnav .nav ul li a div img {
+.swiper-container {
   width: 100%;
   height: 100%;
 }
-.bottomnav .nav ul li a p {
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  height: 4.6rem;
+  padding: 0.7rem 1.05rem;
+}
+.swiper-slide ul {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+.swiper-slide ul li {
+  width: 25%;
+  margin-top: 0.2rem;
+}
+.swiper-slide ul li a {
+  display: block;
+}
+.swiper-slide ul li a div {
+  width: 1.16rem;
+  height: 1.16rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.swiper-slide ul li a p {
   color: #fff;
   font-size: 0.26rem;
   text-align: center;
 }
-.bottomnav .nav ul li:nth-child(1),
-.bottomnav .nav ul li:nth-child(4),
-.bottomnav .nav ul li:nth-child(7),
-.bottomnav .nav ul li:nth-child(10),
-.bottomnav .nav ul li:nth-child(14) {
-  margin-left: 0rem;
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  background-image: url(../img/right.png);
+  right: 0.37rem;
+  outline: inherit;
+  border: none;
 }
-/* PROGRESS */
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  background-image: url(../img/left.png);
+  left: 0.37rem;
+  outline: inherit;
+  border: none;
+}
 .container {
   left: 50%;
   position: absolute;
@@ -103,6 +108,7 @@
   transform: translate(-50%, -50%);
   z-index: 15;
 }
+/* PROGRESS */
 .progress {
   background-color: #e5e9eb;
   height: 0.25em;
@@ -161,8 +167,9 @@
   }
 }
 .footer-text {
-  margin-top: 0.3rem;
-  text-align: center;
   font-size: 0.24rem;
   color: #fff;
+  padding-bottom: 0.2rem;
+  width: 100%;
+  text-align: center;
 }

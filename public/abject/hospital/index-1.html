@@ -9,7 +9,7 @@
 
 		<link rel="stylesheet" href="js/lib/swiper/swiper.min.css">
 		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/index-5.css">
+		<link rel="stylesheet" href="css/index-1.css">
 		<script type="text/javascript" src="js/core.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
 		<script type="text/javascript" src="js/lib/swiper/swiper.js"></script>
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<!-- loding e -->
-		<div class="dis">
+
 			<!-- welcome s -->
 			<div class="welcome swiper-one">
 				<img src="img/fm.jpg" alt="" />
@@ -38,7 +38,7 @@
 			<!-- background start -->
 			<div class="bg">
 				
-				<img src="img/index-5.jpg" alt="" /></div>
+				<img src="img/index-1-bg.jpg" alt="" /></div>
 			<!-- background end -->
 			<!-- bottomnav s -->
 			<div class="bottomnav">
@@ -75,30 +75,7 @@
 								<p>大会注册</p>
 							</a>
 						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/6.png" alt="" /></div>
-								<p>特邀嘉宾</p>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/7.png" alt="" /></div>
-								<p>酒店住宿</p>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/8.png" alt="" /></div>
-								<p>微直播</p>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/9.png" alt="" /></div>
-								<p>照片直播</p>
-							</a>
-						</li>
+						
 					</ul>
 				</div>
 				<div class="footer-text">
@@ -106,7 +83,7 @@
 				</div>
 			</div>
 			<!-- bottomnav e -->
-		</div>
+
 
 
 		<script>
@@ -162,6 +139,11 @@
 						
 					}, 2000)
 				}
+			}
+			var liLength = $(".nav ul li").length;
+			if(liLength < 9){
+				$(".bottomnav").css({"height":"13.6rem"})
+				$(".footer-text").css({"position":"absolute","bottom":"20px"})
 			}
 			var swiper = new Swiper('.swiper-container', {
 							navigation: {

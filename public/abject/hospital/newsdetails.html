@@ -120,7 +120,11 @@
 			stopPropagation(e)
 
 		})
+		
+		var hg = $(document).height();
+		 var hgs = (hg -88);
 
+		$("iframe").css('height',hgs+'px')
 		function stopPropagation(e) {
 
 			  

@@ -1,7 +1,6 @@
-@charset "utf-8";
 .welcome {
   position: fixed;
-  z-index: 105;
+  z-index: 5;
   left: 0;
   top: 0;
   width: 100%;
@@ -68,9 +67,9 @@
   width: 1.93rem;
   height: 1.93rem;
   border-radius: 50%;
-  background: rgba(49, 92, 164, 0.6);
+  background: rgba(102, 239, 255, 0.6);
   margin-top: 0.5rem;
-  border: 2px solid #fff;
+  border: 2px solid #33efff;
   margin-left: 0.4rem;
 }
 .bottomnav .nav ul li a {
@@ -97,7 +96,7 @@
   top: 35%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  z-index: 120;
+  z-index: 15;
 }
 .progress {
   background-color: #e5e9eb;
@@ -158,72 +157,8 @@
 }
 .footer-text {
   margin-top: 0.3rem;
-  text-align: center;
   font-size: 0.24rem;
   color: #fff;
-}
-/* CSS Document */
-#certify {
-  position: absolute;
-  width: 95%;
-  z-index: 99;
-  top: 0.7rem;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  display: none;
-}
-#certify .swiper-slide {
-  width: 5.6rem;
-  height: 3.2rem;
-  background: #fff;
-}
-#certify .swiper-slide img {
-  display: block;
-}
-#certify .swiper-slide p {
-  line-height: 98px;
-  padding-top: 0;
-  text-align: center;
-  color: #636363;
-  font-size: 1.1em;
-  margin: 0;
-}
-#certify .swiper-pagination {
   width: 100%;
-  bottom: 20px;
-}
-#certify .swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 0 5px;
-  border: 3px solid #fff;
-  background-color: #d5d5d5;
-  width: 10px;
-  height: 10px;
-  opacity: 1;
-}
-#certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
-  border: 3px solid #00aadc;
-  background-color: #fff;
-}
-#certify .swiper-button-prev {
-  left: -30px;
-  width: 45px;
-  height: 45px;
-  background-position: 0 0;
-  background-size: 100%;
-}
-#certify .swiper-button-prev:hover {
-  background-position: 0 -46px;
-  background-size: 100%;
-}
-#certify .swiper-button-next {
-  right: -30px;
-  width: 45px;
-  height: 45px;
-  background-position: 0 -93px;
-  background-size: 100%;
-}
-#certify .swiper-button-next:hover {
-  background-position: 0 -139px;
-  background-size: 100%;
+  text-align: center;
 }

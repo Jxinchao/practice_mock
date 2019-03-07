@@ -7,12 +7,12 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>首页</title>
 
-		<link rel="stylesheet" href="js/lib/swiper.min.css">
+		<link rel="stylesheet" href="js/lib/swiper/swiper.3.3.1.min.css">
 		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/index-7.css">
 		<script type="text/javascript" src="js/core.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="js/lib/swiper.min.js"></script>
+		<script type="text/javascript" src="js/lib/swiper/swiper.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
 	</head>
 
@@ -38,12 +38,20 @@
 			<!-- background start -->
 			<div class="bg">
 
-				<img src="img/index-7.jpg" alt="" /></div>
+				<img src="img/index-7.png" alt="" /></div>
 			<!-- background end -->
 			
 			<!-- bottomnav s -->
 			<div class="bottomnav">
-
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="img/index-6-banner2.png" />
+						</div>
+						<div class="swiper-slide"><img src="img/index-6-banner2.png" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
 				<div class="nav">
 					<ul>
 						<li>
@@ -72,34 +80,13 @@
 						</li>
 						<li>
 							<a href="javascript:;">
-								<div><img src="img/sv-5.png" alt="" /></div>
-								<p>大会注册</p>
+								<div><img src="img/sv-2.png" alt="" /></div>
+								<p>组织机构</p>
 							</a>
 						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/sv-6.png" alt="" /></div>
-								<p>特邀嘉宾</p>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/sv-7.png" alt="" /></div>
-								<p>酒店住宿</p>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/sv-8.png" alt="" /></div>
-								<p>微直播</p>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/sv-9.png" alt="" /></div>
-								<p>照片直播</p>
-							</a>
-						</li>
+						
+						
+						
 					</ul>
 				</div>
 				<div class="footer-text">
@@ -163,6 +150,22 @@
 					}, 2000)
 				}
 			}
+			var liLength = $(".nav ul li").length;
+			if(liLength < 9){
+				$(".bottomnav").css({"height":"100%"})
+				$(".footer-text").css({"position":"absolute","bottom":"20px"})
+			}
+			var swiper = new Swiper('.swiper-container', {
+				pagination: {
+					el: '.swiper-pagination',
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				observer: true,
+				observeParents: true
+			});
 		</script>
 
 		

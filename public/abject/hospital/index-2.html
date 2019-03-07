@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<!-- loding e -->
-		<div class="dis">
+
 			<!-- welcome s -->
 			<div class="welcome swiper-one">
 				<img src="img/fm.jpg" alt="" />
@@ -115,7 +115,7 @@
 			</div>
 			<!-- bottomnav e -->
 			
-		</div>
+
 
 		<script>
 			//当页面加载状态改变的时候执行function
@@ -170,6 +170,11 @@
 
 					}, 2000)
 				}
+			}
+			var liLength = $(".nav ul li").length;
+			if(liLength < 9){
+				$(".bottomnav").css({"height":"100%"})
+				$(".footer-text").css({"position":"absolute","bottom":"20px"})
 			}
 			var swiper = new Swiper('.swiper-container', {
 				pagination: {

@@ -7,12 +7,12 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>首页</title>
 
-		<link rel="stylesheet" href="js/lib/swiper/swiper.min.css">
+		<link rel="stylesheet" href="js/lib/swiper.min.css">
 		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/index-1.css">
+		<link rel="stylesheet" href="css/index-6.css">
 		<script type="text/javascript" src="js/core.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="js/lib/swiper/swiper.js"></script>
+		<script type="text/javascript" src="js/lib/swiper.min.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
 	</head>
 
@@ -26,23 +26,33 @@
 			</div>
 		</div>
 		<!-- loding e -->
-		<div class="dis">
+
 			<!-- welcome s -->
 			<div class="welcome swiper-one">
 				<img src="img/fm.jpg" alt="" />
-				
+
 				<div class="arrowsdown"><img src="img/next.png" alt="" /></div>
 			</div>
 			<!-- welcome e -->
 
 			<!-- background start -->
 			<div class="bg">
-				
-				<img src="img/index-1-bg.jpg" alt="" /></div>
+
+				<img src="img/index-6.jpg" alt="" /></div>
 			<!-- background end -->
+			<div id="certify">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="img/index-6-banner1.png" /></div>
+						<div class="swiper-slide"><img src="img/index-6-banner2.png" /></div>
+						<div class="swiper-slide"><img src="img/index-6-banner2.png" /></div>
+						
+					</div>
+				</div>
+			</div>
 			<!-- bottomnav s -->
 			<div class="bottomnav">
-				
+
 				<div class="nav">
 					<ul>
 						<li>
@@ -99,18 +109,6 @@
 								<p>照片直播</p>
 							</a>
 						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/9.png" alt="" /></div>
-								<p>照片直播</p>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div><img src="img/9.png" alt="" /></div>
-								<p>照片直播</p>
-							</a>
-						</li>
 					</ul>
 				</div>
 				<div class="footer-text">
@@ -118,7 +116,6 @@
 				</div>
 			</div>
 			<!-- bottomnav e -->
-		</div>
 
 
 		<script>
@@ -137,7 +134,7 @@
 								}
 							}
 							startX = e.originalEvent.changedTouches[0].pageX,
-							startY = e.originalEvent.changedTouches[0].pageY;
+								startY = e.originalEvent.changedTouches[0].pageY;
 						});
 						$(".welcome").on("touchend", function(e) {
 							// 判断默认行为是否可以被禁用
@@ -148,9 +145,9 @@
 								}
 							}
 							moveEndX = e.originalEvent.changedTouches[0].pageX,
-							moveEndY = e.originalEvent.changedTouches[0].pageY,
-							X = moveEndX - startX,
-							Y = moveEndY - startY;
+								moveEndY = e.originalEvent.changedTouches[0].pageY,
+								X = moveEndX - startX,
+								Y = moveEndY - startY;
 							if(Y > 0) {
 								$(".bottomnav").hide();
 								$(".bg").hide();
@@ -161,7 +158,7 @@
 								$(".welcome").fadeOut();
 								$(".bg").show();
 								$(".bottomnav").show(500);
-								
+								$("#certify").show();
 								console.log('shang')
 							}
 							//单击
@@ -171,18 +168,63 @@
 								console.log('dian')
 							}
 						});
-						
+
 					}, 2000)
 				}
 			}
-			var swiper = new Swiper('.swiper-container', {
-							navigation: {
-								nextEl: '.swiper-button-next',
-								prevEl: '.swiper-button-prev',
-							},
-							observer:true,
-							 observeParents:true
-						});
+		</script>
+
+		<script>
+			$(function() {
+				var liLength = $(".nav ul li").length;
+			if(liLength < 9){
+				$(".bottomnav").css({"height":"100%"})
+				$(".footer-text").css({"position":"absolute","bottom":"20px"})
+			}
+				certifySwiper = new Swiper('#certify .swiper-container', {
+					watchSlidesProgress: true,
+					slidesPerView: 'auto',
+					centeredSlides: true,
+					loop: true,
+					loopedSlides: 5,
+					autoplay: 3000,
+					prevButton: '.swiper-button-prev',
+					nextButton: '.swiper-button-next',
+					pagination: '.swiper-pagination',
+					observer:true,
+							 observeParents:true,
+					//paginationClickable :true,
+					onProgress: function(swiper, progress) {
+						for(i = 0; i < swiper.slides.length; i++) {
+							var slide = swiper.slides.eq(i);
+							var slideProgress = swiper.slides[i].progress;
+							modify = 1;
+							if(Math.abs(slideProgress) > 1) {
+								modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+							}
+							translate = slideProgress * modify * 260 + 'px';
+							scale = 1 - Math.abs(slideProgress) / 5;
+							zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+							slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+							slide.css('zIndex', zIndex);
+							slide.css('opacity', 1);
+							if(Math.abs(slideProgress) > 3) {
+								slide.css('opacity', 0);
+							}
+						}
+					},
+					onSetTransition: function(swiper, transition) {
+						for(var i = 0; i < swiper.slides.length; i++) {
+							var slide = swiper.slides.eq(i)
+							slide.transition(transition);
+						}
+
+					},
+					//处理分页器bug
+					
+				});
+
+			})
 		</script>
 	</body>
 
