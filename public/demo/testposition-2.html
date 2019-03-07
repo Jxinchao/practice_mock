@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+
+  <meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=0.4,maximum-scale=0.4,user-scalable=no;">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/css.css" title="default" />
+
+
+<title>确认到达</title>
+
+    
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=srSepo6QrN2kVf4KhSsVXApknreW1fMR"></script>  
+<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>  
+</head> 
+  </head>
+        <body>
+        
+   <!-- 腾讯定位（json地址） -->
+   <!-- <div id="pos-area" style='width:80%;hight:400px';margin-left:10%; font-size:40px;>
+   <p id="demo" style="font-size:40px;margin-left:2%;">点击下面的按钮，获得对应信息：<br /></p>
+</div>
+
+
+<div id="btn-area">
+   <button style="font-size:40px;margin-left:2%;" onclick="geolocation.getLocation(showPosition, showErr, options)">获取精确定位信息</button>
+</div> 
+<script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+<script type="text/JavaScript">
+   var geolocation = new qq.maps.Geolocation("OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77", "myapp");
+   var positionNum = 0;
+   var options = {timeout: 8000};
+   function showPosition(position) {
+       positionNum ++;
+       document.getElementById("demo").appendChild(document.createElement('pre')).innerHTML = JSON.stringify(position, null, 4);
+   };
+   function showErr() {
+       positionNum ++;
+       document.getElementById("demo").innerHTML += "序号：" + positionNum;
+       document.getElementById("demo").appendChild(document.createElement('p')).innerHTML = "定位失败！";
+   };
+</script>-->
+
+
+
+
+
+<!-- 百度定位（地图） -->
+<div id="status" style="text-align: center"></div>    
+  <div style="width:96%;height:800px;border:1px solid gray;margin:30px auto" id="container"></div> 
+<script type="text/javascript">    
+   //默认地理位置设置为上海市浦东新区  
+   var x=121.48789949,y=31.24916171;     
+   window.onload = function() {    
+       if(navigator.geolocation) {    
+           navigator.geolocation.getCurrentPosition(showPosition);  
+           document.getElementById("status").innerHTML = "HTML5 Geolocation is supported in your browser.";    
+               // 百度地图API功能    
+               var map = new BMap.Map("container");    
+               var point = new BMap.Point(x,y);    
+               map.centerAndZoom(point,16);    
+               var geolocation = new BMap.Geolocation();    
+               geolocation.getCurrentPosition(function(r){    
+                   if(this.getStatus() == BMAP_STATUS_SUCCESS){    
+                       var mk = new BMap.Marker(r.point);    
+                       map.addOverlay(mk);    
+                       map.panTo(r.point);    
+                   }    
+                   else {    
+                       alert('failed'+this.getStatus());    
+                   }            
+               },{enableHighAccuracy: true})    
+           return;  
+       }    
+       alert("你的浏览器不支持获取地理位置！");  
+   };    
+   function showPosition(position){  
+     x=position.coords.latitude;   
+     y=position.coords.longitude;  
+     document.getElementById("status").innerHTML = "经度："+y+",纬度："+x;
+     setTimeout(function () {  
+   var gpsPoint = new BMap.Point(y, x);  
+   BMap.Convertor.translate(gpsPoint, 0, function (point) {  
+       var geoc = new BMap.Geocoder();  
+       geoc.getLocation(point, function (rs) {  
+           var addComp = rs.addressComponents;  
+           alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);  
+       });  
+   });  
+}, 3000);  
+   }  
+</script>    
+ </body>
+</html>

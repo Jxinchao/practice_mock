@@ -1,0 +1,135 @@
+<html class="pixel-ratio-1">
+<head>
+    <title>多tab实现ajax滚动加载更多</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- head 中 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <!-- body 最后 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+</head>
+<body>
+<div class="weui-tab">
+    <div class="weui-navbar">
+        <div class="weui-navbar__item weui-navbar__item--on" href="#tab1">
+            选项一
+        </div>
+        <div class="weui-navbar__item" href="#tab2">
+            选项二
+        </div>
+        <div class="weui-navbar__item" href="#tab3">
+            选项三
+        </div>
+    </div>
+    <div class="weui-tab__bd">
+        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active infinite">
+            <div class="content-padded">
+ 
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+        <div id="tab2" class="weui-tab__bd-item infinite">
+            <div class="content-padded">
+                
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+        <div id="tab3" class="weui-tab__bd-item infinite">
+            <div class="content-padded">
+                
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //初始化变量
+    max=10,page=1;
+    $(function () {
+        //切换tab标签
+        $(".weui-navbar__item").click(function () {
+            $(".weui-loadmore").html('<i class="weui-loading"></i> <span class="weui-loadmore__tips">正在加载</span>')
+            $(".infinite").infinite()
+            max=10,page=1;
+            var findbox=$($(this).attr("href")).find(".content-padded");
+            findbox.empty();
+            ajaxdata(page,findbox);
+        })
+        //第一次进入页面加载
+        ajaxdata(page,$("#tab1").find(".content-padded"))
+        //滚动加载更多
+        $(".infinite").infinite().on("infinite", function() {
+            var self = this;
+            if(self.loading) return;
+            self.loading = true;
+            setTimeout(function() {
+                page=page+1;
+                ajaxdata(page,$(self).find(".content-padded"))
+                self.loading = false;
+            }, 1000);   //模拟延迟
+        });
+    })
+    //ajax加载数据 p为page ele为元素
+    function ajaxdata(p,ele) {
+        //判断不同的tab标签
+        if(ele.parent().attr("id")=="tab1"){
+            var url="http://123.56.119.1:3000/words/search";
+            var data={"offset":(p-1)*max,"limit":max}
+            $.get(url,data,function (res) {
+                if(res.data.length==0||res.data.length==res.num){
+                    //没有数据时
+                    $(".infinite").destroyInfinite()
+                    $(".weui-loadmore").html('<div class="weui-loadmore weui-loadmore_line"> <span class="weui-loadmore__tips">暂无数据</span> </div>')
+                }
+                for(var i=0;i<res.data.length;i++){
+                    ele.append('<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">'
+                            +'<div class="weui-media-box__hd">'
+                            +'<img class="weui-media-box__thumb" src="http://123.56.119.1:3000/upload/'+res.data[i].image+'">'
+                            +'</div>'
+                            +'<div class="weui-media-box__bd">'
+                            +'<h4 class="weui-media-box__title">'+res.data[i].content+'</h4>'
+                            +'</div>'
+                            +'</a>')
+                }
+            })
+        }else{
+            //相同接口不同参数
+            if(ele.parent().attr("id")=="tab2"){
+                var url="http://123.56.119.1:3000/article/searchHeadtype?headtype=2";
+                var data={"offset":(p-1)*max,"limit":max}
+            }else{
+                var url="http://123.56.119.1:3000/article/searchHeadtype?headtype=3";
+                var data={"offset":(p-1)*max,"limit":max}
+            }
+            $.get(url,data,function (res) {
+                if(res.data.length==0||res.data.length==res.num){
+                    $(".infinite").destroyInfinite()
+                    $(".weui-loadmore").html('<div class="weui-loadmore weui-loadmore_line"> <span class="weui-loadmore__tips">暂无数据</span> </div>')
+                }
+                for(var i=0;i<res.data.length;i++){
+                    ele.append('<a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">'
+                            +'<div class="weui-media-box__hd">'
+                            +'<img class="weui-media-box__thumb" src="http://123.56.119.1:3000/upload/'+res.data[i].image+'">'
+                            +'</div>'
+                            +'<div class="weui-media-box__bd">'
+                            +'<h4 class="weui-media-box__title">'+res.data[i].title+'</h4>'
+                            +'</div>'
+                            +'</a>')
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>
