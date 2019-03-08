@@ -7,7 +7,7 @@
     <title>鼠标拾取地图坐标</title>
     <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
     <script type="text/javascript"
-            src="http://webapi.amap.com/maps?v=1.4.1&key=4f14955139ebd8f49208b294820ab8bd&plugin=AMap.Autocomplete"></script>
+            src="https://webapi.amap.com/maps?v=1.4.1&key=4f14955139ebd8f49208b294820ab8bd&plugin=AMap.Autocomplete"></script>
     <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 </head>
 <body>
@@ -61,7 +61,7 @@
         str.push('纬度：' + data.position.getLat());
       
        dw = new AMap.Marker({
-                      icon: "http://webapi.amap.com/theme/v1.3/markers/n/loc.png",
+                      icon: "https://webapi.amap.com/theme/v1.3/markers/n/loc.png",
                         position: [ data.position.getLng() ,  data.position.getLat()]
                     });
                 
