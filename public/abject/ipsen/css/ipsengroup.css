@@ -1,5 +1,5 @@
 .ipsengroup {
-  padding: 100px 0;
+  padding: 100px 0 0px;
 }
 .ipsengroup .ipsengroup_1 {
   margin: 0 auto;
@@ -40,8 +40,10 @@
 .swiper-container-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  bottom: 35px;
   text-align: center;
+}
+.swiper-container {
+  height: 200px;
 }
 .swiper-pagination-bullet {
   width: 10px;
