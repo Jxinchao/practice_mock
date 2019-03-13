@@ -1,5 +1,5 @@
 $(function() {
-	var titleTop = 790;//$('.bannner').height();
+	var titleTop = 865;//$('.bannner').height();
 	console.log(titleTop)
 	$(document).on('scroll', function() {
 		if($(document).scrollTop() > titleTop) {

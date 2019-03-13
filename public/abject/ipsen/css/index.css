@@ -16,24 +16,28 @@
   text-indent: 10%;
   font-size: 40px;
   color: #fff;
-  margin-top: 300px;
+  margin-top: 30px;
 }
 .banner .banner_bottom {
   height: 130px;
+  background: none;
+  padding-left: 150px;
 }
 .banner .banner_bottom span {
   font-size: 30px;
   color: #fff;
   line-height: 130px;
+  display: block;
+  float: left;
+  margin-right: 50px;
 }
 .banner .banner_bottom .banner_list {
-  width: 900px;
-  float: right;
+  float: left;
   padding: 20px 0;
 }
 .banner .banner_bottom .banner_list a {
   float: left;
-  margin-right: 115px;
+  margin-right: 60px;
 }
 .banner .banner_bottom .banner_list a img {
   width: 120px;
@@ -45,7 +49,7 @@
 }
 .banner .banner_bottom .banner_list a div {
   float: left;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 .banner .banner_bottom .banner_list a div p {
   color: #fefeff;
@@ -59,8 +63,8 @@
   padding: 140px 0;
 }
 .ipsen_one .ipsen_con {
-  width: 1024px;
-  height: 414px;
+  width: 1200px;
+  height: 485px;
   margin: 0 auto;
   border: 1px solid #b2dff4;
   background: #fff;
@@ -68,6 +72,7 @@
 .ipsen_one .ipsen_con div {
   float: left;
   width: 50%;
+  height: 100%;
   overflow: hidden;
 }
 .ipsen_one .ipsen_con div img {
@@ -92,31 +97,34 @@
   overflow: hidden;
 }
 .disease h3 {
-  width: 1024px;
+  width: 1200px;
   margin: 0 auto;
   font-size: 36px;
   color: #ffffff;
 }
 .disease ul {
   margin-top: 50px;
+  width: 1200px;
+  margin: 30px auto;
 }
 .disease ul li {
-  width: 20%;
-  height: 480px;
+  width: 45%;
+  height: 500px;
   background: #fff;
   display: block;
-  margin-left: 4%;
+  margin-top: 50px;
   float: left;
 }
 .disease ul li div {
   overflow: hidden;
+  height: 300px;
 }
 .disease ul li div img {
   width: 100%;
 }
 .disease ul li div h1 {
   font-size: 26px;
-  margin-top: 15%;
+  margin-top: 5%;
   text-align: center;
 }
 .disease ul li div a {
@@ -129,18 +137,21 @@
 .disease ul li div a:hover {
   color: #006fee;
 }
+.disease ul li.m-l {
+  margin-left: 4.5%;
+}
 .media {
   background: url(../images/bg.jpg);
   overflow: hidden;
   padding: 50px 0 100px;
 }
 .media .media_w1024 {
-  width: 1024px;
+  width: 1200px;
   height: 400px;
   margin: 0 auto;
 }
 .media .media_w1024 h3 {
-  width: 1024px;
+  width: 1200px;
   margin: 0 auto;
   font-size: 36px;
   color: #202020;
@@ -165,7 +176,7 @@
 }
 .media .media_w1024 ul li div h1 {
   font-size: 26px;
-  margin-top: 15%;
+  margin-top: 5%;
   text-align: center;
 }
 .media .media_w1024 ul li div a {
@@ -180,6 +191,19 @@
 }
 .media .media_w1024 ul li.f_r {
   float: right;
+}
+a.activebj {
+  display: block;
+  width: 165px;
+  height: 45px;
+  margin: 15px auto 0;
+  background: url(../images/more.jpg);
+}
+.line {
+  width: 710px;
+}
+.anchor_layer .nav_wrap .wrap_tab {
+  width: 33%;
 }
 .contact {
   width: 100%;

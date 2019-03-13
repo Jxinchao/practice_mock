@@ -1,0 +1,243 @@
+.china_1 {
+  padding: 100px 0;
+  background: url(../images/bg.jpg);
+}
+.china_1 .yipus {
+  background: #fff;
+  box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) -3px -3px 50px, rgba(0, 111, 238, 0.05) -8px -9px 50px, rgba(0, 111, 238, 0.05) -16px -17px 50px;
+  -webkit-box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) -3px -3px 50px, rgba(0, 111, 238, 0.05) -8px -9px 50px, rgba(0, 111, 238, 0.05) -16px -17px 50px;
+  padding: 66px 90px;
+  overflow: hidden;
+}
+.china_1 .yipus .yipus_r {
+  width: 100%;
+}
+.china_1 .yipus .yipus_r h1 {
+  font-size: 32px;
+  color: #1C1C1C;
+  text-align: center;
+}
+.china_1 .yipus .yipus_r p {
+  font-size: 18px;
+  color: #181818;
+  margin-top: 22px;
+}
+.china_1 .yipus .yipus_img {
+  overflow: hidden;
+  margin: 30px 0;
+}
+.china_1 .yipus .yipus_img div {
+  float: left;
+  width: 50%;
+  height: 330px;
+}
+.china_1 .yipus .yipus_img div img {
+  width: 100%;
+  height: 100%;
+}
+.china_1 .yipus .yipus_img div.plays {
+  position: relative;
+}
+.china_1 .yipus .yipus_img div.plays .imgp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  cursor: pointer;
+}
+iframe {
+  background: transparent !important;
+}
+.bigs {
+  width: 100%;
+  background: url(../images/chain_banner.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 980px;
+  overflow: hidden;
+}
+.bigs h2 {
+  color: #fff;
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+  margin: 1.5rem;
+  width: 1200px;
+  margin: 55px auto 0;
+}
+.bigs .horizontal-timeline {
+  padding: 1rem;
+}
+.bigs .tabe {
+  width: 1200px;
+  margin: 30px auto 10px;
+  overflow: hidden;
+}
+.bigs .tabe a {
+  display: block;
+  width: 50%;
+  background: #fff;
+  font-size: 18px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  color: #126FFA;
+  float: left;
+  cursor: pointer;
+}
+.bigs .tabe a.active {
+  background: #126FFA;
+  color: #fff;
+}
+.bigs div.text {
+  width: 1200px;
+  margin: 0 auto;
+}
+.bigs div.text p {
+  font-size: 16px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 30px;
+  margin: 30px 0;
+}
+.bigs .horizontal-timeline .timeline-slider {
+  margin: 0;
+}
+.bigs .horizontal-timeline {
+  padding: 0 !important;
+}
+.ipsenchina_b {
+  margin-top: 80px;
+}
+.ipsenchina_b .w1200 {
+  box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) -3px -3px 50px, rgba(0, 111, 238, 0.05) -8px -9px 50px, rgba(0, 111, 238, 0.05) -16px -17px 50px;
+  -webkit-box-shadow: rgba(0, 111, 238, 0.05) 0px 0px 50px, rgba(0, 111, 238, 0.05) -3px -3px 50px, rgba(0, 111, 238, 0.05) -8px -9px 50px, rgba(0, 111, 238, 0.05) -16px -17px 50px;
+}
+.ipsenchina_b .w1200 div.title {
+  height: 100px;
+  width: 1200px;
+  padding: 0 30px;
+}
+.ipsenchina_b .w1200 div.title h1 {
+  width: 351px;
+  height: 100px;
+  font-size: 33px;
+  font-family: MicrosoftYaHei-Bold;
+  font-weight: bold;
+  color: #1c1c1c;
+  line-height: 100px;
+  float: left;
+}
+.ipsenchina_b .w1200 div.title div {
+  float: right;
+  vertical-align: middle;
+  padding-top: 40px;
+  cursor: pointer;
+}
+.ipsenchina_b .w1200 .ipsen_coporate {
+  overflow: hidden;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_one {
+  margin-top: 50px;
+  overflow: hidden;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_one div {
+  padding: 40px;
+  width: 50%;
+  float: left;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_one div img {
+  width: 100%;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_one div.text {
+  padding: 50px;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_one div.text h6 {
+  font-size: 22px;
+  color: #181818;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_one div.text p {
+  font-size: 16px;
+  color: #181818;
+  margin-top: 20px;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_two {
+  padding: 0px 40px;
+  overflow: hidden;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_two p {
+  font-size: 20px;
+  color: #181818;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_two ul {
+  width: 100%;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_two ul li {
+  width: 30%;
+  padding: 15px;
+  height: 240px;
+  float: left;
+  border: 2px solid #4fa1ff;
+  margin-top: 35px;
+  margin-left: 5%;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_two ul li h6 {
+  font-size: 22px;
+  color: #181818;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_two ul li span {
+  display: block;
+  font-size: 14px;
+  color: #181818;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_two ul li.m_l {
+  margin-left: 0;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three {
+  padding: 30px 40px 50px;
+  position: relative;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three h3 {
+  font-size: 24px;
+  color: #1C1C1C;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p {
+  font-size: 18px;
+  color: #181818;
+  margin-top: 15px;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p span {
+  font-size: 12px;
+  display: block;
+  float: left;
+  width: 24%;
+  text-align: left;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p.mt {
+  margin-top: 0;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p.title_s {
+  font-size: 26px;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p.bold {
+  color: #1C1C1C;
+  font-weight: bold;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three p.indent {
+  text-indent: 20px;
+}
+.ipsenchina_b .w1200 .ipsen_coporate .coporate_three div.imgpos {
+  position: absolute;
+  right: 3%;
+  top: 23%;
+}
+.ipsenchina_b .m_t {
+  padding-bottom: 50px;
+}

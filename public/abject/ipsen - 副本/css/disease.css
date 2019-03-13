@@ -1,0 +1,96 @@
+.cont {
+  padding: 24px 0px 24px 70px;
+  -webkit-box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, 0.5);
+  box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, 0.5);
+  margin-top: 50px;
+}
+.cont .disease_box {
+  overflow: hidden;
+}
+.cont .disease_box h1 {
+  font-size: 16px;
+}
+.cont .disease_box .content div {
+  float: left;
+}
+.cont .disease_box .content div.disease_l {
+  width: 480px;
+  height: 400px;
+  position: relative;
+  border: 1px solid #2077fa;
+  margin-top: 60px;
+}
+.cont .disease_box .content div.disease_l img {
+  width: 480px;
+  height: 400px;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+}
+.cont .disease_box .content .disease_r {
+  float: right;
+  width: 55.6%;
+}
+.cont .disease_box .content .disease_r .title {
+  margin-top: 10%;
+  float: none;
+  height: 60px;
+  background: #003c68;
+  line-height: 60px;
+  color: #fff;
+  font-size: 16px;
+}
+.cont .disease_box .content .disease_r .title img {
+  vertical-align: middle;
+  width: 25px;
+  height: 16px;
+  margin-left: 2%;
+}
+.cont .disease_box .content .disease_r .title span {
+  margin-left: 5%;
+}
+.cont .disease_box .content .disease_r .title_s {
+  padding-top: 15px;
+  height: 90px;
+}
+.cont .disease_box .content .disease_r .title_s span {
+  margin-left: 5%;
+  display: inline-block;
+  /* width: 50%; */
+  /* height: 100%; */
+  line-height: 30px;
+}
+.cont .disease_box .content .disease_r p {
+  text-align: right;
+  color: #003c68;
+  font-size: 16px;
+  font-style: oblique;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-right: 70px;
+}
+.cont .disease_box .content .disease_r div.text {
+  padding: 50px 50px;
+}
+.cont .disease_box .content .disease_r div.text p {
+  color: #141414;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  padding-right: 0px;
+  text-align: left;
+  margin-top: 0;
+}
+.cont .disease_boxs {
+  margin-top: 50px;
+}
+.product_text {
+  margin-top: 30px;
+}
+.product_text h1 {
+  font-size: 16px;
+  color: #1C1C1C;
+}
+.product_text p {
+  margin-top: 10px;
+}
