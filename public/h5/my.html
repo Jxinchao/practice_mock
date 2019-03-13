@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>中视联-我的</title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<link rel="stylesheet" href="css/pub.css" />
+		<link rel="stylesheet" href="css/my.css" />
+	</head>
+
+	<body>
+		<!-- header s -->
+
+		<div class="headerpage"></div>
+		<!-- header e -->
+		<!-- mytop s -->
+		
+			
+		
+		<div class="mytop">
+			<div class="brief">
+				<div><img src="images/grzx/mine_photo@3x.png" /></div>
+				<div class="mytoptext">
+					<p>伊丽莎白.二蛋</p>
+					<p>账号：19476986</p>
+					<p><span>关注 1</span> &nbsp; | &nbsp; <span>粉丝 1</span></p>
+				</div>
+				<div class="leftarrows"><img src="images/grzx/mine_into@3x.png" /></div>
+			</div>
+			<div class="tabnav">
+				<div class="con">
+					<div onclick="layer.msg('前往APP查看')">
+						<img src="images/grzx/mine_news@3x.png" alt="" />
+						<p>消息</p>
+					</div>
+					<div onclick="dj()">
+						<img src="images/grzx/mine_grade@3x.png" alt="" />
+						<p>我的等级</p>
+					</div>
+					<div onclick="window.location.href='browse.html'">
+						<img src="images/grzx/mine_eyes@3x.png" alt="" />
+						<p>支付记录</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="mylist">
+			<ul>
+				<li class="recodings">
+					<div><img src="images/grzx/mine_record@3x.png" /></div>
+					<div>直播记录</div>
+					<div><img src="images/grzx/mine_black_into@3x.png" /></div>
+				</li>
+				<li onclick="layer.msg('前往APP充值')">
+					<div><img src="images/grzx/mine_recharge@3x.png" /></div>
+					<div>充值</div>
+					<div><img src="images/grzx/mine_black_into@3x.png" /></div>
+				</li>
+				<li onclick="window.location.href='register.html'">
+					<div><img src="images/grzx/mine_binding@3x.png" /></div>
+					<div>绑定手机</div>
+					<div><img src="images/grzx/mine_black_into@3x.png" /></div>
+				</li>
+				<li onclick="layer.msg('前往APP咨询')">
+					<div><img src="images/grzx/mine_service@3x.png" /></div>
+					<div>客服</div>
+					<div><img src="images/grzx/mine_black_into@3x.png" /></div>
+				</li>
+			</ul>
+		</div>
+		<div class="unlogin">
+		</div>	
+		<!-- mytop e -->
+		<div style="height: 3rem;"></div>
+		<!-- bottom  s -->
+		<div class="footer">
+			<ul>
+				<li>
+					<a href="index.html" class="">
+						<img src="images/nav/nav_live@3x.png" alt="" />
+						<p class="">直播</p>
+					</a>
+				</li>
+				<li>
+					<a href="video_1.html" class="">
+						<img src="images/nav/nav_view@3x.png" alt="" />
+						<p class="">视频</p>
+					</a>
+				</li>
+				<li>
+					<a href="nearby.php" class="">
+						<img src="images/nav/nav_near@3x.png" alt="" />
+						<p class="">附近</p>
+					</a>
+				</li>
+				<li>
+					<a href="my.html" class="">
+						<img src="images/nav/nav_mineing@3x.png" alt="" />
+						<p class="active">我的</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- bottom  e -->
+		<!--<div style="height: 1.2rem;"></div>-->
+		<!-- bottom  e -->
+		<!-- js 引入  S  -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/rem.js"></script>
+		<script src="js/iscroll.js"></script>
+		<script src="js/pubhtml.js"></script>
+		<script src="js/layui/layui.all.js"></script>
+		<script src="js/server.js"></script>
+		<!--<script src="js/pub.js"></script>-->
+
+		<!-- js 引入 e -->
+		<!-- js 逻辑  S-->
+		<script>
+			$('.tab a').click(function() {
+				//获取点击的元素给其添加样式，讲其兄弟元素的样式移除
+				　　　　
+				$(this).addClass("active").siblings().removeClass("active");　　　　 //获取选中元素的下标
+				　　　　
+				var index = $(this).index();　　　　
+				$('.list').eq(index).show().siblings('.list').hide();
+			})
+
+			//向后台发送处理数据
+			var datajson = localStorage.json;
+			
+			$('.recodings').click(function(){
+				var obj = $.parseJSON(datajson);
+				window.location.href='recording.html?uid='+ obj.id;
+			})
+			
+			if( datajson != undefined){
+				$(".unlogin").hide();
+				$(".mytop").show();
+				$(".mylist").show();
+				var obj = $.parseJSON(datajson);
+				
+				$.ajax({
+					url: host + '?service=User.GetUserHome',
+					type: "post",
+					dataType: 'json',
+					data: {
+						uid: obj.id,
+						touid: obj.id
+					},
+					success: function(data) {
+						$(".brief").html('<div><img src="'+ data.data.info[0].avatar+'"/></div><div class="mytoptext"><p>' + data.data.info[0].user_nicename + '</p><p>账号：'+data.data.info[0].user_login+'</p><p><span id="gz">关注 ' + data.data.info[0].follows + '</span> &nbsp; |  &nbsp; <span id="fs">粉丝 ' + data.data.info[0].fans + '</span></p></div><div class="leftarrows" onclick="quitlogin()"><img src="images/grzx/mine_into@3x.png"/></div>');
+						$("#gz").click(function(){
+							window.location.href = 'attentionlist.html?uid='+data.data.info[0].id+'&touid='+data.data.info[0].id+'&entrance=gz';
+						})
+						$("#fs").click(function(){
+							window.location.href = 'attentionlist.html?uid='+data.data.info[0].id+'&touid='+data.data.info[0].id+'&entrance=fs'
+						})
+					},
+					error: function() {
+						console.log("出错了");
+					}
+				})
+			}else{
+				$(".mytop").hide();
+				$(".mylist").hide();
+				$(".unlogin").show()
+				var html = '<p>您还未登录 <a href="login.html">点击登录</a></p>';
+				$(".unlogin").html(html)
+			}
+			
+			// 退出登录
+			function quitlogin(){
+				window.location.href='quitlogin.html'
+			}
+			//	等级
+			var obj = $.parseJSON(datajson);
+				console.log(obj)
+			function dj(){   
+				var obj = $.parseJSON(datajson);
+				console.log(obj)
+				window.location.href='/index.php?g=Appapi&m=level&a=index&uid='+obj.id+'&token='+obj.token;
+			}
+		</script>
+		<!-- js 逻辑  E-->
+	</body>
+
+</html>

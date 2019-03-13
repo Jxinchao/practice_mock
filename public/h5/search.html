@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>中视联-热门</title>
+	<link rel="stylesheet" href="css/rest.css" />
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<link rel="stylesheet" href="css/search.css" />
+	<link rel="stylesheet" href="css/record.css" />
+	<style>
+		.top .left a{
+			width: 0.5rem;
+		}
+		.list ul li div:nth-child(1) {
+		    width: 0.6rem;
+		    height: 0.6rem;
+		    margin-top: 0.2rem;
+		    border-radius: 50%;
+		    overflow: hidden;
+		}
+		.list ul li div:nth-child(1) img {
+		    width: 100%;
+		    height: 100%;
+		    display: block;
+		}
+	</style>
+	<!--<link rel="stylesheet" href="css/index.css" />-->
+</head>
+<body>
+	<!-- header s -->
+	<div class="top">
+		<div class="left">
+			<a href="index.html" class="logo"><img src="images/seach_live@3x.png" alt="" /></a>
+		</div>
+		<div class="con">
+			<input type="text" alue="请输入昵称或ID" class="searchinput" /> <span id="serchbtn">搜索</span>
+		</div>
+		<div class="right">
+			<span>
+				<img src="images/remen/home_gold@3x.png" alt="" />
+			</span>
+		</div>
+	</div>
+	<!-- header e -->
+	<div class="list searchlist">
+		<ul>
+			<!--<li>
+				<div><img src="images/chongzhi/reaord_glod@3x.png"/></div>
+				<div>
+					<p>王者 - </p>
+					<p>粉丝 123456</p>
+				</div>
+				<div class="attentionlist">已关注</div>
+			</li>-->
+		</ul>
+		<p class="noattention" style="font-size: 0.24rem;text-align: center;line-height: 5rem;display: none;">您还没有关注用户</p>
+	</div>
+	
+	
+	<!-- 热门推荐  S -->
+	<div class="hot">
+		<!--<div class="title">
+			<span>热门推荐</span>
+			<a href="index.html">更多 > </a>
+		</div>-->
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		      <!--<div class="swiper-slide">
+		      	<ul>
+		      		<li>
+						<a href="javascript:;">
+							<img src="images/list/1.jpg" alt="" />
+							<div class="num_text">
+								<span>唯有敬亭山</span>
+								<span>28392</span>
+							</div>
+						</a>
+					</li>
+		      	</ul>
+		      </div>
+		      <div class="swiper-slide">
+		      	<ul>
+		      		<li>
+						<a href="javascript:;">
+							<img src="images/list/1.jpg" alt="" />
+							<div class="num_text">
+								<span>唯有敬亭山</span>
+								<span>28392</span>
+							</div>
+						</a>
+					</li>
+		      	</ul>
+		      </div>
+		      <div class="swiper-slide">
+		      	<ul>
+		      		<li>
+						<a href="javascript:;">
+							<img src="images/list/1.jpg" alt="" />
+							<div class="num_text">
+								<span>唯有敬亭山</span>
+								<span>28392</span>
+							</div>
+						</a>
+					</li>
+		      	</ul>
+		      </div>
+		      <div class="swiper-slide">
+		      	<ul>
+		      		<li>
+						<a href="javascript:;">
+							<img src="images/list/1.jpg" alt="" />
+							<div class="num_text">
+								<span>唯有敬亭山</span>
+								<span>28392</span>
+							</div>
+						</a>
+					</li>
+		      	</ul>
+		      </div>
+		      <div class="swiper-slide">
+		      	<ul>
+		      		<li>
+						<a href="javascript:;">
+							<img src="images/list/1.jpg" alt="" />
+							<div class="num_text">
+								<span>唯有敬亭山</span>
+								<span>28392</span>
+							</div>
+						</a>
+					</li>
+		      	</ul>
+		      </div>-->
+		    </div>
+		    <!-- Add Pagination -->
+		    <!--<div class="swiper-pagination"></div>-->
+		 </div>
+	</div>
+	<!-- 热门推荐 e -->
+
+	
+	
+	<!-- js 引入  S  -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper.min.js" ></script>
+	<script src="js/server.js" ></script>
+	<script src="js/layui/layui.all.js"></script>
+	<script src="js/rem.js"></script>
+	<!-- js 引入 e -->
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+	      slidesPerView: 3.2,
+	      spaceBetween: 10,
+	      freeMode: true,
+	      pagination: {
+	        el: '.swiper-pagination',
+	        clickable: true,
+	      },
+	    });
+		var v_p = 1;
+		$("#serchbtn").click(function(){
+			var datajson = localStorage.json;
+			var obj = $.parseJSON(datajson);
+			var searchinput = $.trim($(".searchinput").val());
+			$.ajax({
+				url: host+'?service=Home.Search',
+				type: "get",
+				dataType: 'json',
+				data:{
+					uid:obj.id,
+					key:searchinput,
+					p: v_p
+				},
+				success: function(data) {
+					var infole = data.data.info;
+					if(searchinput == ''){
+						layer.msg(data.data.msg)
+					}else if(infole.length == 0){
+						layer.msg('没有您查找的用户')
+					}else{
+						$(".searchlist ul").empty();  
+						for(var i=0;i<infole.length;i++){
+							var isattention = infole[i].isattention;
+							var ishtml = '';
+							var isClass = ''
+							if(infole[i].isattention == 1){
+								isClass = '';
+								ishtml = '已关注';
+							}else{
+								isClass = 'active'
+								ishtml = '关注'
+							}
+							var uid = "'" + "recording.html?&uid=" + infole[i].id + "'";
+							$(".searchlist ul").append('<li><div><img src="'+infole[i].avatar+'"/></div><div  onclick="window.location.href=' + uid + '"><p>'+infole[i].user_nicename+'</p><p>粉丝 '+infole[i].fans+'</p></div><div class="attentionlist '+isClass+'" uid="'+infole[i].id+'" onclick="isattent(this)">'+ishtml+'</div></li>')
+						}
+					}
+					
+				},
+				error: function() {
+					console.log("出错了");
+				}
+			});
+		})
+		
+		function isattent(objs){
+			var datajson = localStorage.json;
+			var obj = $.parseJSON(datajson);
+			$.ajax({
+				type: "get",
+				url: host + '?service=User.SetAttent',
+				dataType: 'json',
+				data: {
+					uid: obj.id,
+					touid: $(objs).attr('uid')
+				},
+				success: function(data) {
+					if(data.data.info[0].isattent == 1){
+						$(objs).text('已关注');
+						$(objs).removeClass("active")
+					}else{
+						$(objs).text('关注')
+						$(objs).addClass("active")
+					}
+				},
+				error: function(e) {
+					console.log(2)
+				}
+			});
+		}
+	</script>
+</body>
+</html>

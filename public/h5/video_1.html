@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>中视联-视频</title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<link rel="stylesheet" href="css/pub.css" />
+		<link rel="stylesheet" href="css/video_1.css" />
+	</head>
+
+	<body>
+		<!-- header s -->
+
+		<div class="headerpage"></div>
+		<!-- header e -->
+		<!-- tab s -->
+		<div class="tab">
+			<a href="javascript:;" class="active">热门</a>
+			<a href="javascript:;">关注</a>
+		</div>
+		<!-- tab e -->
+		<!-- list s -->
+		<div class="list" id="wrapper">
+			<div id="scroller">
+				<ul>
+					<!--<li>
+						<a href="javascript:;">
+							<div class="video_img">
+								<div class="dask">
+									<p>白敬亭饰演夏至未至陆之与颜末搭档车尾几份UI文化繁荣</p>
+									<img src="images/video/video_play.png" alt="" class="img_play" />
+									<span class="time">00：15</span>
+								</div>
+								<img src="images/list/1.jpg" alt="" />
+							</div>
+							<div class="video_bottom">
+								<div><img src="images/chongzhi/reaord_glod@3x.png" /></div>
+								<div>
+									<p>唯有敬亭山</p>
+									<p>8549万播放</p>
+								</div>
+								<div>
+									<img src="images/02.png" alt="" />
+									<span>4839</span>
+								</div>
+								<div>
+									<img src="images/03.png" alt="" />
+									<span></span>
+								</div>
+							</div>
+						</a>
+					</li>-->
+				</ul>
+				<div class="pull-loading">
+					上拉加载
+				</div>
+				<div style="height: 0.5rem;"></div>
+			</div>
+			<div id="denglu"></div>
+		</div>
+		<!-- list e -->
+		<!-- attention s -->
+		<div class="list" style="display: none;">
+			<div id="scrolls">
+				<ul>
+
+				</ul>
+				<!--<div class="pull-loading">
+					上拉加载
+				</div>-->
+				<div style="height: 0.5rem;"></div>
+			</div>
+			<!-- 默认没有关注的  s -->
+			<div class="attention">
+				<div><img src="images/nobody.png" alt="" /></div>
+				<p>您还没有关注的主播，快去关注主播吧  </p>
+			</div>
+			<!-- 默认没有关注的  e -->
+		</div>
+		<!-- attention e -->
+		<div style="height: 1.5rem;"></div>
+		<!-- bottom  s -->
+		<div class="footer">
+			<ul>
+				<li>
+					<a href="index.html" class="">
+						<img src="images/nav/nav_live@3x.png" alt="" />
+						<p class="">直播</p>
+					</a>
+				</li>
+				<li>
+					<a href="video_1.html" class="">
+						<img src="images/nav/nav_viewing@3x.png" alt="" />
+						<p class="active">视频</p>
+					</a>
+				</li>
+				<li>
+					<a href="nearby.php" class="">
+						<img src="images/nav/nav_near@3x.png" alt="" />
+						<p class="">附近</p>
+					</a>
+				</li>
+				<li>
+					<a href="my.html" class="">
+						<img src="images/nav/nav_mine@3x.png" alt="" />
+						<p class="">我的</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- bottom  e -->
+		<!-- bottom  e -->
+		<!-- js 引入  S  -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/rem.js"></script>
+		<script src="js/iscroll.js"></script>
+		<script src="js/server.js"></script>
+		<script src="js/pubhtml.js"></script>
+		<!--<script src="js/pub.js"></script>-->
+
+		<!-- js 引入 e -->
+		<!-- js 逻辑  S-->
+		<script>
+			$('.tab a').click(function() {
+				//获取点击的元素给其添加样式，讲其兄弟元素的样式移除
+				$(this).addClass("active").siblings().removeClass("active");　　　　 //获取选中元素的下标
+				var index = $(this).index();　　　　
+				$('.list').eq(index).show().siblings('.list').hide();
+			})
+			pullOnLoad('Video.GetVideoList');
+			var myscroll = new iScroll("wrapper", {
+				onScrollMove: function() { //拉动时
+					//上拉加载
+					if(this.y < this.maxScrollY) {
+						$(".pull-loading").html("释放加载");
+						$(".pull-loading").addClass("loading");
+					} else {
+						$(".pull-loading").html("上拉加载");
+						$(".pull-loading").removeClass("loading");
+					}
+				},
+				onScrollEnd: function() { //拉动结束时
+					//上拉加载
+					if($(".pull-loading").hasClass('loading')) {
+						$(".pull-loading").html("上拉加载");
+						pullOnLoad('Video.GetVideoList');
+					}
+				}
+			});
+
+			//上拉加载函数,ajax
+			var num = 0;
+			var p = 1;
+
+			function pullOnLoad(hosts) {
+				var datajson = localStorage.json;
+				if(datajson != undefined) {
+					$('#denglu').hide();
+					$("#scroller").show();
+					setTimeout(function() {
+						var obj = $.parseJSON(datajson);
+						$.ajax({
+							url: host + '?service=' + hosts,
+							type: "get",
+							dataType: 'json',
+							data: {
+								uid: obj.id,
+								p: p
+							},
+							success: function(data) {
+								console.log(data)
+								p++;
+								var data_length = data.data.info.length; //数据的总长度
+								if(data_length != '') {
+									for(var j = num; j < data_length; j++) {
+										var videourl = "'" + "video.html?pmtr=" + data.data.info[j].href + "&uid=" + data.data.info[j].uid + "&isvideo=1&commid=" + data.data.info[j].id + "'";
+										var commenturl = "'" + "video.html?pmtr=" + data.data.info[j].href + "&uid=" + data.data.info[j].uid + "&isvideo=1&commid=" + data.data.info[j].id + "'";
+										var uidps = "'" + "recording.html?uid=" + data.data.info[j].uid + "'";
+										$("#scroller ul").append('<li><a href="javascript:;"><div class="video_img" onclick="window.location.href=' + videourl + '"><div class="dask"><p>' + data.data.info[j].title + '</p><img src="images/video/video_play.png" alt="" class="img_play"/><span class="time">' + data.data.info[j].datetime + '</span></div><img src="' + data.data.info[j].thumb_s + '" alt="" /></div><div class="video_bottom"><div onclick="window.location.href=' + uidps + '"><img src="' + data.data.info[j].userinfo.avatar + '" /></div><div><p>' + data.data.info[j].userinfo.user_nicename + '</p><p>8549万播放</p></div><div onclick="window.location.href=' + commenturl + '"><img src="images/02.png" alt="" /><span>' + data.data.info[j].comments + '</span></div><div><img src="images/03.png" alt="" /><span></span></div></div></a></li>');
+									}
+								} else {
+									$('.pull-loading').html("我是有底线的");
+								}
+								myscroll.refresh();
+							},
+							error: function() {
+								console.log("出错了");
+							}
+						});
+						myscroll.refresh();
+					}, 300);
+				} else {
+					$("#scroller").hide();
+					$('#denglu').html("请前往我的<a href='login.html' style='color:#2DA4FB;'>登录</a>");
+				}
+
+			}
+
+			pullOnLoads('Video.GetAttentionVideo')
+
+			function pullOnLoads(hosts) {
+				setTimeout(function() {
+
+					var datajson = localStorage.json;
+					var obj = $.parseJSON(datajson);
+					$.ajax({
+						url: host + '?service=' + hosts,
+						type: "get",
+						dataType: 'json',
+						data: {
+							uid: obj.id,
+							p: p
+						},
+						success: function(data) {
+							console.log(data)
+							p++;
+							var data_length = data.data.info.length; //数据的总长度
+							if(data_length != '') {
+								for(var j = num; j < data_length; j++) {
+									$(".attention").css("display", 'none');
+									var videourl = "'" + "video.html?pmtr=" + data.data.info[j].href + "&uid=" + data.data.info[j].uid + "&isvideo=1&commid=" + data.data.info[j].id + "'";
+									var commenturl = "'" + "video.html?pmtr=" + data.data.info[j].href + "&uid=" + data.data.info[j].uid + "&isvideo=1&commid=" + data.data.info[j].id + "'";
+									var uidps = "'" + "recording.html?uid=" + data.data.info[j].uid + "'";
+									$("#scrolls ul").append('<li><a href="javascript:;"><div class="video_img" onclick="window.location.href=' + videourl + '"><div class="dask"><p>' + data.data.info[j].title + '</p><img src="images/video/video_play.png" alt="" class="img_play"/><span class="time">00：15</span></div><img src="' + data.data.info[j].thumb_s + '" alt="" /></div><div class="video_bottom"><div onclick="window.location.href=' + uidps + '"><img src="' + data.data.info[j].userinfo.avatar + '" /></div><div><p>' + data.data.info[j].userinfo.user_nicename + '</p><p>8549万播放</p></div><div onclick="window.location.href=' + commenturl + '"><img src="images/02.png" alt="" /><span>' + data.data.info[j].comments + '</span></div><div><img src="images/03.png" alt="" /><span></span></div></div></a></li>');
+								}
+							} else {
+								$(".attention").css("display", 'block')
+								//								$('.pull-loading').html("我是有底线的");
+							}
+							myscroll.refresh();
+						},
+						error: function() {
+							console.log("出错了");
+						}
+					});
+					myscroll.refresh();
+				}, 300);
+			}
+		</script>
+		<!-- js 逻辑  E-->
+	</body>
+
+</html>

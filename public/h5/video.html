@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>中视联-视频</title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<link rel="stylesheet" href="css/pub.css" />
+		<link rel="stylesheet" href="css/qiniuplayer-0.3.9.min.css" />
+		<link rel="stylesheet" href="css/video.css" />
+	</head>
+
+	<body>
+		<!-- header s -->
+		<div class="headerpage"></div>
+		<!-- header e -->
+		<!-- video S -->
+		<div class="video" id="output">
+			<!--<video src="video/yuqina.mp4" id="video"></video>-->
+			<video id="demo-video" class="video-js vjs-big-play-centered" poster="//vr0.6rooms.com/v/r0/3c77d303e4906bf08feeab0df8038e69.png"></video>
+		</div>
+		<!-- video E -->
+		<!-- attention S -->
+		<div class="attention">
+			<!--<div class="con">
+				<div><img src="images/remen/home_mine@3x.png" /></div>
+				<div>
+					<p class="uname">唯有敬亭山</p>
+					<p>8549万播放</p>
+				</div>
+				<div>
+					<a href="javascript:;" class="attentions">关注</a>
+				</div>
+			</div>-->
+		</div>
+		<!-- 评论列表  start  -->
+		<div class="comment">
+			<!--<div class="comm">
+				<div class="con">
+					<div><img src="images/remen/home_mine@3x.png" /></div>
+					<div>
+						<p class="uname">唯有敬亭山</p>
+						<p>1小时前</p>
+					</div>
+				</div>
+				<div class="text">
+					哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+				</div>
+			</div>-->
+		</div>
+		<!-- attention E -->
+		<div style="height: 1.2rem;"></div>
+		<!-- bottom  e -->
+		<!-- js 引入  S  -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/rem.js"></script>
+		<script src="js/server.js"></script>
+		<script src="js/qiniuplayer-0.3.9.min.js"></script>
+		<!-- js 引入 e -->
+		<script>
+			// 引入搜索
+			$(".headerpage").load("publicHtml/top.html");
+			// 声明变量
+			var datajson = localStorage.json;  // 获取本次存储
+			var obj = $.parseJSON(datajson);   // 转换json 
+			var params = getParams();          // 获取地址栏参数
+			var uid = params.uid;			   // 获取id
+			var videoid = params.commid;       // 获取视频ID
+			var rtmp = params.pmtr;			   // 获取播流
+			var isvideo = params.isvideo;	   // 获取流地址为 视频 or 直播
+			var newwatch = rtmp.replace('rtmp', 'http');  // 转换为可以供h5的播流地址
+			newwatch = newwatch.replace('1935', '8080')
+
+			var isurl = '';
+			// 判断是视频还是直播
+			if(isvideo == 1) {
+				isurl = rtmp;
+			} else {
+				isurl = newwatch + '.m3u8';
+			}
+
+			// 评论列表
+			try {
+			    $.ajax({
+					type: "get",
+					url: host + '?service=Video.GetComments',
+					dataType: 'json',
+					data: {
+						uid: uid,
+						videoid: videoid
+					},
+					success: function(data) {
+						var datajson = data.data.info[0].commentlist;
+						if(datajson != 0) {
+							var html = '';
+							for(var i = 0; i < datajson.length; i++) {
+								html += '<div class="comm"><div class="con"><div><img src="' + datajson[i].userinfo.avatar_thumb + '" /></div><div><p class="uname">' + datajson[i].userinfo.user_nicename + '</p><p>' + datajson[i].datetime + '</p></div></div><div class="text">' + datajson[i].content + '</div>'
+							}
+							$(".comment").append(html)
+						} else {
+							$(".comment").html('还没有人评论哦')
+						}
+					},
+					error: function(e) {
+						console.log(2)
+					}
+				});
+			}
+			catch(err) {
+			   console.log('没有留言')
+			}
+			
+
+			// 播放控件
+			var options = {
+				engineOrder: ['html5', 'flash'], // 优先选择播放源为什么控件
+				controls: true, // 播放器的底部控件
+				//						url:'http://192.168.1.146/Public/vcd/zsl_4.mp4',
+				url: isurl, // 播放路径
+				type: 'hls', // 播放源为什么格式
+				preload: 'auto', //取值：auto, metadata 或 none，用于设置视频是否会自动加载。
+				// 这三个选项的意义分别解释如下：
+				// auto: 表示视频会参考具体设备来确定是否自动加载。在桌面平台下，视频将会自动加载，但在一些移动平台上，比如 iPhone，为了帮助用户节约流量，会禁止自动加载。
+				// metadata: 表示将会自动加载视频的元数据，元数据包括视频总长度，宽高等信息。
+				// none: 表示视频将不会被自动加载。
+				width: 300, // 设置视频的宽高  这里并不好用
+				height: 600,
+				stretching: 'panscan', // 视频的播放的这四个选项的意义分别解释如下：
+				// letterbox：表示视频将会适配窗口，保持视频比例，可能产生黑边；
+				// panscan： 表示视频将会保持纵横比例，填满窗口，多余视频被切掉；
+				// fitwindow： 表示不保持视频比例，仅填满窗口，可能会变形；
+				// none： 表示使用视频真实大小。
+				autoplay: true // 如为 true，则视频将会自动播
+			};
+			var player = new QiniuPlayer('demo-video', options);
+
+			// 获取用户名 头像
+			$.ajax({
+				type: "get",
+				url: host + '?service=User.GetUserHome',
+				dataType: 'json',
+				data: {
+					uid: obj.id,
+					touid: uid
+				},
+				success: function(data) {
+					var html = '';
+					var uids = "'" + "recording.html?&uid=" +  data.data.info[0].liveinfo.uid + "'";
+					html += '<div class="con"><div  onclick="window.location.href=' + uids + '"><img src="' + data.data.info[0].liveinfo.avatar_thumb + '" /></div><div><p class="uname">' + data.data.info[0].liveinfo.user_nicename + '</p><p>8549万播放</p></div><div><a href="javascript:;" class="attentions">关注</a></div>';
+					$(".attention").append(html)
+					//  获取是否关注接口
+					$.ajax({
+						type: "get",
+						url: host + '?service=User.IsAttent',
+						dataType: 'json',
+						data: {
+							uid: obj.id,
+							touid: uid
+						},
+						success: function(data) {
+							if(data.data.info[0].isattent == 1) {
+								$(".attentions").text('已关注');
+								$(".attentions").css("background", "#ccc")
+							} else {
+								$(".attentions").text('关注')
+								$(".attentions").css("background", "#60b5fe")
+							}
+						},
+						error: function(e) {
+							console.log(2)
+						}
+					});
+					// 点击关注/ 取消关注
+					$(".attentions").click(function() {
+						$.ajax({
+							type: "get",
+							url: host + '?service=User.SetAttent',
+							dataType: 'json',
+							data: {
+								uid: obj.id,
+								touid: uid
+							},
+							success: function(data) {
+								if(data.data.info[0].isattent == 1) {
+									$(".attentions").text('已关注');
+									$(".attentions").css("background", "#ccc")
+								} else {
+									$(".attentions").text('关注')
+									$(".attentions").css("background", "#60b5fe")
+								}
+							},
+							error: function(e) {
+								console.log(2)
+							}
+						});
+					})
+				},
+				error: function(e) {
+					console.log(2)
+				}
+			});
+
+			//			var datajson = localStorage.json;
+			//			var params = getParams();
+			//			//  var newwatch = watch.replace('rtmp','http');
+			//			//	newwatch = newwatch.replace('1935','8080')
+			//			//	console.log(newwatch)
+			//			//获取地址栏上的userName
+			//
+			//			var obj = $.parseJSON(datajson);
+			//			console.log(obj.id)
+			//			var uid = params.uid;
+			//			var rtmp = params.pmtr;
+			//			$.ajax({
+			//				type: "get",
+			//				url: host + '?service=Live.EnterRoom',
+			//				dataType: 'json',
+			//				data: {
+			//					token: obj.token,
+			//					uid: obj.id,
+			//					liveuid: uid,
+			//					stream: rtmp
+			//				},
+			//				success: function(data) {
+			//					console.log(data);
+			//					
+			//				},
+			//				error: function(e) {
+			//					console.log(2)
+			//				}
+			//			});
+
+			//获取地址栏参数 
+			//url为空时为调用当前url地址 
+			//调用方法为 var params = getPatams();
+		</script>
+
+		<style>
+			.video-damage-note {
+				font-size: 0.22rem;
+			}
+		</style>
+
+	</body>
+
+</html>

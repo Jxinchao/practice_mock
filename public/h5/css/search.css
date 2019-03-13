@@ -1,0 +1,140 @@
+.top {
+  width: 100%;
+  height: 0.8rem;
+  padding: 0.1rem 0.21rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  background: #FBFBFB;
+}
+.top .left {
+  flex: 1;
+  -webkit-flex: 1;
+}
+.top .left a {
+  width: 0.51rem;
+  height: 0.26rem;
+  display: block;
+}
+.top .left a img {
+  display: block;
+  width: 100%;
+}
+.top .con {
+  flex: 8;
+  -webkit-flex: ;
+}
+.top .con input {
+  width: 4.4rem;
+  height: 0.48rem;
+  background: url(../images/remen/home_seach@3x.png) no-repeat left;
+  background-size: 14% 119%;
+  -webkit-background-size: 14% 119%;
+  border-radius: 0.24rem;
+  outline: none;
+  display: block;
+  border: 1px solid #DBDBDB;
+  float: left;
+  text-indent: 0.6rem;
+  font-size: 0.24rem;
+}
+.top .con span {
+  display: block;
+  font-size: 0.24rem;
+  color: #666;
+  float: left;
+  text-align: center;
+  line-height: 0.48rem;
+  margin-left: 0.3rem;
+}
+.top .right {
+  flex: 1;
+  -webkit-flex: 1;
+}
+.top .right span {
+  width: 0.52rem;
+  height: 0.52rem;
+  display: block;
+  float: left;
+}
+.top .right span img {
+  display: block;
+  width: 100%;
+}
+.top .right span:nth-child(2) {
+  margin-left: 0.2rem;
+}
+body {
+  background: #fbfbfb;
+}
+.hot {
+  width: 100%;
+  height: 3.3rem;
+  background: #fff;
+  padding: 0.21rem 0 0.21rem 0.21rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  overflow: hidden;
+}
+.hot .title {
+  display: -webkit-flex;
+  display: flex;
+}
+.hot .title span {
+  flex: 1;
+  -webkit-flex: 1;
+  display: block;
+  font-size: 0.26rem;
+  text-align: left;
+}
+.hot .title a {
+  flex: ;
+  -webkit-flex: 1;
+  display: block;
+  font-size: 0.24rem;
+  text-align: right;
+  color: #666666;
+  padding-right: 0.21rem;
+}
+.hot ul {
+  margin-top: 0.2rem;
+  overflow: hidden;
+  width: 11rem;
+}
+.hot ul li {
+  width: 1.95rem;
+  height: 1.93rem;
+  position: relative;
+  margin-left: 2%;
+  float: left;
+  flex-wrap: nowrap;
+}
+.hot ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hot ul li a img {
+  width: 100%;
+  height: 100%;
+}
+.hot ul li a div.num_text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0.4rem;
+  padding: 0 0.1rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.hot ul li a div.num_text span {
+  font-size: 0.24rem;
+  color: #fff;
+  display: block;
+  width: 50%;
+  float: left;
+}
+.hot ul li a div.num_text span:nth-child(2) {
+  text-align: right;
+}

@@ -1,0 +1,84 @@
+.tel-box {
+  padding: 0rem 0.3rem;
+}
+.tel-box input.tel {
+  width: 100%;
+  height: 0.8rem;
+  border: 1px solid #EEEEEE;
+  border-radius: 0.4rem;
+  background: url(../images/grzx/mine_binding@3x.png) no-repeat;
+  -webkit-background-size: 6%;
+  background-size: 6%;
+  background-position: 0.3rem 0.12rem;
+  font-size: 0.28rem;
+  color: #CCCCCC;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+}
+.tel-box input:nth-child(2),
+.tel-box input:nth-child(3) {
+  background: url(../images/suo.png) no-repeat;
+  -webkit-background-size: 6%;
+  background-size: 6%;
+  background-position: 0.3rem 0.12rem;
+  margin-top: 0.3rem;
+}
+.tel-box div {
+  display: flex;
+  display: -webkit-flex;
+  margin-top: 0.5rem;
+}
+.tel-box div input.telnum {
+  font-size: 0.28rem;
+  color: #CCCCCC;
+  width: 4.48rem;
+  height: 0.8rem;
+  padding-left: 0.5rem;
+  border: 1px solid #EEEEEE;
+  border-radius: 0.4rem;
+}
+.tel-box div button {
+  width: 2.25rem;
+  font-size: 0.28rem;
+  color: #999;
+  background: #eee;
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  outline: none;
+  border: none;
+  margin-left: 0.1rem;
+}
+.tel-box button {
+  width: 100%;
+  font-size: 0.28rem;
+  color: #999;
+  background: #eee;
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  outline: none;
+  border: none;
+  margin-left: 0.1rem;
+  margin-top: 0.3rem;
+}
+.tel-box button.active {
+  background: #60B5FE;
+  color: #fff;
+}
+.tel-box p {
+  font-size: 0.28rem;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+.tel-box p a {
+  color: #60B5FE;
+}
+.top .left a {
+  width: 0.2rem;
+  height: 0.37rem;
+  display: block;
+}
+div,
+input {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>中视联-绑定手机号</title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<link rel="stylesheet" href="css/pub.css" />
+		<link rel="stylesheet" href="css/register.css" />
+	</head>
+
+	<body>
+		<!-- top s -->
+		<div class="top">
+			<div class="left">
+				<a href="index.html" class="logo"><img src="images/chongzhi/recharge_bg.png" alt="" /></a>
+			</div>
+			<div class="right">
+				<span onclick="window.location.href='search.html'">
+				<img src="images/search.png" alt="" />
+			</span>
+				<span>
+				<img src="images/remen/home_gold@3x.png" alt="" />
+			</span>
+			</div>
+		</div>
+		<!-- top e -->
+		<!-- input tel s -->
+		<div class="tel-box">
+			<input type="number" class="tel" placeholder="请输入手机号" value="" id="tel" />
+			<input type="password" class="tel" placeholder="请输入密码" value="" id="pwd" />
+			<input type="password" class="tel" placeholder="确认密码" value="" id="pwds" />
+			<div>
+				<input type="number" class="telnum" placeholder="获取验证码" id="codes" />
+				<button class="active" id="condebtn" onclick="sendMessage1() " value="">获取验证码</button>
+			</div>
+			<p>已有账号?<a href="login.html">登录</a></p>
+			<button class="active" id="btn">注册</button>
+		</div>
+		<!-- input tel e -->
+		<!-- js 引入  S  -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/layui/layui.all.js"></script>
+		<script src="js/server.js"></script>
+		<script src="js/rem.js"></script>
+
+		<!--<script src="js/pub.js"></script>-->
+
+		<!-- js 引入 e -->
+		<!-- js 逻辑  S-->
+		<script>
+			var count = 60; //间隔函数，1秒执行
+			var InterValObj1; //timer变量，控制时间
+			var curCount1; //当前剩余秒数
+			$(function() {
+				var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/; //手机号正则
+				$("#btn").click(function() {
+					var tel = $.trim($("#tel").val());
+					var pwd = $.trim($("#pwd").val());
+					var pwds = $.trim($("#pwds").val());
+					var code = $.trim($("#codes").val());
+
+					if(tel == '' || pwd == '' || pwds == '' || code == '') {
+						layer.msg('手机号或密码不能为空');
+						return false;
+					} else if(!phoneReg.test(tel)) {
+						layer.msg('请输入有效的手机号码');
+						return false;
+					}else if(pwd != pwds){
+						layer.msg('两次密码输入不一致');
+						return false;
+					} else {
+						$.ajax({
+							url: host + '?service=Login.UserReg',
+							type: "post",
+							dataType: 'json',
+							data: {
+								user_login: tel,
+								user_pass: pwd,
+								user_pass2: pwds,
+								code: code,
+								upper: 0
+							},
+							success: function(data) {
+								if(data.code == 0) {
+									if(layer.msg(data.data.msg) != '') {
+										layer.msg(data.data.msg)
+									}
+								} else {
+									if(layer.msg(data.data.msg) != '') {
+										layer.msg(data.data.msg)
+									}
+								}
+							},
+							error: function() {
+								console.log("出错了");
+							}
+						});
+					}
+
+				})
+
+			})
+
+			/*第一*/
+			function sendMessage1() {
+				curCount1 = count;
+				var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/; //手机号正则
+				var phone = $.trim($('#tel').val());
+				var timestamp = (new Date()).getTime();
+				console.log(timestamp, parseInt(timestamp / 137))
+				if(!phoneReg.test(phone)) {
+					layer.msg(" 请输入有效的手机号码");
+					return false;
+				}
+				//设置button效果，开始计时
+				$("#condebtn").attr("disabled", "true");
+				$("#condebtn").text(+curCount1 + "秒再获取");
+				InterValObj1 = setInterval(SetRemainTime1, 1000); //启动计时器，1秒执行一次
+				//向后台发送处理数据
+				$.ajax({
+					url: host + '?service=Login.GetCode',
+					type: "post",
+					dataType: 'json',
+					data: {
+						mobile: phone,
+						time: timestamp,
+						key: parseInt(timestamp / 137)
+					},
+					success: function(data) {
+						console.log(data)
+						if(data.data.code == 0) {
+							if(layer.msg(data.data.msg) != '') {
+								layer.msg(data.data.msg)
+							}
+						} else {
+							if(layer.msg(data.data.msg) != '') {
+								layer.msg(data.data.msg)
+							}
+						}
+					},
+					error: function() {
+						console.log("出错了");
+					}
+				})
+			}
+
+			function SetRemainTime1() {
+				if(curCount1 == 0) {
+					clearInterval(InterValObj1); //停止计时器
+					$("#condebtn").removeAttr("disabled"); //启用按钮
+					$("#condebtn").text("重新发送");
+					$("#condebtn").addClass('active');
+				} else {
+					curCount1--;
+					$("#condebtn").text(curCount1 + "秒再获取");
+					$("#condebtn").removeClass('active');
+				}
+			}
+		</script>
+		<!-- js 逻辑  E-->
+	</body>
+
+</html>

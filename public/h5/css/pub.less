@@ -1,0 +1,120 @@
+// top
+.top{
+    width: 100%;
+    height: 80/100rem;
+    padding: 10/100rem 21/100rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    background: #FBFBFB;
+    .left{
+        flex: 8;
+        -webkit-flex: 8;
+        a{
+            width: 51/100rem;
+            height: 26/100rem;
+            display: block;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .right{
+        flex:2;
+        -webkit-flex: 2;
+        span{
+            width: 52/100rem;
+            height: 52/100rem;
+            display: block;
+            float: left;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        span:nth-child(2){
+            margin-left: 20/100rem;
+        }
+    }
+}
+
+// nav Start
+.navtop{
+    height: 70/100rem;
+    position: relative;
+    z-index: 3;
+    background: #F7F7F7;
+    border:1px solid rgba(247, 247, 247, 1);
+    ul{
+        display: flex;
+        display: -webkit-flex;
+        
+        li{
+            -webkit-flex: 1;
+            flex: 1;
+            a{
+                display: block;
+                text-align: center;
+                line-height: 70/100rem;
+                font-size: 27/100rem;
+                color: #999999;
+            }
+            a.active{
+                color: #2DA4FB;
+            }
+        }
+    }
+    .menu{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 62/100rem;
+        height: 69/100rem;
+        background: #fff;
+        padding: 10/100rem;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        img{
+            width: 48/100rem;
+            height: 48/100rem;
+            display: block;
+        }
+    }
+}
+
+// footer start
+.footer{
+    width: 100%;
+    height: 98/100rem;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    ul{
+        display: flex;
+        display: -webkit-flex;
+        li{
+            flex: 1;
+            -webkit-flex:1;
+            a{
+                display: block;
+                img{
+                    display: block;
+                    width: 40/100rem;
+                    height: 40/100rem; 
+                    margin: 0.1rem auto; 
+                }
+                p{
+                    text-align: center;
+                    color: #999999;
+                    font-size: 24/100rem;
+                }
+                p.active{
+                    color: #2DA4FB;
+                }
+            }
+        }
+    }
+}

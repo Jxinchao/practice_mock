@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>中视联-支付详情</title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<link rel="stylesheet" href="css/pub.css" />
+		<link rel="stylesheet" href="css/paydetails.css" />
+	</head>
+
+	<body>
+
+		<!-- top s -->
+		<div class="top">
+			<div class="left">
+				<a href="javascript:;" class="logo" onclick="window.history.go(-1);"><img src="images/chongzhi/recharge_bg.png" alt="" /></a>
+			</div>
+			<div class="right">
+				支付详情
+			</div>
+		</div>
+		<!-- top e -->
+		<div class="paycontent">
+			<!--<div class="title">
+				<div><img src="images/recharge.png" alt="" /></div>
+				<div>购买记录</div>
+				<div>2019.03.02</div>
+			</div>
+			<div class="content">
+				<p>充值金额：0.01</p>
+				<p>充值钻石：11 钻石</p>
+				<p>支付方式：支付宝</p>
+				<p>支付时间：2019-03-04 09:45</p>
+				<p>交易订单号：20190305375599</p>
+			</div>-->
+		</div>
+
+		<!-- bottom  e -->
+
+		<!-- bottom  e -->
+		<!-- js 引入  S  -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/rem.js"></script>
+		<script src="js/server.js"></script>
+
+		<!-- js 引入 e -->
+		<!-- js 逻辑  S-->
+		<script>
+			//向后台发送处理数据
+			var datajson = localStorage.json;
+
+			var obj = $.parseJSON(datajson);
+			
+			var params = getParams();          // 获取地址栏参数
+			var id = params.id;
+			$.ajax({
+						url: host + '?service=Charge.getChargedetail',
+						type: "post",
+						dataType: 'json',
+						data: {
+							uid: obj.id,
+							token: obj.token,
+							id: id
+							//						uid: obj.id,
+							//						token: obj.token
+						},
+						success: function(data) {
+							console.log(data.data.info)
+							var datajson = data.data.info;
+							var html = '';
+							var zifu = ''
+							if(data.data.info.type == '1'){
+								zifu = '支付宝'
+							}else{
+								zifu = '微信'
+							}
+							html += '<div class="title"><div><img src="images/recharge.png" alt="" /></div><div>购买记录</div><div>'+datajson.dateformat+'</div></div><div class="content"><p>充值金额：'+datajson.money+'</p><p>充值钻石：'+datajson.coin+' 钻石</p><p>支付方式：'+zifu+'</p><p>支付时间：'+datajson.dateformat+'</p><p>交易订单号：'+datajson.orderno+'</p></div>'
+							$(".paycontent").html(html)
+						},
+						error: function() {
+							console.log("出错了");
+						}
+				})
+		</script>
+		<!-- js 逻辑  E-->
+	</body>
+
+</html>

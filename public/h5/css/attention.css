@@ -1,0 +1,76 @@
+.listss ul li {
+  padding: 0.4rem 0.2rem 0.2rem;
+  border-bottom: 1px solid #EEEEEE;
+}
+.listss ul li a div.attention_one {
+  display: flex;
+  display: -webkit-flex;
+}
+.listss ul li a div.attention_one div:nth-child(1) {
+  width: 0.76rem;
+  height: 0.76rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.listss ul li a div.attention_one div:nth-child(1) img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.listss ul li a div.attention_one div:nth-child(2) {
+  margin-left: 0.3rem;
+}
+.listss ul li a div.attention_one div:nth-child(2) p:nth-child(1) {
+  color: #333333;
+  font-size: 0.3rem;
+}
+.listss ul li a div.attention_one div:nth-child(2) p:nth-child(2) {
+  margin-top: 0.05rem;
+  color: #bbb;
+  font-size: 0.24rem;
+}
+.listss ul li a div.attention_two {
+  padding-left: 1.1rem;
+  padding-top: 0.3rem;
+}
+.listss ul li a div.attention_two p {
+  color: #333333;
+  font-size: 0.3rem;
+}
+.listss ul li a div.attention_two div:nth-child(2) {
+  margin-top: 0.2rem;
+  width: 4.9rem;
+  height: 3.3rem;
+  position: relative;
+  overflow: hidden;
+}
+.listss ul li a div.attention_two div:nth-child(2) img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.listss ul li a div.attention_two div:nth-child(2) div.dask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+.listss ul li a div.attention_two div:nth-child(2) span.time {
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  font-size: 0.24rem;
+  color: #F9F9F9;
+}
+.listss ul li a div.attention_two div:nth-child(3) span {
+  color: #CCCCCC;
+  font-size: 0.24rem;
+}
+.listss ul li a div.attention_two div:nth-child(3) span em img {
+  width: 0.4rem;
+  height: 0.4rem;
+  vertical-align: text-bottom;
+}
+.listss ul li a div.attention_two div:nth-child(3) span:nth-child(2) {
+  margin-left: 0.3rem;
+}

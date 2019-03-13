@@ -1,0 +1,144 @@
+// top
+.top{
+    width: 100%;
+    height: 80/100rem;
+    padding: 10/100rem 21/100rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    background: #FBFBFB;
+    .left{
+        flex: 1;
+        -webkit-flex: 1;
+        a{
+            width: 51/100rem;
+            height: 26/100rem;
+            display: block;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .con{
+        flex:8;
+        -webkit-flex: ;
+        input{
+            width: 440/100rem;
+            height: 48/100rem;
+            background: url(../images/remen/home_seach@3x.png) no-repeat left;
+            background-size: 14% 119%;
+            -webkit-background-size: 14% 119%;
+            border-radius: 24/100rem;
+            outline: none;
+            display: block;
+            border: 1px solid #DBDBDB;
+            float: left;
+            text-indent: 0.6rem;
+            font-size: 0.24rem;
+        }
+        span{
+            display: block;
+            font-size: 0.24rem;
+            color: #666;
+            float: left;
+            text-align: center;
+            line-height: 0.48rem;
+            margin-left: 0.3rem;
+        }
+    }
+    .right{
+        flex:1;
+        -webkit-flex: 1;
+        span{
+            width: 52/100rem;
+            height: 52/100rem;
+            display: block;
+            float: left;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        span:nth-child(2){
+            margin-left: 20/100rem;
+        }
+    }
+}
+body{
+    background: #fbfbfb;
+}
+// 热门推荐
+.hot{
+    width: 100%;
+    height: 330/100rem;
+    background: #fff;
+    padding: 21/100rem 0 21/100rem 21/100rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+    .title{
+        display: -webkit-flex;
+        display: flex;
+        span{
+            flex: 1;
+            -webkit-flex: 1;
+            display: block;
+            font-size: 26/100rem;
+            text-align: left;
+        }
+        a{
+            flex: ;
+            -webkit-flex: 1;
+            display: block;
+            font-size: 24/100rem;
+            text-align: right;
+            color: #666666;
+            padding-right: 21/100rem;
+        }
+    }
+    ul{
+//      display: -webkit-flex;
+//      display: flex;
+        margin-top: 0.2rem;
+        overflow: hidden;
+        width: 1100/100rem;
+        li{
+            width: 195/100rem;
+            height: 193/100rem;
+            position: relative;
+            margin-left: 2%;
+            float: left;
+            flex-wrap: nowrap;
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                div.num_text{
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 0.4rem;
+                    padding: 0 0.1rem;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    span{
+                        font-size: 24/100rem;
+                        color: #fff;
+                        display: block;
+                        width: 50%;
+                        float: left;
+                    }
+                    span:nth-child(2){
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}

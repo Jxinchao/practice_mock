@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>中视联-直播记录</title>
+	<link rel="stylesheet" href="css/rest.css" />
+	<link rel="stylesheet" href="css/pub.css" />
+	<link rel="stylesheet" href="css/recording.css" />
+	<link rel="stylesheet" href="css/attention.css"/>
+	<style>
+		.lists p {
+		    font-size: 0.28rem;
+		    color: #666;
+		     margin-top: 0rem; 
+		}
+	</style>
+</head>
+<body>
+	<!-- top s -->
+	<div class="top">
+		<div class="left">
+			<a href="javascript:;" class="logo" onclick="window.history.go(-1);"><img src="images/chongzhi/recharge_bg.png" alt="" /></a>
+		</div>
+		<div class="right">
+			<span onclick="window.location.href='search.html'">
+				<img src="images/search.png" alt="" />
+			</span>
+			<span>
+				<img src="images/remen/home_gold@3x.png" alt="" />
+			</span>
+		</div>
+	</div>
+	<!-- top e -->
+	<!-- my s -->
+	<div class="mytop">
+		<div class="brief">
+			<!--<div><img src="images/grzx/mine_photo@3x.png"/></div>
+			<div class="mytoptext">
+				<p>伊丽莎白.二蛋</p>
+				<p>账号：19476986</p>
+				<p><span>关注 1</span> &nbsp; |  &nbsp; <span>粉丝 1</span></p>
+			</div>
+			<div class="leftarrows">关注</div>-->
+		</div>		
+	</div>
+	<!-- my e -->
+	<!-- tab s -->
+	<div class="tabnav">
+		<span class="active">直播记录</span>
+		<span>历史视频</span>
+		<span>个人资料</span>
+	</div>
+	<!-- tab e -->
+	<!-- zhibo s -->
+	<div class="listss lists listactive" id="wrappers">
+		<div id="scrollers">
+			<ul>
+				<!--<li>
+					<a href="javascript:;">
+						<div class="attention_one">
+							<div><img src="images/grzx/mine_photo@3x.png"/></div>
+							<div>
+								<p>伊丽莎白.二蛋</p>
+								<p>2018.11.23  21：33</p>
+							</div>
+						</div>
+						<div class="attention_two">
+							<p>过去覅UN五毒俱全降低</p>
+							<div>
+								<div class="dask"></div>
+								<img src="images/list/1.jpg"/>
+								<span class="time">00：15</span>
+							</div>
+							<div>
+								<span>2859万次播放</span>
+							</div>
+						</div>
+					</a>
+				</li>-->
+			</ul>
+			<div class="pull-loading">
+			            	我是有底线的
+		    </div>
+	    </div>
+	</div>
+	<!-- zhibo e -->
+	<!-- lishi s -->
+	<div class="listss lists" id="video">
+		<ul>
+			<!--<li>
+				<a href="javascript:;">
+					<div class="attention_one">
+						<div><img src="images/grzx/mine_photo@3x.png"/></div>
+						<div>
+							<p>伊丽莎白.二蛋</p>
+							<p>2018.11.23  21：33</p>
+						</div>
+					</div>
+					<div class="attention_two">
+						<p>过去覅UN五毒俱全降低</p>
+						<div>
+							<div class="dask"></div>
+							<img src="images/list/1.jpg"/>
+							<span class="time">00：15</span>
+						</div>
+						<div>
+							<span>2859万次播放</span>
+						</div>
+					</div>
+				</a>
+			</li>-->
+		</ul>
+		<div class="pull-loading">
+			            	我是有底线的
+		    </div>
+	</div>
+	<!-- lishi s -->
+	<!-- geren s -->
+	<div class="lists listss" id="gereninfo">
+		<!--<div class="title"><a href="javascript:;"><span>个人信息</span><span><img src="images/grzx/mine_black_into@3x.png" alt="" /></span></a></div>-->
+		<!--<div class="title"><a href="javascript:;"><span>个人信息</span></a></div>
+		<p>昵称：伊丽莎白</p>
+		<p>性别：女</p>
+		<p>年龄：未知</p>
+		<p>所在地：未知</p>-->
+	</div>
+	<!-- geren e -->
+	<!-- js 引入  S  -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/iscroll.js"></script>
+	<script src="js/server.js"></script>
+	<script src="js/rem.js"></script>
+	
+	<!-- js 引入 e -->
+	
+	<script>
+		var datajson = localStorage.json;
+			var obj = $.parseJSON(datajson);
+			var params = getParams();
+			var uid = params.uid;
+			// 直播记录
+			var nums = 0;
+			var ps = 1;
+			var zhibojilu = null;
+			
+			// '获取个人信息'
+			$.ajax({
+				type: "get",
+				url: host + '?service=User.GetUserHome',
+				dataType: 'json',
+				data: {
+					uid: obj.id,
+					touid: uid
+				},
+				success: function(data) {
+					console.log(data)
+					var datainfo = data.data.info[0];
+					var zhibojilu = data.data.info[0].liverecord;
+					var videos = data.data.info[0].video;
+						// 视频播放记录
+						if(videos.length != 0){
+							var html = '';
+							for(var i = 0;i<videos.length;i++){
+								var videourl = "'"+"video.html?pmtr="+videos[i].href+"&uid="+videos[i].uid+"&isvideo=1"+"'";
+								html += '<li><a href="javascript:;"><div class="attention_one"><div><img src="'+datainfo.avatar_thumb+'"/></div><div><p>'+datainfo.user_nicename+'</p><p></p></div></div><div class="attention_two"><p>'+videos[i].title+'</p><div onclick="window.location.href='+videourl+'"><div class="dask"></div><img src="'+videos[i].thumb_s+'"/><span class="time">'+videos[i].datetime+'</span></div><div><span>2345次播放</span></div></div></a></li>'
+								
+							}
+							$("#video ul").append(html);
+						}else{
+							$(".pull-loading").html("主播很懒，没有直播记录哦");
+						}
+						// 直播记录
+						if(zhibojilu.length != 0){
+							var html = '';
+							for(var i = 0;i<zhibojilu.length;i++){
+								html += '<li><a href="javascript:;"><div class="attention_one"><div><img src="'+datainfo.avatar_thumb+'"/></div><div><p>'+datainfo.user_nicename+'</p><p>'+zhibojilu[i].datestarttime+'</p></div></div><div class="attention_two"><p>'+zhibojilu[i].city+'</p><div><div class="dask"></div><img src="'+datainfo.avatar_thumb+'"/><span class="time">00：15</span></div><div><span>2859万次播放</span></div></div></a></li>'
+								
+							}
+							$("#scrollers ul").append(html);
+						}else{
+							$(".pull-loading").html("主播很懒，没有直播记录哦");
+						}
+					// 头部资料
+					$(".brief").html('<div><img src="'+datainfo.avatar_thumb+'"/></div><div class="mytoptext"><p>'+datainfo.user_nicename+'</p><p>账号：'+datainfo.user_login+'</p><p><span>关注 '+data.data.info[0].follows+'</span> &nbsp; |  &nbsp; <span>粉丝 '+data.data.info[0].fans+'</span></p></div><div class="leftarrows"></div>');
+					// 个人信息
+					var issex = datainfo.sex;
+					var sex = ''
+					if(issex == 1){
+						sex = '男'
+					}else{
+						sex = '女'
+					}
+					$("#gereninfo").html('<div class="title"><a href="javascript:;"><span>个人信息</span></a></div><p>昵称：'+datainfo.user_nicename+'</p><p>性别：'+sex+'</p><p>年龄：未知</p><p>所在地：'+datainfo.city+'</p>')
+					if(obj.id == uid){
+						$(".leftarrows").hide();
+					}else{
+						$(".leftarrows").show();
+					}
+					// 查看是否关注
+					$.ajax({
+						type: "get",
+						url: host + '?service=User.IsAttent',
+						dataType: 'json',
+						data: {
+							uid: obj.id,
+							touid: uid
+						},
+						success: function(data) {
+							if(data.data.info[0].isattent == 1){
+								$(".leftarrows").text('已关注');
+								$(".leftarrows").css("background","#ccc")
+							}else{
+								$(".leftarrows").text('关注')
+								$(".leftarrows").css("background","#60b5fe")
+							}
+						},
+						error: function(e) {
+							console.log(2)
+						}
+					});
+					$(".leftarrows").click(function(){
+						$.ajax({
+							type: "get",
+							url: host + '?service=User.SetAttent',
+							dataType: 'json',
+							data: {
+								uid: obj.id,
+								touid: uid
+							},
+							success: function(data) {
+								if(data.data.info[0].isattent == 1){
+									$(".leftarrows").text('已关注');
+									$(".leftarrows").css("background","#ccc")
+								}else{
+									$(".leftarrows").text('关注')
+									$(".leftarrows").css("background","#60b5fe")
+								}
+							},
+							error: function(e) {
+								console.log(2)
+							}
+						});
+					})
+				},
+				error: function(e) {
+					console.log(2)
+				}
+			});			
+		$(function(){
+			$('.tabnav span').click(function(){
+			//获取点击的元素给其添加样式，讲其兄弟元素的样式移除
+		　　　　$(this).addClass("active").siblings().removeClass("active");
+		　　　　//获取选中元素的下标
+			　　　　var index = $(this).index();
+			　　　　$('.lists').eq(index).show().siblings('.lists').hide();
+			})
+		})
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 关注
+			
+//			function attention() {
+//				if(datajson != undefined) {
+//					setTimeout(function() {
+//						$.ajax({
+//							url: host + '?service=User.GetLiverecord',
+//							type: "get",
+//							dataType: 'json',
+//							data: {
+//								touid: uid,
+//								p: ps
+//							},
+//							success: function(data) {
+//								ps++;
+//								var data_length = data.data.info.length; //数据的总长度
+//			
+//								if(data_length != 0) {
+//									console.log(data)
+//									for(var j = nums; j < data_length; j++) {
+//										var tx = data.data.info[j].avatar;
+//										var title = data.data.info[j].title;
+//										var thumb = data.data.info[j].thumb;
+//										var user_nicename = data.data.info[j].user_nicename;
+//										var isURL = "'"+"video.html?uid=" + data.data.info[j].uid + "&pmtr=" + data.data.info[j].pull + "&isvideo="+data.data.info[j].isvideo+"'";
+//										var isdata = "'"+"recording.html?uid=" + data.data.info[j].uid + "'";
+//										$("#scrollers ul").append('<li><a href="javascript:;"><div class="attention_one"><div onclick="window.location.href='+isdata+'"><img src="' + tx + '"/></div><div><p>' + user_nicename + '</p><p>2018.11.23  21：33</p></div></div><div class="attention_two"><p>' + title + '</p><div onclick="window.location.href='+isURL+'"><div class="dask"></div><img src="' + thumb + '"/><span class="time">00：15</span></div><div><span>2859万次播放</span><span><em><img src="images/01.png"/></em>235万</span><span><em><img src="images/02.png"/></em>123万</span><span><em><img src="images/03.png"/></em></span></div></div></a></li>');
+//									}
+//								} else {
+//									$('.pull-loading').html("我是有底线的");
+//								}
+//								myscrolls.refresh();
+//							},
+//							error: function() {
+//								console.log("出错了");
+//							}
+//						});
+//						myscrolls.refresh();
+//					}, 300);
+//				} else {
+//					$('.pull-loading').html("请前往我的登录");
+//				}
+//			
+//			}
+	</script>
+	
+</body>
+</html>

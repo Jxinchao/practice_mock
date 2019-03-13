@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>中视联-关注</title>
+	<link rel="stylesheet" href="css/rest.css" />
+	<link rel="stylesheet" href="css/pub.css" />
+	<link rel="stylesheet" href="css/record.css" />
+	<style>
+		.list ul li div:nth-child(1){
+			width: 0.57rem;
+			height: 0.57rem;
+			margin-top: 0.1rem;
+			border-radius: 50%;
+    		overflow: hidden;
+		}
+		.list ul li div:nth-child(2){
+			width: 72%;
+		}
+	</style>
+</head>
+<body>
+	<!-- top s -->
+	<div class="top">
+		<div class="left">
+			<a href="javascript:;" class="logo" onclick="window.history.go(-1);"><img src="images/chongzhi/recharge_bg.png" alt="" /></a>
+		</div>
+		<div class="right">
+			<span onclick="window.location.href='search.html'">
+				<img src="images/search.png" alt="" />
+			</span>
+			<span>
+				<img src="images/remen/home_gold@3x.png" alt="" />
+			</span>
+		</div>
+	</div>
+	<!-- top e -->
+
+	<div class="list">
+		<ul>
+			<!--<li>
+				<div><img src="images/chongzhi/reaord_glod@3x.png"/></div>
+				<div>
+					<p>王者 - </p>
+					<p>粉丝 123456</p>
+				</div>
+				<div class="attentionlist">已关注</div>
+			</li>-->
+		</ul>
+		<p class="noattention" style="font-size: 0.24rem;text-align: center;line-height: 5rem;display: none;">您还没有关注用户</p>
+	</div>
+	<!-- js 引入  S  -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/rem.js"></script>
+	<script src="js/server.js"></script>
+
+	<!-- js 引入 e -->
+	<!-- js 逻辑  S-->
+	<script>
+
+	var params = getParams();
+	var uid = params.uid;
+	var touid = params.touid;
+	var port = params.entrance;
+	var urls = '';
+	if(port == 'gz'){
+		urls = 'User.GetFollowsList'
+	}else{
+		urls = 'User.GetFansList'
+	}
+	$.ajax({
+		url: host + '?service='+urls,
+		type: "post",
+		dataType: 'json',
+		data: {
+			uid: uid,
+			touid: touid
+		},
+		success: function(data) {
+			var datajson = data.data.info;
+			if(datajson != 0){
+				$(".noattention").hide();
+				for(var i=0;i < datajson.length;i++){
+					console.log(datajson)
+					var issattention = ''
+					if(datajson[i].isattention==1){
+						issattention = '已关注'
+					}else{
+						issattention = '未关注';
+						$(".attentionlist").css("background", "#60b5fe");
+					}
+					$('.list ul').append('<li><div onclick="hrefs('+datajson[i].id+')"><img src="'+datajson[i].avatar_thumb+'"/></div><div><p>'+datajson[i].user_nicename+'</p><p>粉丝 '+datajson[i].fans+'</p></div><div class="attentionlist" onclick="attention('+datajson[i].id+',this)">'+issattention+'</div></li>')
+					
+				}
+			}else{
+				$(".noattention").show();
+			}
+			console.log(data)
+		}
+	})
+	
+	function hrefs(uid){
+		window.location.href = 'recording.html?uid='+uid;
+	}
+	
+	function attention(obj,objs){
+		$.ajax({
+			type: "get",
+			url: host + '?service=User.SetAttent',
+			dataType: 'json',
+			data: {
+				uid: uid,
+				touid: obj
+			},
+			success: function(data) {
+				if(data.data.info[0].isattent == 1) {
+					$(objs).text('已关注');
+					$(objs).css("background", "#ccc")
+				} else {
+					$(objs).text('关注')
+					$(objs).css("background", "#60b5fe")
+				}
+			},
+			error: function(e) {
+				console.log(2)
+			}
+		});
+	}
+	</script>
+	<!-- js 逻辑  E-->
+
+
+
+</body>
+</html>

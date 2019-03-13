@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>中视联-支付记录</title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<link rel="stylesheet" href="css/pub.css" />
+		<link rel="stylesheet" href="css/record.css" />
+	</head>
+
+	<body>
+		<!-- top s -->
+		<div class="top">
+			<div class="left">
+				<a href="javascript:;" class="logo" onclick="window.history.go(-1);"><img src="images/chongzhi/recharge_bg.png" alt="" /></a>
+			</div>
+			<div class="right">
+				<span onclick="window.location.href='search.html'">
+				<img src="images/search.png" alt="" />
+			</span>
+				<span>
+				<img src="images/remen/home_gold@3x.png" alt="" />
+			</span>
+			</div>
+		</div>
+		<!-- top e -->
+
+		<div class="list" id="wrapper">
+			<div id="scroller">
+			<ul >
+				<!--<li>
+					<div><img src="images/recharge.png" /></div>
+					<div>
+						<p>购买魔法扫把坐骑 </p>
+						<p>2019.03.02</p>
+					</div>
+					<div>-200</div>
+				</li>
+				<li>
+					<div><img src="images/recharge.png" /></div>
+					<div>
+						<p>购买魔法扫把坐骑 </p>
+						<p>2019.03.02</p>
+					</div>
+					<div>-200</div>
+				</li>
+				<li>
+					<div><img src="images/recharge.png" /></div>
+					<div>
+						<p>购买魔法扫把坐骑 </p>
+						<p>2019.03.02</p>
+					</div>
+					<div>-200</div>
+				</li>-->
+			</ul>
+			<div class="pull-loading">
+				我是有底线的
+			</div>
+			</div>
+			
+			<div class="nomoney">您没有充值哦</div>
+		</div>
+		<!-- js 引入  S  -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/iscroll.js"></script>
+		<script src="js/server.js"></script>
+		<script src="js/rem.js"></script>
+
+		<!-- js 引入 e -->
+		<!-- js 逻辑  S-->
+		<script>
+			// 热门
+			var myscroll = new iScroll("wrapper", {
+				onScrollMove: function() { //拉动时
+					//上拉加载
+					if(this.y < this.maxScrollY) {
+						$(".pull-loading").html("释放加载");
+						$(".pull-loading").addClass("loading");
+					} else {
+						$(".pull-loading").html("上拉加载");
+						$(".pull-loading").removeClass("loading");
+					}
+				},
+				onScrollEnd: function() { //拉动结束时
+					//上拉加载
+					if($(".pull-loading").hasClass('loading')) {
+						$(".pull-loading").html("上拉加载");
+						pullOnLoad();
+					}
+				}
+			});
+
+			//上拉加载函数,ajax  热门
+			var num = 0;
+			var p = 1;
+			pullOnLoad()
+
+			function pullOnLoad() {
+				setTimeout(function() {
+					var datajson = localStorage.json;
+					var obj = $.parseJSON(datajson);
+					$.ajax({
+						url: host + '?service=Charge.getChargelist',
+						type: "post",
+						dataType: 'json',
+						data: {
+							p: p,
+							uid: obj.id,
+							token: obj.token
+						},
+						success: function(data) {
+							p++;
+							var data_length = data.data.info.length; //数据的总长度
+								if(data.data.info.length != 0) {
+									$('.nomoney').hide();
+									var html = '';
+									for(var i = 0; i < data.data.info.length; i++) {
+										var zifu = ''
+										if(data.data.info[i].type == '1'){
+											zifu = '支付宝'
+										}else{
+											zifu = '微信'
+										}
+										var urls = "'"+"paydetails.html?id=" + data.data.info[i].id +"'"
+										html += '<li onclick="window.location.href='+urls+'"><div><img src="images/recharge.png" /></div><div><p>' + data.data.info[i].coin + '钻石 </p><p>' + data.data.info[i].date + '</p><p>来源：' + zifu + '</p></div><div>+' + data.data.info[i].money + '</div></li>'
+									}
+									$("#scroller ul").append(html)
+								} else {
+									$('.pull-loading').html("我是有底线的");
+								}
+
+							myscroll.refresh();
+						},
+						error: function() {
+							console.log("出错了");
+						}
+					});
+					myscroll.refresh();
+				}, 300);
+			}
+		</script>
+		<!-- js 逻辑  E-->
+
+		<style>
+			.list ul li div:nth-child(1) {
+				width: 0.57rem;
+				height: 0.57rem;
+				margin-top: 0.1rem;
+			}
+			
+			.list ul li div:nth-child(2) {
+				width: 72%;
+			}
+			
+			#wrapper,
+			#wrappers,
+			#t_wrapper,
+			#n_wrapper,
+			#v_wrapper {
+				width: 100%;
+				min-width: 320px;
+				position: absolute;
+				left: 0;
+				top: 37px;
+				bottom: 20px;
+				overflow: hidden;
+				z-index: 1;
+				//  background-color: #eee;
+				/* 防止本机Windows上的触摸事件 */
+				-ms-touch-action: none;
+				/* 防止callout tap-hold和文本的选择 */
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				/* 防止文本调整取向变化对web应用程序很有用 */
+				-webkit-text-size-adjust: none;
+				-moz-text-size-adjust: none;
+				-ms-text-size-adjust: none;
+				-o-text-size-adjust: none;
+				text-size-adjust: none;
+			}
+			
+			.pull-loading,.nomoney {
+				font-size: 0.3rem;
+				text-align: center;
+				line-height: 30px;
+			}
+			.nomoney{
+				display: none;
+			}
+		</style>
+	</body>
+
+</html>

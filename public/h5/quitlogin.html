@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>中视联-退出登录</title>
+	<link rel="stylesheet" href="css/rest.css" />
+	<link rel="stylesheet" href="css/pub.css" />
+	<link rel="stylesheet" href="css/information.css" />
+
+</head>
+<body>
+	<!-- top s -->
+	<div class="top">
+		<div class="left">
+			<a href="index.html" class="logo"><img src="images/chongzhi/recharge_bg.png" alt="" /></a>
+		</div>
+		<div class="right">
+			<span onclick="window.location.href='search.html'">
+				<img src="images/search.png" alt="" />
+			</span>
+			<span>
+				<img src="images/remen/home_gold@3x.png" alt="" />
+			</span>
+		</div>
+	</div>
+	<!-- top e -->
+	<!-- title s -->
+    <!--<div class="recharge_title">
+    	<div>&nbsp;</div>
+    	<div><span>个人信息</span><a href="javascript:;">保存</a></div>
+    </div>-->
+	<!-- title e -->
+	<!-- content s -->
+	<div class="content">
+		
+		<div class="btn">
+			<a href="javascript:;">退出登录</a>
+		</div>
+	</div>
+	<!-- content e -->
+	<!-- js 引入  S  -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/rem.js"></script>
+	
+	<!-- js 引入 e -->
+	
+	<script>
+		$(".btn").click(function(){
+			localStorage.clear();
+			window.location.href='login.html'
+		})
+	</script>
+	
+</body>
+</html>
