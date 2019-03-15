@@ -1,0 +1,135 @@
+.detali {
+  width: 844px;
+  height: 1070px;
+  position: relative;
+  background: url(../images/zzjg.png) no-repeat;
+}
+.detali .topimg {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto;
+}
+.detali .topimg img {
+  width: 100%;
+}
+.detali .figure {
+  overflow: hidden;
+}
+.detali .figure .con {
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+.detali .figure .con p {
+  font-size: 20px;
+  text-align: center;
+}
+.detali .figure .con p.con_w {
+  width: 320px;
+  text-indent: 50%;
+}
+.detali .figure .con p.con_f {
+  width: 320px;
+  text-indent: 25%;
+}
+.detali .figure .con .rwimg {
+  float: left;
+  margin-top: 40px;
+  margin-left: 75px;
+}
+.detali .figure .con .rwimg a {
+  display: block;
+  width: 117px;
+}
+.detali .figure .con .rwimg a img {
+  width: 100%;
+}
+.detali .figure .cons p.consmp {
+  margin-top: 70px;
+}
+.detali .figure .cons .rwimg {
+  margin-top: 35px;
+  margin-left: 39px;
+}
+.detali .figure .cons .rwimgs {
+  margin-left: 75px;
+}
+.detali .lefttext {
+  margin-top: 7%;
+  margin-left: 30%;
+}
+.detali .lefttext a {
+  display: block;
+  border-radius: 5px;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background: #a72126;
+}
+.detali .listtext {
+  margin-top: 13%;
+  overflow: hidden;
+}
+.detali .listtext a {
+  font-size: 14px;
+  float: left;
+  display: block;
+  border-radius: 5px;
+  width: 10.5%;
+  height: 40px;
+  color: #fff;
+  margin-left: 0.5%;
+  text-align: center;
+  background: #a72126;
+}
+.detali .listtext .l-g {
+  line-height: 40px;
+}
+.detali .splist {
+  margin-top: 15%;
+}
+.detali .splist a {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  float: left;
+  padding: 18px 10px;
+  display: block;
+  border-radius: 5px;
+  width: 40px;
+  height: 278px;
+  color: #fff;
+  margin-left: 0.5%;
+  text-align: center;
+  background: #a72126;
+  font-size: 16px;
+  line-height: 16px;
+}
+.detali .splist .m-1 {
+  margin-left: 2%;
+}
+.detali .splist .m-2 {
+  margin-left: 4.5%;
+}
+.detali .splist .m-3 {
+  margin-left: 5.5%;
+}
+.detali .splist .m-4 {
+  margin-left: 14%;
+}
+.detali .splist .m-5 {
+  margin-left: 5.5%;
+}
+.detali .splist .m-6 {
+  margin-left: 4%;
+}
+.detali .splist .m-7 {
+  margin-left: 4.8%;
+}
+.detali .splist .m-8 {
+  margin-left: 4.8%;
+}
+.detali .splist .m-9 {
+  margin-left: 4.8%;
+}
