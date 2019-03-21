@@ -1,100 +1,148 @@
 .cont {
-    padding: 24px 0px 24px 70px;
-//  -webkit-box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, .5);
-//  box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, .5);
+    //  -webkit-box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, .5);
+    //  box-shadow: 0px 0px 50px 0 rgba(174, 235, 254, .5);
     margin-top: 50px;
     .disease_box {
         overflow: hidden;
         h1 {
-            font-size: 16px;
+            font-size: 22px;
         }
         .content {
-            div {
-                float: left;
+            overflow: hidden;
+            width: 1200px;
+            height: 600px;
+            background: url(../images/new/yiyuan-d.png) no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            margin: 30px auto 0;
+            .tops {
+                width: 100%;
+                height: 475px;
+                overflow: hidden;
+                div {
+                    width: 50%;
+                    height: 475px;
+                    float: left;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                div.r {
+                    h5 {
+                        font-size: 20px;
+                    }
+                    padding: 60px 70px;
+                    font-size: 18px;
+                    color: #F8F8F8;
+                    p {
+                        line-height: 36px;
+                        margin-top: 30px;
+                    }
+                }
             }
-            div.disease_l {
-                width: 480px;
-                height: 400px;
-                position: relative;
-                border: 1px solid #2077fa;
-                margin-top: 60px;
+            .jstext {
+                padding: 40px;
+                color: #F8F8F8;
+                text-align: right;
+                span {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 20px;
+                    text-align: right;
+                    font-style: oblique;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .text-js {
+            overflow: hidden;
+            margin-top: 40px;
+            font-size: 20px;
+            line-height: 35px;
+            .max {
+                font-size: 23px;
+                margin-bottom: 20px;
+            }
+        }
+        .contents {
+            position: relative;
+            overflow: hidden;
+            .disease_l {
+                width: 40%;
+                float: left;
                 img {
-                    width: 480px;
-                    height: 400px;
-                    position: absolute;
-                    top: -20px;
-                    left: 20px;
+                    width: 100%;
                 }
             }
             .disease_r {
-                float: right;
-                width: 55.6%;
-                .title {
-                    margin-top: 10%;
-                    float: none;
-                    height: 60px;
-                    background: #003c68;
-                    line-height: 60px;
-                    color: #fff;
-                    font-size: 16px;
-                    img {
-                        vertical-align: middle;
-                        width: 25px;
-                        height: 16px;
-                        margin-left: 2%;
-                    }
-                    span {
-                        margin-left: 5%;
-                    }
+                width: 60%;
+                float: left;
+                overflow: hidden;
+                h1 {
+                    color: #0C0C0C;
+                    font-size: 22px;
+                    text-indent: 30px;
+                    line-height: 55px;
                 }
-                .title_s {
-                    padding-top: 15px;
-                    height: 90px;
-                    span {
-                        margin-left: 5%;
-                        display: inline-block;
-                        /* width: 50%; */
-                        /* height: 100%; */
-                        line-height: 30px;
-                    }
-                }
-                p {
-                    text-align: right;
-                    color: #003c68;
-                    font-size: 16px;
-                    font-style: oblique;
-                    font-weight: bold;
-                    margin-top: 10px;
-                    padding-right: 70px;
-                }
-                div.text {
-                    padding: 50px 50px;
+                div {
+                    border: 1px solid #E0EAF7;
+                    height: 355px;
+                    width: 100%;
+                    padding: 20px 30px;
                     p {
-                        color: #141414;
-                        font-size: 16px;
-                        font-style: normal;
-                        font-weight: 500;
-                        padding-right: 0px;
-                        text-align: left;
-                        margin-top: 0;
+                        font-size: 18px;
+                        line-height: 32px;
+                    }
+                }
+            }
+            .foot {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                height: 100px;
+                background: url(../images/new/lantiao.png) no-repeat;
+                .jstext {
+                    padding: 20px;
+                    color: #F8F8F8;
+                    text-align: right;
+                    span {
+                        font-size: 20px;
+                    }
+                    p {
+                        font-size: 20px;
+                        text-align: right;
+                        font-style: oblique;
+                        margin-top: 10px;
                     }
                 }
             }
         }
     }
     .disease_boxs {
+        .content {
+            background: url(../images/new/yiyuan_bg.png) no-repeat;
+            .tops {
+                height: 500px;
+                div.l {
+                    width: 50%;
+                    height: 500px;
+                    float: left;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .jstext {
+                padding: 20px;
+            }
+        }
         margin-top: 50px;
     }
 }
 
-.product_text {
-    margin-top: 30px;
-//  padding-left: 5%;
-    h1 {
-        font-size: 16px;
-        color: #1C1C1C;
-    }
-    p {
-        margin-top: 10px;
-    }
+.m_l_m{
+    margin-top: 100px;
 }
