@@ -89,10 +89,58 @@
 }
 .bigs {
   width: 100%;
-  background: url(../images/chain_banner.jpg);
+  background: url(../images/new/bg.png);
   -webkit-background-size: cover;
   background-size: cover;
   height: 960px;
+}
+.leadership {
+  width: 100%;
+  height: 915px;
+  background: url(../images/new/china-bg.png) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+.leadership .leader {
+  width: 100%;
+  overflow: hidden;
+  height: 330px;
+  background: rgba(88, 111, 127, 0.8);
+  margin: 80px 0;
+}
+.leadership .leader div {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+.leadership .leader div img {
+  width: 100%;
+  height: 100%;
+}
+.leadership .leader div p {
+  font-size: 22px;
+  color: #FFFFFF;
+  margin-top: 10%;
+  width: 87%;
+  margin-left: 5%;
+}
+.leadership .leader div.r_text {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+}
+.leadership .leader div.r_text div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: rgba(34, 107, 187, 0.7);
+  font-size: 24px;
+  padding-left: 5%;
+  line-height: 100px;
+  color: #fff;
+  font-style: oblique;
 }
 .ipsenchina_b {
   padding-top: 130px;
@@ -107,4 +155,11 @@
 }
 .ipsenchina_b .product_text div img {
   width: 100%;
+}
+#banner_bottom {
+  background: url(../images/new/t.png) !important;
+  height: 24px;
+}
+.dask {
+  background: none !important;
 }
