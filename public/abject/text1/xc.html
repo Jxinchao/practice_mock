@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>公告</title>
+    <meta name="keywords" content="公告" />
+    <meta name="description" content="公告" />
+    <link rel="stylesheet" type="text/css" href="templates/default/style/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="templates/default/style/common.css">
+    <link rel="stylesheet" type="text/css" href="templates/default/style/xc.css">
+    <script type="text/javascript" src="templates/default/js/jquery.min.js"></script>
+    <script type="text/javascript" src="templates/default/js/swiper.min.js"></script>
+</head>
+<body>
+    <div class="activity wrap m">
+        <div class="activity-ban1">
+<div class="ban1-title">
+                康心联盟<br>
+                即将全面升级转型<br>
+            </div>
+            <div class="ban1-title-s">
+                升级后业务全面覆盖<br>
+                慈善救助与互联网综合医疗服务
+            </div>
+            <div class="ban1-share">
+                <strong>360元<span>成为</span>会员，<span>即可享有</span></strong>
+            </div>
+        </div>
+        <div class="activity-ban2">
+        <img src="templates/default/images/gy.png">
+        </div>
+            <div class="activity-text">
+                <strong>公益救助</strong>
+            </div>
+        <div class="gy1">
+        <img src="templates/default/images/gy1.png">
+        </div>
+
+        <div class="activity-ban2">
+        <img src="templates/default/images/gyy.png">
+        </div>
+            <div class="activity-text">
+                <strong>个人救助</strong>
+            </div>
+        <div class="gy2">
+        <img src="templates/default/images/gy2.png">
+        </div>
+
+        <div class="activity-ban2">
+        <img src="templates/default/images/gyyy.png">
+        </div>
+            <div class="activity-text">
+                <strong>家庭医生</strong>
+            </div>
+        <div class="gy3">
+        <img src="templates/default/images/gy3.png">
+        </div>
+
+        <div class="activity-ban2">
+        <img src="templates/default/images/gyyyy.png">
+        </div>
+            <div class="activity-text">
+                <strong>名医在线</strong>
+            </div>
+        <div class="gy4">
+        <img src="templates/default/images/gy4.png">
+        </div>
+
+        <div class="activity-ban2">
+        <img src="templates/default/images/gyyyyy.png">
+        </div>
+            <div class="activity-text">
+                <strong>挂号秘书</strong>
+            </div>
+        <div class="gy5">
+        <img src="templates/default/images/gy5.png">
+        </div>
+
+        <div class="activity-ban2">
+        <img src="templates/default/images/gyyyyyy.png">
+        </div>
+            <div class="activity-text">
+                <strong>绿色通道</strong>
+            </div>
+        <div class="gy6">
+        <img src="templates/default/images/gy6.png">
+        </div>
+
+        <div class="activity-ban11">
+        <div class="d-text">
+        <strong>平台正在开发中...<br>敬请期待!</strong>
+        </div>
+        </div>
+
+
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        var exampleSwiper = new Swiper('#example', {
+            autoplay: 5000,
+            loop: true,
+            pagination: {
+                el: '#example .pagination',
+            }
+        });
+
+        $(".swiper-pagination-bullet").click(function(){
+            $(this).addClass("swiper-pagination-bullet-active").siblings().removeClass("swiper-pagination-bullet-active")
+            var index = $(this).index()+1;
+            exampleSwiper.slideTo(index, 1000, false);
+        })
+
+        $(".question").click(function(){
+            $(this).find(".question-text").toggle();
+            if( $(this).find(".question-text").is(":hidden") ){
+                $(this).find(".question-tit").removeClass("question-tit-yes")
+            }else{
+                $(this).find(".question-tit").addClass("question-tit-yes")
+            }
+        })
+
+    })
+</script>
+</html>

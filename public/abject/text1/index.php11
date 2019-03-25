@@ -1,0 +1,311 @@
+<?php 
+    require_once(dirname(__FILE__).'/include/config.inc.php'); 
+    if(isset($_POST['nickname'])) {
+        $post     = $_POST;
+        $nickname = trim($post['nickname']);
+        $content  = trim($post['content']); 
+        $content  = trim($post['tt']); 
+        $posttime = time();
+
+        if(empty($nickname) || empty($content)) {
+          echo "<script> alert('请认真填写信息!');location.href=document.referrer;</script>";
+        } else {
+              $dosql->Execute("insert into `#@__message` (nickname, content, tt,posttime,checkinfo) values('$nickname','$tt', '$content', '$posttime', 'false')");
+              echo "<script> alert('添加留言成功!');location.href=document.referrer;</script>";
+              require('email.php');
+        }
+    }
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><?=$cfg_webname;?></title>
+    <meta name="keywords" content="<?=$cfg_keyword;?>">
+    <meta name="description" content="<?=$cfg_description;?>">
+    <link rel="stylesheet" type="text/css" href="templates/default/style/common.css">
+    <link rel="stylesheet" type="text/css" href="templates/default/style/index.css">
+    <script type="text/javascript" src="templates/default/js/jquery.min.js"></script>
+    <script type="text/javascript" src="templates/default/js/jquery.SuperSlide.2.1.2.js"></script>
+    <script type="text/javascript" src="templates/default/js/common.js"></script>
+</head>
+<body>
+    <div class="top">
+        <div class="wrap m clearfix">
+            <div class="logo fl">
+                <a href="index.html">
+                    <img src="templates/default/images/logo.png">
+                </a>
+            </div>
+            <div class="nav fr">
+                <ul class="clearfix">
+                    <li class="active">
+                        <a href="http://www.kangxinlianmeng.com/index.php">首页</a>
+                    </li>
+                    <li>
+                        <a href="http://www.kangxinlianmeng.com/plan.php">互助计划</a>
+                    </li>
+                    <li>
+                        <a href="http://www.kangxinlianmeng.com/news.php">新闻中心</a>
+                    </li>
+                    <li>
+                        <a href="http://www.kangxinlianmeng.com/contact-us.php">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+            <?php require_once('right.php'); ?>
+    <div class="banner" id="Js_Banner">
+        <div class="s-bd">
+            <div class="swrap">
+                <?php
+                $dosql->Execute("SELECT title,picurl FROM `#@__admanage` WHERE classid=1 AND checkinfo=true ORDER BY orderid asc LIMIT 0,5");
+                while($row = $dosql->GetArray())
+                {
+                ?> 
+                <div class="item">
+                    <a href="#">
+                        <img src="<?=$row['picurl'];?>">
+                    </a>
+                </div>
+                <?php
+                }
+                ?>
+            </div>
+            <div class="hd">
+                <ul>
+                    <?php
+                    $dosql->Execute("SELECT title,picurl FROM `#@__admanage` WHERE classid=1 AND checkinfo=true ORDER BY orderid asc LIMIT 0,5");
+                    while($row = $dosql->GetArray())
+                    {
+                    ?> 
+                    <li></li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="plan-wrap wrap m">
+        <div class="plan-tit">
+            互助计划
+        </div>
+        <div class="plan-line m"></div>
+        <div class="plan-con">
+            <ul class="clearfix">
+                <li>
+                    <a href="http://www.kangxinlianmeng.com/plan.php" rel="nofollow">
+                        <div class="plan-pic">
+                            <img src="templates/default/images/plan-1.png">
+                            <div class="plan-pic-code">
+                                <img src="templates/default/images/code.png">
+                            </div>
+                        </div>
+                        <div class="plan-desc">
+                            <div class="plan-desc-t">
+                                宝宝互助计划
+                            </div>
+                            <div class="plan-desc-text">
+                                白血病、视力严重受损等192种大病
+                            </div>
+                            <div class="plan-desc-date">
+                                出生后28天-17周岁
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.kangxinlianmeng.com/plan.php" rel="nofollow">
+                        <div class="plan-pic">
+                            <img src="templates/default/images/plan-2.png">
+                            <div class="plan-pic-code">
+                                <img src="templates/default/images/code.png">
+                            </div>
+                        </div>
+                        <div class="plan-desc">
+                            <div class="plan-desc-t">
+                                青年互助计划
+                            </div>
+                            <div class="plan-desc-text">
+                                胃癌、肝癌等各种癌症
+                            </div>
+                            <div class="plan-desc-date">
+                                18-50周岁
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.kangxinlianmeng.com/plan.php" rel="nofollow">
+                        <div class="plan-pic">
+                            <img src="templates/default/images/plan-3.png">
+                            <div class="plan-pic-code">
+                                <img src="templates/default/images/code.png">
+                            </div>
+                        </div>
+                        <div class="plan-desc">
+                            <div class="plan-desc-t">
+                                中老年互助计划
+                            </div>
+                            <div class="plan-desc-text">
+                                恶性肿瘤、瘫痪等192种大病
+                            </div>
+                            <div class="plan-desc-date">
+                                51-65周岁
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.kangxinlianmeng.com/plan.php" rel="nofollow">
+                        <div class="plan-pic">
+                            <img src="templates/default/images/plan-4.png">
+                            <div class="plan-pic-code">
+                                <img src="templates/default/images/code.png">
+                            </div>
+                        </div>
+                        <div class="plan-desc">
+                            <div class="plan-desc-t">
+                                综合意外互助计划
+                            </div>
+                            <div class="plan-desc-text">
+                                意外身故、意外伤残
+                            </div>
+                            <div class="plan-desc-date">
+                                1-65周岁
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--
+    <div class="what">
+        <div class="wrap m">
+            <div class="what-con">
+                <div class="what-tit">
+                    什么是互助？
+                </div> 
+                <div class="what-desc">
+                    互联网公益互助平台通过互联网集聚用户，通过“抱团“和“分摊”的形式，大幅降低用户得大病保障的成本。
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <div class="advantage wrap m">
+        <ul class="clearfix"> 
+            <li>
+                <div class="advantage-pic">
+                    <img src="templates/default/images/ico-1.png">
+                </div>
+                <div class="advantage-desc">
+                    <div class="adv-desc-tit">
+                        专业
+                    </div>
+                    <div class="adv-desc-text">
+                        实力强大，专业专注，资本金雄厚区块链技术保证信息安全
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="advantage-pic">
+                    <img src="templates/default/images/ico-2.png">
+                </div>
+                <div class="advantage-desc">
+                    <div class="adv-desc-tit">
+                        安全
+                    </div>
+                    <div class="adv-desc-text">
+                        互助金由第三方托管<br>专款专用
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="advantage-pic">
+                    <img src="templates/default/images/ico-3.png">
+                </div>
+                <div class="advantage-desc">
+                    <div class="adv-desc-tit">
+                        公开
+                    </div>
+                    <div class="adv-desc-text">
+                        第三方专业查勘<br>件件公示
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="advantage-pic">
+                    <img src="templates/default/images/ico-4.png">
+                </div>
+                <div class="advantage-desc">
+                    <div class="adv-desc-tit">
+                        透明
+                    </div>
+                    <div class="adv-desc-text">
+                        资金流向，互助事件<br>全网公示，全民监督                    
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="about-us">
+        <div class="plan-tit">
+            关于我们
+        </div>
+        <div class="plan-line m"></div>
+        <div class="about-con wrap m clearfix">
+                    <div class="about-con-l fl">
+                <div class="a-con-lpic">
+                   <img src="templates/default/images/111.png">
+                </div>
+
+                <div class="a-con-lpics">
+                   <!-- <img src="templates/default/images/about-1.png">-->
+                   <video  controls="controls" autoplay="autoplay" width="430" height="290" poster="templates/default/images/about-1.png">
+                   <source src="templates/default/images/xl1.mp4" type="video/mp4" width="420"/>
+                   </video>
+
+                </div>
+
+            </div>
+        <!--
+            <div class="about-con-l fl">
+            
+                <div class="a-con-lpic">
+                    <img src="templates/default/images/about-bg.png">
+                </div>
+
+                <div class="a-con-lpics">
+                    <img src="templates/default/images/about-1.png">
+                </div>
+            </div>
+        -->
+            <div class="about-con-r fr">
+                <div class="a-con-r-tit">
+                    康心联盟简介
+                </div>
+                <div class="a-con-r-text">
+                    康心联盟大病互助平台于2018年7月正式上线，是一个真实可靠的大病互助社群。在这里人人相互保障，共同抵御重大疾病、癌症的风险。康心联盟由北京康行慈善基金会授权运营，资金透明公开，定期公示，全员监督，保障每一分钱都用于互助！
+                </div>
+                <div class="about-btn">
+                    <a href="http://www.kangxinlianmeng.com/news.php">MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap m">
+        <div class="code m">
+            <div class="code-code">
+                <img src="templates/default/images/code.png">
+            </div>
+            <div class="code-text">
+                扫码·关注康心联盟
+            </div>
+        </div>
+    </div>
+    <?php require_once('footer.php'); ?>

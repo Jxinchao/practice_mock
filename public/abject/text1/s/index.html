@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link rel="stylesheet" type="text/css" href="pc/css/swiper.min.css" />
+<link rel="stylesheet" type="text/css" href="pc/css/common.css" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
+</head>
+
+
+
+<div class="banner">
+    <h1><em>康心联盟</em>区域代理申请表</h1>
+</div>
+
+<div class="wrap form_area">
+    <h1>填写申请表并提交</h1>
+    <h2>Fill in the application form and submit it</h2>
+    <span class="short_line"></span>
+    <form id="form">
+        <input type="text" name="name" placeholder="必填：请输入你的姓名">
+        <div class="sex_select">
+            <span>性别:</span>
+            <label><input type="radio" name="sex" value="1" checked="checked">男</label>
+            <label><input type="radio" name="sex" value="2">女</label>
+        </div>
+        <input type="text" name="tel" placeholder="必填：请输入你的手机号">
+        <input type="text" name="birth" value="2018-10-08" onClick="WdatePicker()" placeholder="必填：请输入你的生日">
+        <input type="text" name="province" placeholder="必填：请输入你的地区">
+        <input type="text" name="user_no" placeholder="必填：请输入你的会员编号或绑定手机号">
+        <div class="sex_select">
+            <span>是否愿意遵守康心联盟城市合伙人制度：<i>*</i></span>
+            <label><input type="radio" name="is_rules" value="1" checked="checked">是</label>
+            <label><input type="radio" name="is_rules" value="0">否</label>
+        </div>
+        <div class="sex_select">
+            <span>是否愿意分享、传播康心联盟公益理念：<i>*</i></span>
+            <label><input type="radio" name="is_idea" value="1" checked="checked">是</label>
+            <label><input type="radio" name="is_idea" value="0">否</label>
+        </div>
+        <div class="sex_select">
+            <span>是否愿意参加康心联盟组织的公益活动：<i>*</i></span>
+            <label><input type="radio" name="is_welfare" value="1" checked="checked">是</label>
+            <label><input type="radio" name="is_welfare" value="0">否</label>
+        </div>
+        <div class="sex_select">
+            <span>是否愿意通过康心联盟发布真实的公益信息：<i>*</i></span>
+            <label><input type="radio" name="is_real" value="1" checked="checked">是</label>
+            <label><input type="radio" name="is_real" value="0">否</label>
+        </div>
+        <input type="hidden" name="status" value="1">
+        <input type="button" name="" class="sub_btn" value="立即申请">
+    </form>
+
+    <h3>感谢您的热心，我们在接到申请表后的三个工作日内会通知您最终结果。<em>——康心联盟城市合伙人管理委员会</em></h3>
+</div>
+
+<div class="footer">Copyright 2015康心联盟 沪ICP备15050430号</div>
+
+<script type="text/javascript">
+$(function(){
+        $(".sub_btn").click(function(){
+            if($("#form input[name=name]").val() == ''){
+                alert("请输入名称");
+                return;
+            }
+            if($("#form input[name=tel]").val() == ''){
+                alert("请输入手机号");
+                return;
+            }
+
+             $.ajax({
+               url:'/index.php?r=apply%2Fapply',
+               data:$("#form").serialize(),
+               type:'post',
+               async: false,//设置成同步
+               dataType:"json",
+               success:(function (res) {
+                   if (res.code == 'fail'){
+                       alert(res.msg);
+                       return false;
+                   }else{
+
+                    alert("提交成功，请耐心等待审核")
+
+                   }
+               })
+            })
+             //
+
+
+
+        });
+        
+            
+});
+</script>

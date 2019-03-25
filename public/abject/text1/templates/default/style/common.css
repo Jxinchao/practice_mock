@@ -1,0 +1,445 @@
+@charset "utf-8";
+
+/* CSS reset */
+
+html,
+body {
+    -webkit-text-size-adjust: none;
+}
+
+blockquote,
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB';
+}
+
+body {
+    background: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var,
+i {
+    font-style: normal;
+}
+
+small {
+    font-size: 12px;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+input {
+    outline: none;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f78609;
+    text-decoration: none;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.al {
+    text-align: left;
+}
+
+.ac {
+    text-align: center;
+}
+
+.ar {
+    text-align: right;
+}
+
+.hide {
+    display: none;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: '\20';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.wrap {
+    width: 1200px;
+}
+
+.m {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**颜色**/
+
+
+.top{
+    width: 100%;
+    height: 90px;
+    background: #fff;
+}
+.logo{
+    width: 170px;
+    height: 58px;
+    margin-top: 16px;
+}
+.logo a,
+.logo a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.nav ul li{
+    float: left;
+}
+.nav ul li a{
+    display: block;
+    width: 120px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 18px;
+    color: #424242;
+}
+.nav ul li.active a,
+.nav ul li a:hover{
+    background: #1296db;
+    color: #fff;
+}
+
+
+
+/**banner**/
+.banner {
+    position: relative;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.banner .item,
+.banner .item a{
+    text-align: center;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    font-size: 0; 
+}
+.banner .item img {
+    width: 100%;
+    display: inline-block;
+    margin: 0 -50%;
+}
+
+.banner .s-bd .banner-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.banner .hd {
+    position: absolute;
+    bottom: 10px;
+    left: 18px;
+    text-align: left;
+}
+
+.banner .hd li {
+    cursor: pointer;
+    margin: 0 2px;
+    width: 9px;
+    height: 9px;
+    background: #fff;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+}
+
+.banner .hd li.active {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+
+
+.foot{
+    background: #353535;
+    padding: 20px 0;
+    
+}
+.footer{
+    height: 40px;
+    text-align: center;
+    background: #1b1b1b;
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 40px;
+}
+.foot-l{
+    width: 460px;
+    padding-left: 100px;
+}
+.tel{
+    position: relative;
+    padding-left: 50px;
+}
+.ico-tel{
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 40px;
+    height: 40px;
+}
+.ico-tel img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.tel-tit{
+    font-size: 14px;
+    color: #fff;
+}
+.tel-number{
+    font-size: 20px;
+    color: #1296db;
+}
+.link{
+    color: #fff;
+    font-size: 12px;
+    margin-top: 15px;
+    line-height: 24px;
+}
+.link a{
+    color: #fff;
+    padding: 0 10px;
+}
+
+
+.foot-r{
+    width: 300px;
+    padding-right: 150px;
+}
+.form-inp{
+    width: 278px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #fff;
+    font-size: 12px;
+    color: #fff;
+    line-height: 30px;
+    background: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.form-area{
+    width: 278px;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    font-size: 12px;
+    color: #fff;
+    resize: none;
+    background: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin-top: 10px;
+}
+.form-btn{
+    width: 300px;
+    height: 30px;
+    border: none;
+    background: #1296db;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+
+
+/**
+ * webkit-scroll
+ * 2016-04-01 11:29:56
+ * by：nostar
+ */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    display: block;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-button:start {
+    width: 10px;
+    height: 10px;
+    background: url("../images/scrollbar_arrow.png") no-repeat 0 0;
+}
+
+::-webkit-scrollbar-button:start:hover {
+    background: url("../images/scrollbar_arrow.png") no-repeat -15px 0;
+}
+
+::-webkit-scrollbar-button:start:active {
+    background: url("../images/scrollbar_arrow.png") no-repeat -30px 0;
+}
+
+::-webkit-scrollbar-button:end {
+    width: 10px;
+    height: 10px;
+    background: url("../images/scrollbar_arrow.png") no-repeat 0 -18px;
+}
+
+::-webkit-scrollbar-button:end:hover {
+    background: url("../images/scrollbar_arrow.png") no-repeat -15px -18px;
+}
+
+::-webkit-scrollbar-button:end:active {
+    background: url("../images/scrollbar_arrow.png") no-repeat -30px -18px;
+}
+
+
+.page_info{text-align:center;margin-top:0px;color:#333;}
+.page_info span{padding:0 2px;font-weight:bold;}
+.page_list{height:46px;line-height:44px;text-align:center;letter-spacing:0;font-family:"Arial Black";font-size:12px;margin-top:20px;}
+.page_list a{display:inline-block;color:#1896E1;border:1px solid #e8e8e8;background:#f8f8f8;text-align:center;padding:0 8px;margin:0 1px;}
+.page_list a:hover{color:#fff;border:1px solid #1896E1;background:#1896E1;}
+.page_list a.on{color:#fff;border:1px solid #ccc;background:#1896E1;}
+
+.Pagination {margin:10px 0 0;padding:5px 0;text-align:center; height:20px; line-height:20px; font-family:Arial, Helvetica, sans-serif,"宋体";} 

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="renderer" content="webkit">
+      <meta name="tjport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="健康,体检,肿瘤,癌症,高血压,糖尿病,体检报告,公立医院,美年大,爱康国宾,体检套餐,单位体检,健康体检,体检预约" />
+      <meta name="description" content="杭州每天健康专注于体检与健康管理互联网服务平台的探索和研发,开发一站式体检预约的体系,打造“体检+互联网”综合管理平台。“体检中心运营管理平台”为体检中心提供最优质的解决方案,提升体检中心管理效率,优化服务体验、提供更多更强的市场化能力,服务客户邵逸夫医院,鼓楼医院,杭州市第一人民医院,杭州市第三人民医院,浙江大学医学院,友谊医院,体检中心官网,体检套餐,中山大学孙逸仙纪念医院,广医二院等国内TOP医院" />
+      <link rel="dns-prefetch" href="//mytijian-img.oss-cn-hangzhou.aliyuncs.com">
+      <link rel="shortcut icon" href="//mytijian-img.oss-cn-hangzhou.aliyuncs.com/official-web/favicon.ico">
+      <title>每天健康官网mytijian.com-预约公立医院体检,上每天健康</title>
+
+      <script src="templates/default/js/font_7lrgkttju1fqd7vi.js"></script>
+      <link rel="stylesheet" href="templates/default/style/bootstrap.min.css">
+      <link rel="stylesheet" href="templates/default/style/style.css">
+      <!--[if lt IE 9]>
+      <script src="static/js/html5shiv.min.js"></script>
+      <script src="static/js/respond.min.js"></script>
+      <![endif]-->
+      <style>
+      .pl35{ padding-left: 35px; }.pr35{ padding-right: 35px;} .bg-center{ background-position: center; background-repeat: no-repeat; background-size: cover; }
+      .qd-container { width: 1100px; margin: 0 auto; background-color: inherit; padding-top: 30px;}
+      .layout-table{ display: table;} .layout-cell{ display: table-cell; }
+
+      .qd-section-hd { text-align: center;margin-top: 40px; height: 0; background-color: inherit;}
+      .qd-section-hd-txt { font-size: 30px; font-weight: 400; position: relative; top:-.6em; padding: 0 35px;}
+      .qd-section-hd{ position: relative; }
+      .qd-section-hd::after, .qd-section-hd::before{ content:''; display: block; position: absolute; top:-1px; height: 1px; background-color: #D6D6D6;}
+      .qd-section-hd::after{ left: 0; right: 60%; }
+      .qd-section-hd::before{ right: 0; left: 60%; }
+      .qd-section-sub-hd { text-align: center; font-size: 20px; color:#999; line-height: 3; margin-bottom: 30px;}
+
+      .qd-banner{ height: 400px; background-color:#3277DE; }
+
+      .qd-hzys { height: 560px; background: #fff;}
+      .qd-hzys-list,.qd-ability-list { width: 100%; text-align: center; }
+      .qd-hzys-icon { width: 235px;height: 235px; display: inline-block;}
+      .qd-hzys-hd { font-size: 22px; font-weight: 400; margin-top: 10px;}
+      .qd-hzys-desc { font-size: 18px; line-height: 1.6; color:#999; margin-top: 20px;}
+
+      .qd-ability{ background: #F3F4F9; height: 615px;}
+      .qd-ability-icon{ font-size: 140px; }
+      .qd-ability-item-inner{ background: #fff; height: 380px; width: 320px; display: inline-block;-webkit-transition: all .2s linear; transition: all .2s linear;}
+      .qd-ability-item-inner:hover{ -webkit-box-shadow:0 3px 20px rgba(0,0,0,.1); -moz-box-shadow: 0 3px 20px rgba(0,0,0,.1); box-shadow: 0 3px 20px rgba(0,0,0,.1);-webkit-transform: translate3d(0,-2px,0); transform: translate3d(0,-2px,0);}
+      .qd-ability-ul { list-style: none; padding: 0; margin: 0; width: 100%; list-style: none; margin-top: 30px;}
+      .qd-ability-li { text-align: left; margin-left: 30px; line-height: 40px; color: #999; font-size: 16px;}
+      .qd-ability-list-icon { font-size: 38px; vertical-align: -13px; }
+
+      .qd-cooperation { height: 800px; background: #fff; }
+      .qd-cooperation .qd-section-hd::after{ right: 64%; }
+      .qd-cooperation .qd-section-hd::before{ left: 64%; }
+      .qd-cooperation-more{ text-align: center; font-size: 20px; color: #999; margin-top: 30px;}
+
+      .qd-map { height: 800px;}
+
+      .qd-partner { height: 515px;}
+      .qd-partner .qd-section-hd{ border-color: #fff;}
+      .qd-partner .qd-section-hd-txt,.qd-partner .qd-section-sub-hd {color:#fff;}
+
+      .tj-section-tj .qd-section-hd{ margin: 20px 0 30px; }
+
+      /* 背景图片 */
+      .qd-banner { background-image: url('templates/default/images/bg-qd-banner.png'); }
+      .qd-cooperation-img { background-image: url('templates/default/images/bg-partner-hospital.png'); height: 550px; }
+      .qd-map { background-image: url('templates/default/images/bg-map.png');}
+      .qd-partner { background-image: url('templates/default/images/bg-partner-company.png'); }
+      .qd-partner-img { background-image: url('templates/default/images/bg-partner.png'); height: 236px;}
+
+      .webp .qd-banner { background-image: url('templates/default/images/bg-qd-banner.png'); }
+      .webp .qd-cooperation-img { background-image: url('templates/default/images/bg-partner-hospital.png');}
+      .webp .qd-map { background-image: url('templates/default/images/bg-map.png');}
+      .webp .qd-partner { background-image: url('templates/default/images/bg-partner-company.png'); }
+      .webp .qd-partner-img { background-image: url('templates/default/images/bg-partner.png');}
+      </style>
+    </head>
+    <body>
+        <!-- Header S-->
+        <div class="tj-container">
+          <div class="tj-header clearfix">
+              <a href="/?v=1" class="tj-logo pull-left">
+                  <div class="tj-bg-box bg-logo"></div>
+              </a>
+              <ul class="tj-nav pull-left">
+                  <li><a href="index.html">医院合作</a></li>
+                  <li><a href="channel.html" class="current">渠道合作</a></li>
+                  <li><a href="about.html">关于我们</a></li>
+                              <li><a href="xw.php">新闻中心</a></li>
+              </ul>
+            </div>
+        </div>
+        <!-- Header E-->
+
+        <!-- Banner S -->
+        <div class="qd-banner bg-center"></div>
+        <!-- Banner E -->
+
+        <!-- 合作优势 S -->
+        <div class="qd-hzys qd-container">
+            <h2 class="qd-section-hd"><span class="qd-section-hd-txt">合作优势</span></h2>
+            <div class="layout-table qd-hzys-list">
+              <div class="qd-hzys-item layout-cell pr35">
+                <img src="templates/default/images/logo.png" class="icon qd-hzys-icon">
+                <h3 class="qd-hzys-hd">医院合作资源</h3>
+                <p class="qd-hzys-desc">全国近450家体检中心，90%为公立医院，打破体制壁垒，拓展业务蓝海，提供一站式多医院服务能力</p>
+              </div>
+              <div class="qd-hzys-item layout-cell pl35 pr35">
+                <svg class="icon qd-hzys-icon" aria-hidden="true"><use xlink:href="#icon-xitongduijie"></use></svg>
+                <h3 class="qd-hzys-hd">系统深度对接</h3>
+                <p class="qd-hzys-desc">平台实现与医院体检软件的系统级对接，打通数据通道，体检订单等数据信息实时同步，便捷高效</p>
+              </div>
+              <div class="qd-hzys-item layout-cell pl35">
+                <svg class="icon qd-hzys-icon" aria-hidden="true"><use xlink:href="#icon-shouyikongjian"></use></svg>
+                <h3 class="qd-hzys-hd">提升收益空间</h3>
+                <p class="qd-hzys-desc">优化合作路径，降低沟通成本；套餐加项、家属体检实现业务增值；增加用户粘性，提升客单价</p>
+              </div>
+            </div>
+        </div>
+        <!-- 合作优势 E -->
+
+        <!-- 我们的能力 S -->
+
+        <div class="qd-ability">
+          <div class="qd-container">
+            <h2 class="qd-section-hd"><span class="qd-section-hd-txt">我们的能力</span></h2>
+            <p class="qd-section-sub-hd">我们提供灵活做业务的能力</p>
+
+            <div class="layout-table qd-ability-list">
+              <div class="qd-ability-item layout-cell pr35">
+                <div class="qd-ability-item-inner">
+                <img src="templates/default/images/logo.png" class="icon qd-ability-icon">
+                  <!--<svg class="icon qd-ability-icon" aria-hidden="true"><use xlink:href="#icon-gexinghua"></use></svg>-->
+                  <h3 class="qd-hzys-hd">个性化的服务能力</h3>
+                  <ul class="qd-ability-ul">
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      可为用户订制个性化套餐
+                    </li>
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      多医院业务对接
+                    </li>
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      体检时间可自由安排
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="qd-ability-item layout-cell pr35 pl35">
+                <div class="qd-ability-item-inner">
+                  <svg class="icon qd-ability-icon" aria-hidden="true"><use xlink:href="#icon-duomeijie"></use></svg>
+                  <h3 class="qd-hzys-hd">多媒介的运营手段</h3>
+                  <ul class="qd-ability-ul">
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      搭建专属公众号，客户粉丝化</li>
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      消息提醒涵盖检前、检中、检后</li>
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      场景化H5，电邮营销</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="qd-ability-item layout-cell pl35">
+                <div class="qd-ability-item-inner">
+                  <svg class="icon qd-ability-icon" aria-hidden="true"><use xlink:href="#icon-kegongying"></use></svg>
+                  <h3 class="qd-hzys-hd">可共赢的业务模式</h3>
+                  <ul class="qd-ability-ul">
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      共享公立医院资源网
+                    </li>
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      提供合作伙伴open api
+                    </li>
+                    <li class="qd-ability-li">
+                      <svg class="icon qd-ability-list-icon" aria-hidden="true"><use xlink:href="#icon-gou"></use></svg>
+                      大健康生态业务合作
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <!--我们的能力 E -->
+
+        <!-- 合作单位 S -->
+        <div class="qd-cooperation">
+          <div class="qd-container">
+            <h2 class="qd-section-hd"><span class="qd-section-hd-txt">部分合作体检中心</span></h2>
+            <p class="qd-section-sub-hd">全国近450家体检中心</p>
+            <div class="qd-cooperation-img bg-center"></div>
+            <div class="qd-cooperation-more">持续更新中...</div>
+          </div>
+        </div>
+        <!-- 合作单位 E -->
+
+        <!-- 地图 S -->
+        <div class="qd-map bg-center">
+          <div class="qd-container">
+            <h2 class="qd-section-hd"><span class="qd-section-hd-txt">全国拓展概况</span></h2>
+            <p class="qd-section-sub-hd">拓展团队遍布全国14个主要省市</p>
+            <!-- <div class="qd-map-bg bg-center"></div> -->
+          </div>
+        </div>
+        <!-- 地图 E -->
+
+        <!-- 合作伙伴 S -->
+        <div class="qd-partner">
+          <div class="qd-container">
+            <h2 class="qd-section-hd"><span class="qd-section-hd-txt">合作伙伴</span></h2>
+            <p class="qd-section-sub-hd">同行？跨界？用更专业的体检服务吸引越来越多的合作伙伴</p>
+            <div class="qd-partner-img bg-center"></div>
+          </div>
+        </div>
+        <!-- 合作伙伴 E -->
+
+        <!-- 表单 S-->
+        <div class="tj-section">
+            <div class="tj-section-tj">
+                <h2 class="qd-section-hd"><span class="qd-section-hd-txt">合作申请</span></h2>
+                <div class="apply-box" style="padding-top: 60px;">
+                    <div class="apply-row">
+                        <label>企业名称</label>
+                        <input type="text" id="qdCompany" maxlength="50">
+                        <a class="errow" href="javascript:;" >输入文字过长</a>
+                    </div>
+                    <div class="apply-row">
+                        <label>联系人姓名</label>
+                        <input type="text" id="qdName" maxlength="50">
+                        <a class="errow" href="javascript:;" >输入文字过长</a>
+                    </div>
+                    <div class="apply-row">
+                        <label>联系人电话</label>
+                        <input type="text" id="qdPhone" maxlength="50">
+                        <a class="errow" href="javascript:;" >输入文字过长</a>
+                    </div>
+
+                    <div class="apply-submit">
+                        <button id="applyQD" href="javascript:;">提交申请</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 表单 E -->
+
+        <!-- Footer S -->
+        <div class="tj-section-contact">
+            <div class="tj-section">
+                <div class="contact-box clearfix">
+                    <div class="contact-link">
+                        <h3>友情链接</h3>
+                        <ul class="clearfix">
+                            <li><img src="templates/default/picture/zhifubao.png"></li>
+                            <li><img src="templates/default/picture/weixin.png"></li>
+                            <li><img src="templates/default/picture/weibo.png"></li>
+                            <li><img src="templates/default/picture/shizi.png"></li>
+                        </ul>
+                    </div>
+                    <div class="contact-phone">
+                        <h3>客服电话</h3>
+                        <p><img src="templates/default/picture/phone.png"><span>400-6010-550</span></p>
+                    </div>
+                    <div class="contact-code">
+                        <h3>扫码关注我们</h3>
+                        <img src="templates/default/picture/code.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tj-footer tj-section-bgc">
+           Copyright © kangxinlianmeng.com 版权所有：北京牧航网路科技有限公司 京ICP备16004880号-1 客户服务热线：400-6010-550
+        <!-- Footer E -->
+
+        <script src="templates/default/js/jquery.min.js"></script>
+        <script src="templates/default/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

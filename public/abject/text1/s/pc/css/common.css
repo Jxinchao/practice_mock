@@ -1,0 +1,146 @@
+@charset "utf-8";
+/*==========@@HTML默认 开始@@==========*/
+/*基本*/
+*{ padding:0px; margin:0px; font-family:"微软雅黑","Microsoft YaHei", "黑体", "宋体",Arial,Helvetica,sans-serif; color: #333; }
+body, div, dl, dt, dd, ul, ol, li,h1, h2, h3, h4, h5, h6, pre, code,form,fieldset, 
+legend, input, button,textarea, p, blockquote, th, td { margin: 0; padding: 0;}
+html,body{margin:0px auto; font-family: Microsoft YaHei; font-size:14px; background: #fff;}
+div{ margin:0; padding:0; border:0; }
+img{ margin:0; padding:0; border:0; }
+p{ margin: 0px; line-height:1.8em}
+b,strong {font-weight: bold;}
+table { border-collapse: collapse; border-spacing: 0;}
+li{ list-style: none outside none;}
+i,em{ font-style: normal; }
+h1,h2,h3,h4,h5,h6{ font-weight: normal;font-weight: 500; }
+input,select,textarea{outline:0;-moz-appearance:none;-webkit-appearance:none;appearance:none;border:none;background: transparent;}
+/*input框的占位字体颜色*/
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { /* WebKit browsers */  color: #b9bbbd; }  
+input:-moz-placeholder,textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */  color: #b9bbbd;   }  
+input::-moz-placeholder,textarea:-moz-placeholder{ /* Mozilla Firefox 19+ */  color: #b9bbbd; }
+input:-ms-input-placeholder,textarea:-moz-placeholder { /* Internet Explorer 10+ */ color: #b9bbbd; }
+/*链接*/
+a{ text-decoration:none; color:#333; background: transparent;  outline:none; cursor: pointer;}
+a:active{ outline:none;}
+.wrap{width: 1200px; margin:0 auto;overflow: hidden;}
+
+.banner{
+    width: 100%;
+    height: 360px;
+    background: url(../img/banner.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+.banner h1{
+    font-size: 60px;
+    line-height: 360px;
+    text-align: center;
+    color: #fff;
+}
+.banner h1 em{
+    color: #fa254d;
+    margin-right: 35px;
+} 
+.form_area{
+    padding: 60px 0;
+    overflow:hidden;
+}
+.form_area h1{
+    font-size: 36px;
+    line-height: 56px;
+    text-align: center;
+}
+.form_area h2{
+    font-size: 18px;
+    line-height: 38px;
+    color: #cdcdcd;
+    text-align: center;
+}
+.short_line{
+    width: 60px;
+    height: 2px;
+    background: #fa254d;
+    display: block;
+    margin: 26px auto 60px;
+}
+.form_area form{
+    width: 100%;
+    padding: 0 150px;
+    box-sizing: border-box;
+}
+.form_area input[type=text]{
+    width: 100%;
+    height: 92px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    text-indent: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+.sex_select{
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    margin:0 0 60px 0;
+    display: flex;
+}
+.sex_select span{
+    font-size: 24px;
+    line-height: 36px;
+    margin-right: 40px;
+}
+.sex_select span i{
+    color: #fa254d;
+}
+.sex_select label{
+    font-size: 24px;
+    line-height: 36px;
+    height: 36px;
+    display: flex;
+    margin-right: 40px;
+    color: #999;
+}
+.form_area input[type=radio]{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    margin-right: 15px;
+}
+.form_area input[type=radio]:checked{
+    border: 1px solid #fa254d;
+    background: url(../img/checked.png) no-repeat center;
+    background-size: 18px 18px;
+}
+
+.sub_btn{
+    width: 380px;
+    height: 88px;
+    display: block;
+    font-size: 32px;
+    line-height: 88px;
+    color: #fff;
+    background: #fa254d;
+    border-radius: 20px;
+    margin: 40px auto 80px;
+}
+
+.form_area h3{
+    font-size: 24px;
+    line-height: 44px;
+}
+.form_area h3 em{
+    float: right;
+    color: #999;
+}
+.footer{
+    width: 100%;
+    height: 40px;
+    background: #4d4d4d;
+    font-size: 14px;
+    line-height: 40px;
+    color: #cccccc;
+    text-align: center;
+}

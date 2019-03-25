@@ -1,0 +1,144 @@
+.tj-container{
+  width: 100%;
+  overflow: hidden;
+}
+.tj-nav{
+  margin-left: 0;
+}
+.tj-nav>li>a {
+    display: block;
+    padding: 0 5px;
+    font-size: 15px;
+    color: #666;
+}
+.tj-logo{
+  width: 30%;
+}
+.tj-bg-box.bg-logo {
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-image: url(../images/logo-1.png);
+}
+.tj-section{
+  width: 100%;
+  padding-top: 10px;
+}
+.tj-section h2 span{
+    margin: 0;
+    font-size: 18px;
+    line-height: 18px;
+}
+.tj-tabs-head li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    font-size: 12px;
+    color: #999;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+}
+.tj-section p {
+    padding: 10px;
+    font-size: 12px;
+    color: #666;
+}
+.tj-bg-box.bg-3,.tj-bg-box.bg-tjjd,.bg-cxx{
+  width: 100% !important;
+}
+.tj-bg-box.bg-tjdx{
+  width: 100%;
+}
+.tj-section h2{
+  margin-bottom: 20px !important;
+}
+.tj-section-p {
+    float: none;
+    /* margin-right: 20px; */
+    width: 260px;
+    /* height: 500px; */
+    margin: 30px auto;
+}
+.tj-section .tj-section-p:last-child{
+  margin-right: inherit;
+}
+.qd-container{
+  width: 100%;
+}
+.qd-cooperation-img {
+    width: 100%;
+    background-image: url(../images/bg-partner-hospital.png);
+    background-size: contain;
+    height: 205px;
+}
+.qd-cooperation {
+    height: 456px;
+    background: #fff;
+}
+.apply-submit button{
+  width: 213px;
+}
+.tj-section-tj{
+  width: 100%;
+}
+.contact-box{
+  padding: 10px;
+}
+.tj-footer{
+  height: auto;
+  line-height: 32px;
+}
+.contact-phone p span {
+    margin-left: 0px;
+    font-size: 12px;
+    color: #999;
+}
+.contact-phone {
+    padding: 0 10px;
+        border-right: 0px solid #e2e2e2;
+}
+.contact-link h3, .contact-phone h3{
+  font-size: 14px;
+}
+.tj-section{
+    padding-bottom: 0;
+}
+/* two */
+.qd-banner {
+    width: 100% !important;
+    background-image: url(templates/default/images/bg-qd-banner.png);
+    background-size: contain !important;
+}
+.qd-banner {
+    height: 78px !important;
+    background-color: #3277DE;
+}
+.qd-hzys{
+  height: auto !important;
+  width: 100% !important;
+}
+.layout-cell{
+  display: block !important;
+}
+.pr35{
+  padding-right: 0px !important;
+}
+.pl35 {
+    padding-left: 0px !important;
+}
+.tj-content-panel{
+  width: 100%;
+}
+.tj-about-menu{
+  width: 30%;
+}
+.tj-about-contents{
+  padding-left: 0;
+  width: 70%
+}
+
+/* news */
+.wrap{
+  width: 100%;
+}
